@@ -1,11 +1,16 @@
-import Navbar from "./pages/Navbar"
+import MainContainer from "./components/containers/MainContainer.style";
+import Hero from "./pages/Hero";
+import Navbar from "./pages/Navbar";
 
 const App = () => {
   return (
-    <div>
-      <Navbar/>
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <MainContainer>
+        <Hero />
+      </MainContainer>
+    </>
+  );
+};
 
-export default App
+export default App;
