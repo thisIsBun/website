@@ -21,13 +21,4 @@ const H3 = styled.h3`
   line-height: 0.9;
 `;
 
-const P = styled.p`
-  margin: 30px 0 0 0;
-  max-width: 640px;
-  color: var(--slate);
-  font-size: var(--fz-lg);
-  font-weight: 300;
-  line-height: 1.6;
-`;
-
-export { H1, H2, H3, P };
+export { H1, H2, H3 };

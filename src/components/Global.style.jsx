@@ -6,10 +6,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   :root {
+    --lightest-navy: #233554;
     --navy: #0a192f;
     --green: #64ffda;
     --lightest-slate: #ccd6f6;
     --slate: #8892b0;
+    --fz-heading: 32px;
     --fz-xl: 20px;
     --fz-lg: 18px;
     --fz-md: 16px;
