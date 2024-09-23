@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   
   :root {
     --lightest-navy: #233554;
+    --light-navy: #112240;
     --navy: #0a192f;
     --green: #64ffda;
     --lightest-slate: #ccd6f6;
@@ -19,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     --fz-xs: 13px;
     --font-sans: 'Inter', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    --tab-height: 42px;
   }
 
   body {

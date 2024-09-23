@@ -9,7 +9,6 @@ const aboutData = {
     "Storybook",
     "i18next",
     "Vite",
-    "WCAG",
   ],
 };
 

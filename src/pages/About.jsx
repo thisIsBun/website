@@ -4,12 +4,9 @@ import ColumnContainer from "../components/containers/FlexColumn.style";
 import { AboutP } from "../components/fonts/P.style";
 import GridColumn from "../components/containers/GridColumn.style";
 import aboutData from "../data/about.data";
-import TitleH2 from "../components/fonts/TitleH2";
-import {
-  ImgContainer,
-  HeadShotImg,
-  ToolSpan,
-} from "../components/About.style";
+import TitleH2 from "../components/fonts/TitleH2.style";
+import { ImgContainer, HeadShotImg } from "../components/About.style";
+import BulletPoint from "../components/others/BulletPoint.style";
 
 const About = () => {
   const content = useMemo(() => {
@@ -30,7 +27,17 @@ const About = () => {
           })}
           <GridColumn $template="1fr 1fr" $gap="10px">
             {tools.map((tool, index) => {
-              return <ToolSpan key={index}>{tool}</ToolSpan>;
+              return (
+                <BulletPoint
+                  key={index}
+                  $fontFamily="var(--font-mono)"
+                  $fontSize="var(--fz-xs)"
+                  $beforeFontSize="var(--fz-sm)"
+                  $beforeLineHeight="12px"
+                >
+                  {tool}
+                </BulletPoint>
+              );
             })}
           </GridColumn>
         </ColumnContainer>

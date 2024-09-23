@@ -13,20 +13,4 @@ const HeadShotImg = styled.img`
   border-radius: 8px;
 `;
 
-const ToolSpan = styled.span`
-  position: relative;
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-  padding-left: 20px;
-
-  &::before {
-    content: "▹";
-    position: absolute;
-    left: 0px;
-    color: var(--green);
-    font-size: var(--fz-sm);
-    line-height: 12px;
-  }
-`;
-
-export { ImgContainer, HeadShotImg, ToolSpan };
+export { ImgContainer, HeadShotImg };
