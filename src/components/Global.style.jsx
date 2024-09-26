@@ -9,7 +9,9 @@ const GlobalStyle = createGlobalStyle`
     --lightest-navy: #233554;
     --light-navy: #112240;
     --navy: #0a192f;
+    --light-teal: #64d3ff;
     --green: #64ffda;
+    --white: #ffffff;
     --lightest-slate: #ccd6f6;
     --slate: #8892b0;
     --fz-heading: 32px;

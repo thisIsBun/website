@@ -1,5 +1,6 @@
 import MainContainer from "./components/containers/MainContainer.style";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Experiences from "./pages/Experiences";
 import Hero from "./pages/Hero";
 import Navbar from "./pages/Navbar";
@@ -12,6 +13,7 @@ const App = () => {
         <Hero />
         <About />
         <Experiences />
+        <Contact/>
       </MainContainer>
     </>
   );
