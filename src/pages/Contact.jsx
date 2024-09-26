@@ -7,7 +7,6 @@ import {
   Label,
   Input,
   TextArea,
-  Button,
 } from "../components/Contact.style";
 import FlexColumn from "../components/containers/FlexColumn.style";
 import SectionContainer from "../components/containers/SectionContainer.style";
@@ -17,6 +16,7 @@ import emailIcon from "../assets/email_icon.svg";
 import phoneIcon from "../assets/phone_icon.svg";
 import locationIcon from "../assets/location_icon.svg";
 import contactData from "../data/contact.data";
+import { ContactButton } from "../components/others/Button.style";
 
 const Contact = () => {
   return (
@@ -50,7 +50,7 @@ const Contact = () => {
           <Input type="email" id="email" />
           <Label htmlFor="message">Write your message here</Label>
           <TextArea id="message" rows="8"></TextArea>
-          <Button>Send out</Button>
+          <ContactButton>Send out</ContactButton>
         </ContactForm>
       </ContactWrapper>
     </SectionContainer>

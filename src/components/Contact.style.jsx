@@ -64,29 +64,6 @@ const TextArea = styled.textarea`
   }
 `;
 
-const Button = styled.button`
-  border: none;
-  border-radius: 50px;
-  color: var(--white);
-  background: linear-gradient(
-    120deg,
-    var(--light-teal) -37.17%,
-    var(--lightest-navy) 128.21%
-  );
-  font-size: var(--fz-xl);
-  padding: 20px 20px;
-  margin-bottom: 50px;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 35%;
-  align-self: flex-end;
-
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-  }
-`;
-
 export {
   ContactWrapper,
   ContactDetail,
@@ -96,5 +73,4 @@ export {
   Label,
   Input,
   TextArea,
-  Button,
 };

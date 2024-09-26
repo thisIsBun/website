@@ -40,28 +40,4 @@ const NavItem = ({ href, children }) => {
   );
 };
 
-const StyledResumeButton = styled.a`
-  text-decoration: none;
-  color: var(--green);
-  border: 1px solid var(--green);
-  padding: 15px 25px;
-  border-radius: 5px;
-  font-size: var(--fz-xs);
-  font-family: var(--font-mono);
-  transition: 0.3s;
-
-  &:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-  }
-`;
-
-const ResumeButton = ({ href, children }) => {
-  return (
-    <StyledResumeButton href={href} target="_blank" rel="noopener noreferrer">
-      {children}
-    </StyledResumeButton>
-  );
-};
-
-export { NavbarWrapper, NavList, NavItem, ResumeButton };
+export { NavbarWrapper, NavList, NavItem };

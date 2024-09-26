@@ -1,11 +1,10 @@
-import {
-  NavbarWrapper,
-  NavList,
-  NavItem,
-  ResumeButton,
-} from "../components/Navbar.style";
+import { NavbarWrapper, NavList, NavItem } from "../components/Navbar.style";
+import { NavButton } from "../components/others/Button.style";
 
 const Navbar = () => {
+  const handleOpenResume = () => {
+    window.open("/resume.pdf", "_blank", "noopener noreferrer");
+  };
   return (
     <NavbarWrapper>
       <NavList>
@@ -15,7 +14,7 @@ const Navbar = () => {
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/contact">Contact</NavItem>
       </NavList>
-      <ResumeButton href="/resume.pdf">Resume</ResumeButton>
+      <NavButton onClick={handleOpenResume}>Resume</NavButton>
     </NavbarWrapper>
   );
 };
