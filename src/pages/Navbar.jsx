@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavbarWrapper, NavList, NavItem } from "../components/Navbar.style";
 import { NavButton } from "../components/others/Button.style";
@@ -9,7 +9,28 @@ const handleOpenResume = () => {
 };
 
 const Navbar = () => {
+  const [prevScrollY, setPrevScrollY] = useState(window.scrollY);
+  const navWrapperRef = useRef();
   const { hash } = useLocation();
+
+  useEffect(() => {
+    const handleWindowScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY) {
+        navWrapperRef.current.style.top = "-100px";
+      } else {
+        navWrapperRef.current.style.top = "0px";
+      }
+      setPrevScrollY(currentScrollY);
+      console.log(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, [prevScrollY]);
 
   useEffect(() => {
     if (hash) {
@@ -21,7 +42,7 @@ const Navbar = () => {
   }, [hash]);
 
   return (
-    <NavbarWrapper>
+    <NavbarWrapper ref={navWrapperRef}>
       <NavList>
         {navbarData.map(({ name, path }) => {
           return (

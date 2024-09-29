@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     --font-sans: 'Inter', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     --tab-height: 42px;
+    --nav-height: 100px;
   }
 
   body {

@@ -2,11 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const NavbarWrapper = styled.nav`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
   display: flex;
   justify-content: end;
   align-items: center;
-  margin: 35px 50px;
+  padding: 35px 50px;
   gap: 40px;
+  background-color: rgba(10, 25, 47, 0.85);
+  z-index: 28;
+  transition: top 0.3s;
 `;
 
 const NavList = styled.ol`
