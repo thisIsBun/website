@@ -20,7 +20,7 @@ import { ContactButton } from "../components/others/Button.style";
 
 const Contact = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="contact">
       <TitleH2 $number="5">Get In Touch</TitleH2>
       <ContactWrapper>
         <ContactDetail>

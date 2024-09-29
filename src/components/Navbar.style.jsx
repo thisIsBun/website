@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavbarWrapper = styled.nav`
   display: flex;
@@ -23,7 +24,7 @@ const NavList = styled.ol`
   }
 `;
 
-const StyledNavItem = styled.a`
+const StyledNavItem = styled(Link)`
   text-decoration: none;
   color: rgb(204, 214, 246);
 
@@ -35,7 +36,7 @@ const StyledNavItem = styled.a`
 const NavItem = ({ href, children }) => {
   return (
     <li>
-      <StyledNavItem href={href}>{children}</StyledNavItem>
+      <StyledNavItem to={href}>{children}</StyledNavItem>
     </li>
   );
 };

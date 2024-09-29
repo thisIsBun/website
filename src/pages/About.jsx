@@ -18,7 +18,7 @@ const About = () => {
   }, []);
 
   return (
-    <SectionContainer>
+    <SectionContainer id="about">
       <TitleH2 $number="1">About Me</TitleH2>
       <GridColumn $template="3fr 2fr" $gap="30px">
         <ColumnContainer $gap="15px">

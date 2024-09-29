@@ -12,7 +12,7 @@ import H3 from "../components/fonts/H3.style";
 
 const Experiences = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id="experiences">
       <TitleH2 $number="2">Where I’ve Worked</TitleH2>
       <FlexColumn $gap="20px">
         {experienceData.map((data, index) => {

@@ -1,18 +1,35 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { NavbarWrapper, NavList, NavItem } from "../components/Navbar.style";
 import { NavButton } from "../components/others/Button.style";
+import navbarData from "../data/navbar.data";
+
+const handleOpenResume = () => {
+  window.open("/resume.pdf", "_blank", "noopener noreferrer");
+};
 
 const Navbar = () => {
-  const handleOpenResume = () => {
-    window.open("/resume.pdf", "_blank", "noopener noreferrer");
-  };
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const section = document.querySelector(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
   return (
     <NavbarWrapper>
       <NavList>
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/experiences">Experiences</NavItem>
-        <NavItem href="/blogs">Blogs</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/contact">Contact</NavItem>
+        {navbarData.map(({ name, path }) => {
+          return (
+            <NavItem key={name} href={path}>
+              {name}
+            </NavItem>
+          );
+        })}
       </NavList>
       <NavButton onClick={handleOpenResume}>Resume</NavButton>
     </NavbarWrapper>
