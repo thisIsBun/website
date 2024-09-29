@@ -1,6 +1,6 @@
 import SectionContainer from "../components/containers/SectionContainer.style";
 import { FooterP } from "../components/fonts/P.style";
-import { NavLink } from "../components/Navbar.style";
+import Anchor from "../components/others/Link.style";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       <FooterP>Although it’s the end of website.</FooterP>
       <FooterP>
         Don’t let this page be the end,
-        <NavLink to="/#contact">let’s start something!</NavLink>
+        <Anchor to="/#contact">let’s start something!</Anchor>
       </FooterP>
     </SectionContainer>
   );

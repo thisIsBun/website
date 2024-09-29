@@ -7,7 +7,7 @@ const P = styled.p`
 
 const HeroP = styled(P)`
   margin: 30px 0 0 0;
-  max-width: 640px;
+  max-width: 660px;
   color: var(--slate);
   font-size: var(--fz-lg);
 `;

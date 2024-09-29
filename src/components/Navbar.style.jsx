@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Anchor from "./others/Link.style";
 
 const NavbarWrapper = styled.nav`
   position: fixed;
@@ -31,21 +31,12 @@ const NavList = styled.ol`
   }
 `;
 
-const NavLink = styled(Link)`
-  text-decoration: none;
-  color: rgb(204, 214, 246);
-
-  &:hover {
-    color: var(--green);
-  }
-`;
-
 const NavItem = ({ href, children }) => {
   return (
     <li>
-      <NavLink to={href}>{children}</NavLink>
+      <Anchor to={href}>{children}</Anchor>
     </li>
   );
 };
 
-export { NavbarWrapper, NavList, NavItem, NavLink };
+export { NavbarWrapper, NavList, NavItem };
