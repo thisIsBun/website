@@ -31,7 +31,7 @@ const NavList = styled.ol`
   }
 `;
 
-const StyledNavItem = styled(Link)`
+const NavLink = styled(Link)`
   text-decoration: none;
   color: rgb(204, 214, 246);
 
@@ -43,9 +43,9 @@ const StyledNavItem = styled(Link)`
 const NavItem = ({ href, children }) => {
   return (
     <li>
-      <StyledNavItem to={href}>{children}</StyledNavItem>
+      <NavLink to={href}>{children}</NavLink>
     </li>
   );
 };
 
-export { NavbarWrapper, NavList, NavItem };
+export { NavbarWrapper, NavList, NavItem, NavLink };

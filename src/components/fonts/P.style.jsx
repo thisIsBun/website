@@ -16,4 +16,11 @@ const AboutP = styled(P)`
   margin: 0;
 `;
 
-export { HeroP, AboutP };
+const FooterP = styled(P)`
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  color: var(--lightest-slate);
+  margin: 0;
+`;
+
+export { HeroP, AboutP, FooterP };
