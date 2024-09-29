@@ -1,7 +1,8 @@
-import { H1, H2, H3 } from "../components/Hero.style";
+import { H1, H2, H3, IconWrapper } from "../components/Hero.style";
 import SectionContainer from "../components/containers/SectionContainer.style";
 import { HeroP } from "../components/fonts/P.style";
 import Anchor from "../components/others/Link.style";
+import heroData from "../data/hero.data";
 
 const Hero = () => {
   return (
@@ -21,6 +22,15 @@ const Hero = () => {
         , ensuring user-friendly experiences through clean and maintainable
         code.
       </HeroP>
+      <IconWrapper>
+        {heroData.map(({ path, element }, index) => {
+          return (
+            <Anchor to={path} key={index} target="_blank">
+              {element}
+            </Anchor>
+          );
+        })}
+      </IconWrapper>
     </SectionContainer>
   );
 };

@@ -21,4 +21,11 @@ const H3 = styled.h3`
   line-height: 0.9;
 `;
 
-export { H1, H2, H3 };
+const IconWrapper = styled.div`
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+  font-size: var(--fz-xxl);
+`;
+
+export { H1, H2, H3, IconWrapper };

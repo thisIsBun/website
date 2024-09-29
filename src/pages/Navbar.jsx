@@ -22,7 +22,6 @@ const Navbar = () => {
         navWrapperRef.current.style.top = "0px";
       }
       setPrevScrollY(currentScrollY);
-      console.log(window.scrollY);
     };
 
     window.addEventListener("scroll", handleWindowScroll);

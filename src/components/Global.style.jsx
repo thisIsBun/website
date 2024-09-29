@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --slate: #8892b0;
     --fz-heading: 32px;
+    --fz-xxl: 28px;
     --fz-xl: 20px;
     --fz-lg: 18px;
     --fz-md: 16px;
