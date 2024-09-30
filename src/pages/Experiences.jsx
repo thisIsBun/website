@@ -6,9 +6,9 @@ import BulletPoint from "../components/others/BulletPoint.style";
 import {
   CardContent,
   CardPeriod,
-  CardWrapper,
 } from "../components/Experiences.style";
 import H3 from "../components/fonts/H3.style";
+import CardWrapper from "../components/others/CardWrapper.style";
 
 const Experiences = () => {
   return (

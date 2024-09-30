@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-const CardWrapper = styled.div`
-  display: flex;
-  gap: 20px;
-  padding: 30px;
-  border-radius: 8px;
-
-  &:hover {
-    background-color: var(--light-navy);
-  }
-`;
-
 const CardPeriod = styled.div`
   font-size: var(--fz-sm);
   font-family: var(--font-mono);
@@ -21,4 +10,4 @@ const CardPeriod = styled.div`
 
 const CardContent = styled.div``;
 
-export { CardWrapper, CardPeriod, CardContent };
+export { CardPeriod, CardContent };
