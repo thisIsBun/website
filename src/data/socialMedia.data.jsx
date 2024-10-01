@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaMedium } from "react-icons/fa";
 
-const heroData = [
+const socialMediaData = [
   {
     path: "https://medium.com/@bun.coding",
     element: <FaMedium />,
@@ -15,4 +15,4 @@ const heroData = [
   },
 ];
 
-export default heroData;
+export default socialMediaData;
