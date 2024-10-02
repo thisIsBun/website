@@ -5,7 +5,7 @@ import FlexColumn from "../components/containers/FlexColumn.style";
 import H4 from "../components/fonts/H4.style";
 import { AboutP } from "../components/fonts/P.style";
 import { ImArrowUpRight2 } from "react-icons/im";
-import Anchor from "../components/others/Link.style";
+import Anchor from "../components/others/Anchor.style";
 import FlexRow from "../components/containers/FlexRow.style";
 import CardWrapper from "../components/others/CardWrapper.style";
 
@@ -30,7 +30,7 @@ const Blogs = () => {
           } = post;
           return (
             <CardWrapper key={postId} $gap="10px" $column>
-              <Anchor to={mediumUrl}>
+              <Anchor to={mediumUrl} target>
                 <FlexRow>
                   <H4>{title}</H4>
                   <ImArrowUpRight2 />

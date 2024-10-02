@@ -1,7 +1,7 @@
 import { H1, H2, H3 } from "../components/Hero.style";
 import SectionContainer from "../components/containers/SectionContainer.style";
 import { HeroP } from "../components/fonts/P.style";
-import Anchor from "../components/others/Link.style";
+import Anchor from "../components/others/Anchor.style";
 import SocialMedia from "../components/others/SocialMedia";
 
 const Hero = () => {
@@ -15,7 +15,8 @@ const Hero = () => {
         experiences. Currently, I’m focused on developing system at{" "}
         <Anchor
           to="https://www.castlestech.com/payment-solutions/cashub/"
-          target="_blank"
+          target
+          underline
         >
           Castles
         </Anchor>

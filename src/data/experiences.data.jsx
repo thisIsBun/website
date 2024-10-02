@@ -1,5 +1,5 @@
 import Strong from "../components/fonts/Strong.style";
-import Anchor from "../components/others/Link.style";
+import Anchor from "../components/others/Anchor.style";
 
 const experienceData = [
   {
@@ -63,7 +63,8 @@ const experienceData = [
         Won the German{" "}
         <Anchor
           to="https://ifdesign.com/en/winner-ranking/project/cerberus-fortus/234226"
-          target="_blank"
+          target
+          underline
         >
           iF Design Award
         </Anchor>{" "}

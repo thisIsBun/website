@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Anchor from "./others/Link.style";
+import Anchor from "./others/Anchor.style";
 
 const NavbarWrapper = styled.nav`
   position: fixed;

@@ -7,7 +7,7 @@ import aboutData from "../data/about.data";
 import TitleH2 from "../components/fonts/TitleH2.style";
 import { ImgContainer, HeadShotImg } from "../components/About.style";
 import BulletPoint from "../components/others/BulletPoint.style";
-import Anchor from "../components/others/Link.style";
+import Anchor from "../components/others/Anchor.style";
 
 const About = () => {
   const tools = useMemo(() => {
@@ -35,7 +35,7 @@ const About = () => {
           </AboutP>
           <AboutP>
             In my spare time, I love to write{" "}
-            <Anchor to="https://medium.com/@bun.coding" target="_blank">
+            <Anchor to="https://medium.com/@bun.coding" target underline>
               blogs
             </Anchor>{" "}
             to share and consolidate the skills I’ve picked up.

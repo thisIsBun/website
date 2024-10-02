@@ -1,13 +1,13 @@
 import socialMediaData from "../../data/socialMedia.data";
 import { IconWrapper } from "../Hero.style";
-import Anchor from "./Link.style";
+import Anchor from "./Anchor.style";
 
 const SocialMedia = () => {
   return (
     <IconWrapper>
       {socialMediaData.map(({ path, element }, index) => {
         return (
-          <Anchor to={path} key={index} target="_blank">
+          <Anchor to={path} key={index} target>
             {element}
           </Anchor>
         );
