@@ -10,4 +10,13 @@ const CardPeriod = styled.div`
 
 const CardContent = styled.div``;
 
-export { CardPeriod, CardContent };
+const Badge = styled.span`
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: var(--badge-bg);
+  color: var(--badge-color);
+`;
+
+export { CardPeriod, CardContent, Badge };

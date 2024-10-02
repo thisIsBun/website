@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
     --white: #ffffff;
     --lightest-slate: #ccd6f6;
     --slate: #8892b0;
+    --badge-color: #50c0cc;
+    --badge-bg: #152d47;
     --fz-heading: 32px;
     --fz-xxl: 28px;
     --fz-xl: 20px;

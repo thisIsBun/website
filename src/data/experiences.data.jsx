@@ -33,6 +33,7 @@ const experienceData = [
         <Strong>product’s quality and stability</Strong>.
       </>,
     ],
+    tools: ["JavaScript", "React", "Storybook", "Vite"],
   },
   {
     company: "QNAP",
