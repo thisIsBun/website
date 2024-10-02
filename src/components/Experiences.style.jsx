@@ -19,4 +19,12 @@ const Badge = styled.span`
   color: var(--badge-color);
 `;
 
-export { CardPeriod, CardContent, Badge };
+const Heading3 = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: var(--fz-xxl);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--lightest-slate);
+`;
+
+export { CardPeriod, CardContent, Badge, Heading3 };

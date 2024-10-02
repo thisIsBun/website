@@ -11,11 +11,11 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <MainContainer style={{ marginTop: "var(--nav-height)" }}>
+      <MainContainer $marginTop={"var(--nav-height)"}>
         <Hero />
         <About />
         <Experiences />
-        <Blogs/>
+        <Blogs />
         <Contact />
         <Footer />
       </MainContainer>

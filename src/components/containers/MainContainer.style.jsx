@@ -6,6 +6,9 @@ const MainContainer = styled.main`
   align-items: center;
   width: 100%;
   height: 100vh;
+  ${({ $justifyContentCenter }) =>
+    $justifyContentCenter && `justify-content: center;`}
+  margin-top: ${({ $marginTop }) => $marginTop}
 `;
 
 export default MainContainer;

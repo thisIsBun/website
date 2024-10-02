@@ -1,14 +1,14 @@
 import { useRouteError } from "react-router-dom";
 import MainContainer from "../components/containers/MainContainer.style";
-import { H3 } from "../components/Hero.style";
 import { AboutP } from "../components/fonts/P.style";
+import Heading3 from "../components/fonts/Heading3.style";
 
 const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <MainContainer style={{ justifyContent: "center" }}>
-      <H3 style={{ marginBottom: "20px" }}>Oops..</H3>
+    <MainContainer $justifyContentCenter>
+      <Heading3 $marginBottom="20px">Oops..</Heading3>
       <AboutP>Sorry, an unexpected error has occurred.</AboutP>
       <AboutP>{error.statusText || error.message}</AboutP>
     </MainContainer>

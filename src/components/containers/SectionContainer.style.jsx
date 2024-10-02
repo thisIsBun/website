@@ -7,6 +7,9 @@ const SectionContainer = styled.section`
   margin-bottom: 80px;
   width: 100%;
   max-width: 1000px;
+  align-items: ${({ $alignItemsCenter }) =>
+    $alignItemsCenter ? "center" : "stretch"};
+  padding-bottom: ${({ $paddingBottom }) => $paddingBottom};
 `;
 
 export default SectionContainer;

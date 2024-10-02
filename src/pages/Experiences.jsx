@@ -8,8 +8,8 @@ import {
   CardContent,
   CardPeriod,
   Badge,
+  Heading3,
 } from "../components/Experiences.style";
-import H3 from "../components/fonts/H3.style";
 import CardWrapper from "../components/others/CardWrapper.style";
 
 const Experiences = () => {
@@ -23,9 +23,9 @@ const Experiences = () => {
               <CardWrapper key={index}>
                 <CardPeriod>{period}</CardPeriod>
                 <CardContent>
-                  <H3>
+                  <Heading3>
                     {title} · {company}
-                  </H3>
+                  </Heading3>
                   <FlexColumn $gap="5px">
                     {description.map((item, index) => {
                       return (
@@ -41,7 +41,7 @@ const Experiences = () => {
                     })}
                   </FlexColumn>
                   {tools?.length > 0 && (
-                    <FlexRow style={{ margin: "10px 0 0 20px" }}>
+                    <FlexRow $margin="10px 0 0 20px">
                       {tools.map((tool, index) => {
                         return <Badge key={index}>{tool}</Badge>;
                       })}

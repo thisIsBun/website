@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const H1 = styled.h1`
+const HeroH1 = styled.h1`
   margin: 0 0 0 4px;
   color: var(--green);
   font-family: var(--font-mono);
@@ -8,17 +8,10 @@ const H1 = styled.h1`
   font-weight: 400;
 `;
 
-const H2 = styled.h2`
+const HeroH2 = styled.h2`
   margin: 0;
   color: var(--lightest-slate);
   font-size: clamp(40px, 8vw, 80px);
-`;
-
-const H3 = styled.h3`
-  margin: 0;
-  color: var(--slate);
-  font-size: clamp(40px, 8vw, 80px);
-  line-height: 0.9;
 `;
 
 const IconWrapper = styled.div`
@@ -28,4 +21,4 @@ const IconWrapper = styled.div`
   font-size: var(--fz-xxl);
 `;
 
-export { H1, H2, H3, IconWrapper };
+export { HeroH1, HeroH2, IconWrapper };
