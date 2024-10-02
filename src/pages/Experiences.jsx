@@ -3,10 +3,7 @@ import TitleH2 from "../components/fonts/TitleH2.style";
 import experienceData from "../data/experiences.data";
 import FlexColumn from "../components/containers/FlexColumn.style";
 import BulletPoint from "../components/others/BulletPoint.style";
-import {
-  CardContent,
-  CardPeriod,
-} from "../components/Experiences.style";
+import { CardContent, CardPeriod } from "../components/Experiences.style";
 import H3 from "../components/fonts/H3.style";
 import CardWrapper from "../components/others/CardWrapper.style";
 

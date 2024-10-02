@@ -31,9 +31,7 @@ const About = () => {
           </AboutP>
           <AboutP>
             Recently, I’ve been focused on delivering features that meet
-            customer needs while maintaining clean, readable code. In my recent
-            projects, I’ve worked on user authentication, enhancing web
-            accessibility.
+            customer needs while maintaining clean, readable code.
           </AboutP>
           <AboutP>
             In my spare time, I love to write{" "}

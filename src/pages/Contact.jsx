@@ -21,7 +21,7 @@ import { ContactButton } from "../components/others/Button.style";
 const Contact = () => {
   return (
     <SectionContainer id="contact">
-      <TitleH2 $number="5">Get In Touch</TitleH2>
+      <TitleH2 $number="4">Get In Touch</TitleH2>
       <ContactWrapper>
         <ContactDetail>
           <AboutP>
