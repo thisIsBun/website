@@ -11,12 +11,17 @@ const Button = styled.button`
   );
   cursor: pointer;
   transition: 0.3s;
-  
+
   &:hover {
     transform: scale(1.05);
     transition: 0.3s;
   }
-  `;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+`;
 
 const ContactButton = styled(Button)`
   font-size: var(--fz-xl);

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ContactWrapper,
   ContactDetail,
@@ -19,6 +20,49 @@ import contactData from "../data/contact.data";
 import { ContactButton } from "../components/others/Button.style";
 
 const Contact = () => {
+  const [formDate, setFormDate] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [result, setResult] = useState("");
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    const newFormDate = { ...formDate };
+    newFormDate[name] = value;
+    setFormDate(newFormDate);
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+      alert("Success", result);
+      setFormDate({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <SectionContainer id="contact">
       <TitleH2 $number="4">Get In Touch</TitleH2>
@@ -43,14 +87,23 @@ const Contact = () => {
             </IconWrapper>
           </FlexColumn>
         </ContactDetail>
-        <ContactForm>
+        <ContactForm onSubmit={onSubmit}>
           <Label htmlFor="name">Your name</Label>
-          <Input type="text" id="name" />
+          <Input name="name" type="text" id="name" onChange={handleChange} />
           <Label htmlFor="email">Your email</Label>
-          <Input type="email" id="email" />
+          <Input name="email" type="email" id="email" onChange={handleChange} />
           <Label htmlFor="message">Write your message here</Label>
-          <TextArea id="message" rows="8"></TextArea>
-          <ContactButton>Send out</ContactButton>
+          <TextArea
+            name="message"
+            id="message"
+            rows="8"
+            onChange={handleChange}
+          ></TextArea>
+          <ContactButton
+            disabled={!formDate.name || !formDate.email || !formDate.message}
+          >
+            Send out
+          </ContactButton>
         </ContactForm>
       </ContactWrapper>
     </SectionContainer>
