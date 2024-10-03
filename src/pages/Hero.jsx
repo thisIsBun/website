@@ -1,9 +1,24 @@
-import { HeroH1, HeroH2 } from "../components/Hero.style";
 import SectionContainer from "../components/containers/SectionContainer.style";
 import Heading3 from "../components/fonts/Heading3.style";
 import { HeroP } from "../components/fonts/P.style";
 import Anchor from "../components/others/Anchor.style";
 import SocialMedia from "../components/others/SocialMedia";
+import styled from "styled-components";
+
+const HeroH1 = styled.h1`
+  margin: 0 0 0 4px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+  font-weight: 400;
+`;
+
+const HeroH2 = styled.h2`
+  margin: 0;
+  color: var(--lightest-slate);
+  font-size: clamp(40px, 8vw, 80px);
+`;
+
 
 const Hero = () => {
   return (

@@ -4,13 +4,35 @@ import experienceData from "../data/experiences.data";
 import FlexColumn from "../components/containers/FlexColumn.style";
 import FlexRow from "../components/containers/FlexRow.style";
 import BulletPoint from "../components/others/BulletPoint.style";
-import {
-  CardContent,
-  CardPeriod,
-  Badge,
-  Heading3,
-} from "../components/Experiences.style";
 import CardWrapper from "../components/others/CardWrapper.style";
+import styled from "styled-components";
+
+const CardPeriod = styled.div`
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  flex-basis: 18%;
+  flex-shrink: 0;
+  padding-top: 4px;
+`;
+
+const CardContent = styled.div``;
+
+const Badge = styled.span`
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: var(--badge-bg);
+  color: var(--badge-color);
+`;
+
+const Heading3 = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: var(--fz-xxl);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--lightest-slate);
+`;
 
 const Experiences = () => {
   return (

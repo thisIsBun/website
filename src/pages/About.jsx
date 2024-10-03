@@ -5,9 +5,22 @@ import { AboutP } from "../components/fonts/P.style";
 import GridColumn from "../components/containers/GridColumn.style";
 import aboutData from "../data/about.data";
 import TitleH2 from "../components/fonts/TitleH2.style";
-import { ImgContainer, HeadShotImg } from "../components/About.style";
 import BulletPoint from "../components/others/BulletPoint.style";
 import Anchor from "../components/others/Anchor.style";
+import styled from "styled-components";
+
+const ImgContainer = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
+
+const HeadShotImg = styled.img`
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+`;
 
 const About = () => {
   const tools = useMemo(() => {

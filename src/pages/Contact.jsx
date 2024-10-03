@@ -1,14 +1,4 @@
 import { useState } from "react";
-import {
-  ContactWrapper,
-  ContactDetail,
-  IconWrapper,
-  Img,
-  ContactForm,
-  Label,
-  Input,
-  TextArea,
-} from "../components/Contact.style";
 import FlexColumn from "../components/containers/FlexColumn.style";
 import SectionContainer from "../components/containers/SectionContainer.style";
 import TitleH2 from "../components/fonts/TitleH2.style";
@@ -18,6 +8,71 @@ import phoneIcon from "../assets/phone_icon.svg";
 import locationIcon from "../assets/location_icon.svg";
 import contactData from "../data/contact.data";
 import { ContactButton } from "../components/others/Button.style";
+import styled from "styled-components";
+
+const ContactWrapper = styled.div`
+  display: flex;
+  gap: 32px;
+`;
+
+const ContactDetail = styled.div`
+  flex-basis: 40%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-top: 48px;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Img = styled.img`
+  width: 24px;
+  margin-right: 8px;
+`;
+
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+`;
+
+const Label = styled.label`
+  font-size: var(--fz-xl);
+`;
+
+const Input = styled.input`
+  background-color: var(--lightest-navy);
+  font-size: var(--fz-lg);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  height: 54px;
+  color: var(--lightest-slate);
+  font-family: var(--font-mono);
+  margin-bottom: 10px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const TextArea = styled.textarea`
+  background-color: var(--lightest-navy);
+  font-size: var(--fz-lg);
+  padding: 15px 20px;
+  border: none;
+  border-radius: 6px;
+  color: var(--lightest-slate);
+
+  &:focus {
+    outline: none;
+  }
+`;
 
 const Contact = () => {
   const [formDate, setFormDate] = useState({
