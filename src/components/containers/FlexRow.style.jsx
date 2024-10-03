@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FlexRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: ${({ $gap }) => $gap || "10px"};
   margin: ${({ $margin }) => $margin};
 `;
 

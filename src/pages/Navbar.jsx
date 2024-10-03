@@ -4,8 +4,11 @@ import { NavButton } from "../components/others/Button.style";
 import navbarData from "../data/navbar.data";
 import styled from "styled-components";
 import Anchor from "../components/others/Anchor.style";
+import nav_open from "../assets/nav_open.svg";
+import nav_close from "../assets/nav_close.svg";
+import FlexRow from "../components/containers/FlexRow.style";
 
-const NavbarWrapper = styled.nav`
+const Header = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
@@ -18,6 +21,32 @@ const NavbarWrapper = styled.nav`
   background-color: rgba(10, 25, 47, 0.85);
   z-index: 28;
   transition: top 0.3s;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    .navWrapper {
+      position: fixed;
+      flex-direction: column;
+      justify-content: center;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--light-navy);
+      transition: all 0.25s ease-in;
+    }
+  }
+`;
+
+const NavIcon = styled.img`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+  }
 `;
 
 const NavList = styled.ol`
@@ -33,11 +62,28 @@ const NavList = styled.ol`
     content: counter(li, decimal-leading-zero) ". ";
     color: var(--green);
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--fz-xl);
+    gap: 60px;
+    padding: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    li::before {
+      align-self: center;
+    }
+  }
 `;
 
-const NavItem = ({ href, children }) => {
+const NavItem = ({ href, children, handleNavToggle }) => {
   return (
-    <li>
+    <li onClick={handleNavToggle}>
       <Anchor to={href}>{children}</Anchor>
     </li>
   );
@@ -49,16 +95,19 @@ const handleOpenResume = () => {
 
 const Navbar = () => {
   const [prevScrollY, setPrevScrollY] = useState(window.scrollY);
-  const navWrapperRef = useRef();
+  const [navOpen, setNavOpen] = useState(false);
+  const headerRef = useRef();
+  const navWrapper = useRef();
   const { hash } = useLocation();
 
   useEffect(() => {
     const handleWindowScroll = () => {
+      // if (window.innerWidth <= 768) return;
       const currentScrollY = window.scrollY;
       if (currentScrollY > prevScrollY) {
-        navWrapperRef.current.style.top = "-100px";
+        headerRef.current.style.top = "-100px";
       } else {
-        navWrapperRef.current.style.top = "0px";
+        headerRef.current.style.top = "0px";
       }
       setPrevScrollY(currentScrollY);
     };
@@ -79,19 +128,28 @@ const Navbar = () => {
     }
   }, [hash]);
 
+  const handleNavToggle = () => {
+    navWrapper.current.style.right = navOpen ? "-100%" : "0";
+    setNavOpen(!navOpen);
+  };
+
   return (
-    <NavbarWrapper ref={navWrapperRef}>
-      <NavList>
-        {navbarData.map(({ name, path }) => {
-          return (
-            <NavItem key={name} href={path}>
-              {name}
-            </NavItem>
-          );
-        })}
-      </NavList>
-      <NavButton onClick={handleOpenResume}>Resume</NavButton>
-    </NavbarWrapper>
+    <Header ref={headerRef}>
+      <NavIcon src={nav_open} alt="open nav" onClick={handleNavToggle} />
+      <FlexRow $gap="40px" className="navWrapper" ref={navWrapper}>
+        <NavIcon src={nav_close} alt="close nav" onClick={handleNavToggle} />
+        <NavList>
+          {navbarData.map(({ name, path }) => {
+            return (
+              <NavItem key={name} href={path} handleNavToggle={handleNavToggle}>
+                {name}
+              </NavItem>
+            );
+          })}
+        </NavList>
+        <NavButton onClick={handleOpenResume}>Resume</NavButton>
+      </FlexRow>
+    </Header>
   );
 };
 
