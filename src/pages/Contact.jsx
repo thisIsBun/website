@@ -9,6 +9,7 @@ import locationIcon from "../assets/location_icon.svg";
 import contactData from "../data/contact.data";
 import { ContactButton } from "../components/others/Button.style";
 import styled from "styled-components";
+import useToast from "../components/toast/useToast";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -75,12 +76,12 @@ const TextArea = styled.textarea`
 `;
 
 const Contact = () => {
+  const toast = useToast();
   const [formDate, setFormDate] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [result, setResult] = useState("");
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -91,7 +92,6 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
     const formData = new FormData(event.target);
 
     formData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
@@ -104,17 +104,15 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
       event.target.reset();
-      alert("Success", result);
+      toast.open("Your message was send to Bun");
       setFormDate({
         name: "",
         email: "",
         message: "",
       });
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+      toast.open("Something went wrong, try later");
     }
   };
 

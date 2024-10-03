@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import GlobalStyle from "./components/Global.style.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import ToastProvider from "./components/toast/Toast.context.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,9 +13,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
 ]);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <GlobalStyle />
-    <RouterProvider router={router} />
+    <ToastProvider>
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </ToastProvider>
   </StrictMode>
 );
