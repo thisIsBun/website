@@ -5,7 +5,7 @@ import SocialMedia from "../components/others/SocialMedia";
 
 const Footer = () => {
   return (
-    <SectionContainer $alignItemsCenter $paddingBottom="30px">
+    <SectionContainer $alignItemsCenter $marginBottom="30px">
       <SocialMedia />
       <FooterP>
         Don’t let this be the end,

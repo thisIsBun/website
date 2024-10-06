@@ -3,8 +3,8 @@ import styled from "styled-components";
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 180px;
-  margin-bottom: 80px;
+  margin-top: 120px;
+  margin-bottom: ${({ $marginBottom }) => $marginBottom || "80px"};
   width: 100%;
   max-width: 1000px;
   align-items: ${({ $alignItemsCenter }) =>
@@ -14,7 +14,7 @@ const SectionContainer = styled.section`
   @media (max-width: 768px) {
     margin: 0;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
 `;
 

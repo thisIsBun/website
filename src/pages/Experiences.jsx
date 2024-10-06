@@ -49,6 +49,7 @@ const CardWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 10px;
 
     .experienceItem {
       margin-bottom: 0.8rem;

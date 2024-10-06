@@ -26,10 +26,9 @@ const TitleH2 = styled.h2`
     content: "";
     display: block;
     position: relative;
-    top: -50%;
     width: 300px;
     height: 1px;
-    margin-left: 20px;
+    margin: 20px;
     background-color: var(--lightest-navy);
   }
 
