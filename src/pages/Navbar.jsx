@@ -7,6 +7,7 @@ import Anchor from "../components/others/Anchor.style";
 import nav_open from "../assets/nav_open.svg";
 import nav_close from "../assets/nav_close.svg";
 import FlexRow from "../components/containers/FlexRow.style";
+import resume from "../assets/resume.pdf";
 
 const Header = styled.nav`
   position: fixed;
@@ -90,7 +91,7 @@ const NavItem = ({ href, children, handleNavToggle }) => {
 };
 
 const handleOpenResume = () => {
-  window.open("/resume.pdf", "_blank", "noopener noreferrer");
+  window.open(resume, "_blank", "noopener noreferrer");
 };
 
 const Navbar = () => {
