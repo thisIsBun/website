@@ -5,10 +5,12 @@ const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: ${({ height }) => height || "auto"};
   ${({ $justifyContentCenter }) =>
     $justifyContentCenter && `justify-content: center;`}
-  margin-top: ${({ $marginTop }) => $marginTop}
+  margin-top: ${({ $marginTop }) => $marginTop};
+  padding: 0 50px;
+  gap: 60px;
 `;
 
 export default MainContainer;

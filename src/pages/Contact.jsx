@@ -14,6 +14,10 @@ import useToast from "../components/toast/useToast";
 const ContactWrapper = styled.div`
   display: flex;
   gap: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ContactDetail = styled.div`
@@ -23,6 +27,11 @@ const ContactDetail = styled.div`
   flex-direction: column;
   gap: 36px;
   padding-top: 48px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    gap: 16px;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -33,6 +42,9 @@ const IconWrapper = styled.div`
 const Img = styled.img`
   width: 24px;
   margin-right: 8px;
+  @media (max-width: 768px) {
+    margin-right: 16px;
+  }
 `;
 
 const ContactForm = styled.form`

@@ -10,6 +10,12 @@ const SectionContainer = styled.section`
   align-items: ${({ $alignItemsCenter }) =>
     $alignItemsCenter ? "center" : "stretch"};
   padding-bottom: ${({ $paddingBottom }) => $paddingBottom};
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 `;
 
 export default SectionContainer;

@@ -7,7 +7,7 @@ const ErrorPage = () => {
   const error = useRouteError();
 
   return (
-    <MainContainer $justifyContentCenter>
+    <MainContainer $justifyContentCenter height="100vh">
       <Heading3 $marginBottom="20px">Oops..</Heading3>
       <AboutP>Sorry, an unexpected error has occurred.</AboutP>
       <AboutP>{error.statusText || error.message}</AboutP>

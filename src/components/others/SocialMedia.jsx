@@ -7,6 +7,11 @@ const IconWrapper = styled.div`
   margin-top: 30px;
   gap: 15px;
   font-size: var(--fz-xxl);
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    font-size: 5vw;
+  }
 `;
 
 const SocialMedia = () => {

@@ -32,6 +32,12 @@ const TitleH2 = styled.h2`
     margin-left: 20px;
     background-color: var(--lightest-navy);
   }
+
+  @media (max-width: 768px) {
+    &::after {
+      content: none;
+    }
+  }
 `;
 
 export default TitleH2;

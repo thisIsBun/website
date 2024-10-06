@@ -12,6 +12,11 @@ import styled from "styled-components";
 const ImgContainer = styled.div`
   width: 100%;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 65%;
+    align-self: center;
+  }
 `;
 
 const HeadShotImg = styled.img`
@@ -22,6 +27,21 @@ const HeadShotImg = styled.img`
   border-radius: 8px;
 `;
 
+const AboutWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+
+    .toolsWrapper {
+      padding-right: 240px;
+    }
+  }
+`;
+
 const About = () => {
   const tools = useMemo(() => {
     return aboutData.tools;
@@ -30,7 +50,7 @@ const About = () => {
   return (
     <SectionContainer id="about">
       <TitleH2 $number="1">About Me</TitleH2>
-      <GridColumn $template="3fr 2fr" $gap="30px">
+      <AboutWrapper>
         <ColumnContainer $gap="15px">
           <AboutP>
             Hello! My name is Bun and I enjoy building things on the web.
@@ -54,7 +74,7 @@ const About = () => {
             to share and consolidate the skills I’ve picked up.
           </AboutP>
           <AboutP>Here are a few tools I’ve been working with recently:</AboutP>
-          <GridColumn $template="1fr 1fr" $gap="10px">
+          <GridColumn $template="1fr 1fr" $gap="10px" className="toolsWrapper">
             {tools.map((tool, index) => {
               return (
                 <BulletPoint
@@ -73,7 +93,7 @@ const About = () => {
         <ImgContainer>
           <HeadShotImg src="/headShot.jpg" alt="headShot" />
         </ImgContainer>
-      </GridColumn>
+      </AboutWrapper>
     </SectionContainer>
   );
 };

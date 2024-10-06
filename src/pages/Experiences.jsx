@@ -4,7 +4,6 @@ import experienceData from "../data/experiences.data";
 import FlexColumn from "../components/containers/FlexColumn.style";
 import FlexRow from "../components/containers/FlexRow.style";
 import BulletPoint from "../components/others/BulletPoint.style";
-import CardWrapper from "../components/others/CardWrapper.style";
 import styled from "styled-components";
 
 const CardPeriod = styled.div`
@@ -13,6 +12,10 @@ const CardPeriod = styled.div`
   flex-basis: 18%;
   flex-shrink: 0;
   padding-top: 4px;
+
+  @media (max-width: 768px) {
+    font-size: var(--fz-md);
+  }
 `;
 
 const CardContent = styled.div``;
@@ -32,6 +35,25 @@ const Heading3 = styled.h3`
   font-weight: 500;
   line-height: 1.3;
   color: var(--lightest-slate);
+`;
+
+const CardWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--light-navy);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .experienceItem {
+      margin-bottom: 0.8rem;
+    }
+  }
 `;
 
 const Experiences = () => {
@@ -56,6 +78,7 @@ const Experiences = () => {
                           $fontSize="var(--fz-lg)"
                           $beforeFontSize="var(--fz-lg)"
                           $beforeLineHeight="var(--fz-xl)"
+                          className="experienceItem"
                         >
                           {item}
                         </BulletPoint>

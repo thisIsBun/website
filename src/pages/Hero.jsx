@@ -11,35 +11,52 @@ const HeroH1 = styled.h1`
   font-family: var(--font-mono);
   font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    margin: 0 0 20px 0;
+  }
 `;
 
 const HeroH2 = styled.h2`
   margin: 0;
   color: var(--lightest-slate);
   font-size: clamp(40px, 8vw, 80px);
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
+const HeroWrapper = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin: 280px 0;
+  }
+`;
 
 const Hero = () => {
   return (
     <SectionContainer>
-      <HeroH1>Hi, my name is</HeroH1>
-      <HeroH2>Bun Chen.</HeroH2>
-      <Heading3>I build things for the web.</Heading3>
-      <HeroP>
-        I’m a software engineer specializing in building exceptional digital
-        experiences. Currently, I’m focused on developing system at{" "}
-        <Anchor
-          to="https://www.castlestech.com/payment-solutions/cashub/"
-          target
-          underline
-        >
-          Castles
-        </Anchor>
-        , ensuring user-friendly experiences through clean and maintainable
-        code.
-      </HeroP>
-      <SocialMedia />
+      <HeroWrapper>
+        <HeroH1>Hi, my name is</HeroH1>
+        <HeroH2>Bun Chen.</HeroH2>
+        <Heading3>I build things for the web.</Heading3>
+        <HeroP>
+          I’m a software engineer specializing in building exceptional digital
+          experiences. Currently, I’m focused on developing system at{" "}
+          <Anchor
+            to="https://www.castlestech.com/payment-solutions/cashub/"
+            target
+            underline
+          >
+            Castles
+          </Anchor>
+          , ensuring user-friendly experiences through clean and maintainable
+          code.
+        </HeroP>
+        <SocialMedia />
+      </HeroWrapper>
     </SectionContainer>
   );
 };

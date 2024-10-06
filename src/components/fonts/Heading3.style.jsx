@@ -6,6 +6,10 @@ const Heading3 = styled.h3`
   color: var(--slate);
   font-size: clamp(40px, 8vw, 80px);
   line-height: 0.9;
+
+  @media (max-width: 768px) {
+    font-size: 7vw;
+  }
 `;
 
 export default Heading3;
