@@ -25,15 +25,33 @@ const Button = styled.button`
 
 const ContactButton = styled(Button)`
   font-size: var(--fz-xl);
-  padding: 20px 20px;
+  padding: 18px 0;
   margin-bottom: 50px;
   width: 35%;
   align-self: flex-end;
+
+  @media (max-width: 1200px) {
+    width: 40%;
+  }
+
+  @media (max-width: 992px) {
+    width: 60%;
+  }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-lg);
+    padding: 14px 0;
+  }
 `;
 
 const NavButton = styled(Button)`
-  font-size: var(--fz-lg);
-  padding: 20px 40px;
+  font-size: var(--fz-md);
+  padding: 15px 30px;
+
+  @media (max-width: 992px) {
+    font-size: var(--fz-sm);
+    padding: 13px 25px;
+  }
 
   @media (max-width: 768px) {
     font-size: var(--fz-xl);

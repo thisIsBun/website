@@ -5,6 +5,10 @@ const Heading4 = styled.h4`
   font-size: var(--fz-xl);
   font-weight: 500;
   line-height: 1.2;
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-lg);
+  }
 `;
 
 export default Heading4;

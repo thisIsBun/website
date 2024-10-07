@@ -5,33 +5,59 @@ import Anchor from "../components/others/Anchor.style";
 import SocialMedia from "../components/others/SocialMedia";
 import styled from "styled-components";
 
-const HeroH1 = styled.h1`
+const HeroH1 = styled.p`
   margin: 0 0 0 4px;
   color: var(--green);
   font-family: var(--font-mono);
-  font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+  font-size: 1rem;
   font-weight: 400;
 
+  @media (max-width: 992px) {
+    font-size: 0.8rem;
+    margin-left: 2px;
+  }
+
   @media (max-width: 768px) {
-    margin: 0 0 20px 0;
+    font-size: 1rem;
+    margin-bottom: 16px;
   }
 `;
 
 const HeroH2 = styled.h2`
   margin: 0;
   color: var(--lightest-slate);
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: 80px;
+  line-height: 1.2;
+
+  @media (max-width: 1200px) {
+    font-size: 70px;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 56px;
+  }
 
   @media (max-width: 768px) {
+    font-size: 48px;
     margin-bottom: 20px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 32px;
+    margin-bottom: 16px;
   }
 `;
 
 const HeroWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    margin: 280px 0;
+    margin: 25vh 0;
+  }
+
+  @media (max-width: 576px) {
+    margin: 18vh 0;
   }
 `;
 

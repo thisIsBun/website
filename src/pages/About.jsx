@@ -21,10 +21,10 @@ const ImgContainer = styled.div`
 
 const HeadShotImg = styled.img`
   width: 100%;
-  height: 380px;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
+  aspect-ratio: 16 / 16; /* 比如 16:9 的圖片比例 */
 `;
 
 const AboutWrapper = styled.div`
@@ -32,13 +32,14 @@ const AboutWrapper = styled.div`
   grid-template-columns: 3fr 2fr;
   gap: 30px;
 
+  @media (max-width: 992px) {
+    gap: 16px;
+  }
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-
-    .toolsWrapper {
-      padding-right: 240px;
-    }
+    gap: 24px;
   }
 `;
 
@@ -74,15 +75,15 @@ const About = () => {
             to share and consolidate the skills I’ve picked up.
           </AboutP>
           <AboutP>Here are a few tools I’ve been working with recently:</AboutP>
-          <GridColumn $template="1fr 1fr" $gap="10px" className="toolsWrapper">
+          <GridColumn $template="1fr 1fr" $gap="10px">
             {tools.map((tool, index) => {
               return (
                 <BulletPoint
                   key={index}
                   $fontFamily="var(--font-mono)"
-                  $fontSize="var(--fz-xs)"
-                  $beforeFontSize="var(--fz-sm)"
-                  $beforeLineHeight="12px"
+                  $fontSize="var(--fz-sm)"
+                  $beforeFontSize="var(--fz-xs)"
+                  $beforeLineHeight="13px"
                 >
                   {tool}
                 </BulletPoint>

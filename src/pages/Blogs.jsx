@@ -7,7 +7,29 @@ import { AboutP } from "../components/fonts/P.style";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Anchor from "../components/others/Anchor.style";
 import FlexRow from "../components/containers/FlexRow.style";
-import CardWrapper from "../components/others/CardWrapper.style";
+
+import styled from "styled-components";
+
+const CardWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 8px;
+  flex-direction: column;
+
+  &:hover {
+    background-color: var(--light-navy);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px;
+    gap: 8px;
+  }
+`;
 
 const convertDate = (timestamp) => {
   const date = new Date(timestamp);
@@ -29,7 +51,7 @@ const Blogs = () => {
             mediumUrl,
           } = post;
           return (
-            <CardWrapper key={postId} $gap="10px" $column>
+            <CardWrapper key={postId}>
               <Anchor to={mediumUrl} target>
                 <FlexRow>
                   <Heading4>{title}</Heading4>

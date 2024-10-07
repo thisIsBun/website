@@ -6,14 +6,40 @@ const P = styled.p`
 `;
 
 const HeroP = styled(P)`
-  margin: 30px 0 0 0;
-  max-width: 660px;
+  max-width: 50vw;
   color: var(--slate);
   font-size: var(--fz-lg);
+
+  @media (max-width: 1200px) {
+    margin-top: 12px;
+    max-width: 65vw;
+  }
+
+  @media (max-width: 992px) {
+    font-size: var(--fz-md);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--fz-lg);
+    max-width: 80vw;
+  }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-md);
+    max-width: 100vw;
+  }
 `;
 
 const AboutP = styled(P)`
   margin: 0;
+
+  @media (max-width: 1200px) {
+    font-size: var(--fz-lg);
+  }
+
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
 `;
 
 const FooterP = styled(P)`
@@ -21,6 +47,10 @@ const FooterP = styled(P)`
   font-size: var(--fz-xs);
   color: var(--lightest-slate);
   margin: 0;
+
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
 `;
 
 export { HeroP, AboutP, FooterP };

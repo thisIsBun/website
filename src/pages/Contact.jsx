@@ -15,6 +15,14 @@ const ContactWrapper = styled.div`
   display: flex;
   gap: 32px;
 
+  @media (max-width: 1200px) {
+    gap: 28px;
+  }
+
+  @media (max-width: 992px) {
+    gap: 20px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -42,7 +50,8 @@ const IconWrapper = styled.div`
 const Img = styled.img`
   width: 24px;
   margin-right: 8px;
-  @media (max-width: 768px) {
+
+  @media (max-width: 992px) {
     margin-right: 16px;
   }
 `;
@@ -56,6 +65,10 @@ const ContactForm = styled.form`
 
 const Label = styled.label`
   font-size: var(--fz-xl);
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-lg);
+  }
 `;
 
 const Input = styled.input`

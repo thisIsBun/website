@@ -22,6 +22,18 @@ const Header = styled.nav`
   z-index: 28;
   transition: top 0.3s;
 
+  @media (max-width: 1200px) {
+    padding: 30px 40px;
+  }
+
+  @media (max-width: 992px) {
+    height: 80px;
+    padding: 10px 25px;
+    .navWrapper {
+      gap: 20px;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 0;
     .navWrapper {
@@ -34,6 +46,7 @@ const Header = styled.nav`
       height: 110vh;
       background-color: var(--light-navy);
       transition: all 0.25s ease-in;
+      gap: 40px;
     }
   }
 `;
@@ -46,6 +59,12 @@ const NavIcon = styled.img`
     position: absolute;
     top: 35px;
     right: 30px;
+  }
+
+  @media (max-width: 576px) {
+    top: 15px;
+    right: 10px;
+    width: 32px;
   }
 `;
 
@@ -63,6 +82,11 @@ const NavList = styled.ol`
     color: var(--green);
   }
 
+  @media (max-width: 992px) {
+    font-size: 12px;
+    gap: 20px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -78,6 +102,10 @@ const NavList = styled.ol`
     li::before {
       align-self: center;
     }
+  }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-lg);
   }
 `;
 
@@ -102,7 +130,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleWindowScroll = () => {
-      // if (window.innerWidth <= 768) return;
       const currentScrollY = window.scrollY;
       if (currentScrollY > prevScrollY) {
         headerRef.current.style.top = "-100px";

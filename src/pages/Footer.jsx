@@ -5,11 +5,11 @@ import SocialMedia from "../components/others/SocialMedia";
 
 const Footer = () => {
   return (
-    <SectionContainer $alignItemsCenter $marginBottom="30px">
+    <SectionContainer $alignItemsCenter $marginBottom="1rem">
       <SocialMedia />
       <FooterP>
         Don’t let this be the end,
-        <Anchor to="/#contact">let’s start something.</Anchor>
+        <Anchor to="/website/#contact">let’s start something.</Anchor>
       </FooterP>
     </SectionContainer>
   );

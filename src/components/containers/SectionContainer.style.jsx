@@ -11,6 +11,14 @@ const SectionContainer = styled.section`
     $alignItemsCenter ? "center" : "stretch"};
   padding-bottom: ${({ $paddingBottom }) => $paddingBottom};
 
+  @media (max-width: 1200px) {
+    margin-top: 100px;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 80px;
+  }
+
   @media (max-width: 768px) {
     margin: 0;
     padding: 20px 4vw;

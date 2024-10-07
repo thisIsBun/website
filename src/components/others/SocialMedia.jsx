@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const IconWrapper = styled.div`
   display: flex;
-  margin-top: 30px;
   gap: 15px;
   font-size: var(--fz-xxl);
 

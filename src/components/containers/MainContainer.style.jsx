@@ -10,7 +10,17 @@ const MainContainer = styled.main`
     $justifyContentCenter && `justify-content: center;`}
   margin-top: ${({ $marginTop }) => $marginTop};
   padding: 0 50px;
-  gap: 60px;
+  gap: ${({ gap }) => gap || "60px"};
+
+  @media (max-width: 1200px) {
+    padding: 0 60px;
+    gap: 50px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0 30px;
+    gap: 25px;
+  }
 
   @media (max-width: 768px) {
     padding: 0;

@@ -11,10 +11,22 @@ const CardPeriod = styled.div`
   font-family: var(--font-mono);
   flex-basis: 18%;
   flex-shrink: 0;
-  padding-top: 4px;
+  padding-top: 9px;
+
+  @media (max-width: 1200px) {
+    padding-top: 8px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0;
+  }
 
   @media (max-width: 768px) {
     font-size: var(--fz-md);
+  }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-sm);
   }
 `;
 
@@ -27,6 +39,11 @@ const Badge = styled.span`
   border-radius: 50px;
   background-color: var(--badge-bg);
   color: var(--badge-color);
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-xs);
+    padding: 6px 12px;
+  }
 `;
 
 const Heading3 = styled.h3`
@@ -35,6 +52,15 @@ const Heading3 = styled.h3`
   font-weight: 500;
   line-height: 1.3;
   color: var(--lightest-slate);
+
+  @media (max-width: 1200px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+  }
 `;
 
 const CardWrapper = styled.div`
@@ -47,12 +73,34 @@ const CardWrapper = styled.div`
     background-color: var(--light-navy);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
+    .experienceItem {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 992px) {
     flex-direction: column;
     gap: 10px;
 
     .experienceItem {
       margin-bottom: 0.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 10px;
+    padding: 10px;
+    .experienceItem {
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+    }
+    .badgeWrapper {
+      margin-left: 0;
     }
   }
 `;
@@ -61,7 +109,7 @@ const Experiences = () => {
   return (
     <SectionContainer id="experiences">
       <TitleH2 $number="2">Where I’ve Worked</TitleH2>
-      <FlexColumn $gap="20px">
+      <FlexColumn $gap="20px" className="cardContainer">
         {experienceData.map(
           ({ period, title, company, description, tools }, index) => {
             return (
@@ -87,7 +135,7 @@ const Experiences = () => {
                     })}
                   </FlexColumn>
                   {tools?.length > 0 && (
-                    <FlexRow $margin="10px 0 0 20px">
+                    <FlexRow $margin="10px 0 0 20px" className="badgeWrapper">
                       {tools.map((tool, index) => {
                         return <Badge key={index}>{tool}</Badge>;
                       })}

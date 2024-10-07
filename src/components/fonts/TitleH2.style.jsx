@@ -3,7 +3,7 @@ import styled from "styled-components";
 const TitleH2 = styled.h2`
   display: flex;
   align-items: flex-end;
-  font-size: clamp(26px, 5vw, var(--fz-heading));
+  font-size: 32px;
   font-weight: 600;
   color: var(--lightest-slate);
   width: 100%;
@@ -32,10 +32,26 @@ const TitleH2 = styled.h2`
     background-color: var(--lightest-navy);
   }
 
+  @media (max-width: 1200px) {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 28px;
+    margin-top: 80px;
+  }
+
   @media (max-width: 768px) {
     &::after {
       content: none;
     }
+  }
+
+  @media (max-width: 576px) {
+    font-size: 26px;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 `;
 
