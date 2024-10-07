@@ -19,7 +19,11 @@ permissions:
 concurrency:
   group: 'pages'
   cancel-in-progress: true
-
+  
+#Allow repo secrets
+env:
+  VITE_ACCESS_KEY: ${{ secrets.VITE_ACCESS_KEY }}
+  
 jobs:
   # Single deploy job since we're just deploying
   deploy:
