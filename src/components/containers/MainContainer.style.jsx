@@ -11,6 +11,10 @@ const MainContainer = styled.main`
   margin-top: ${({ $marginTop }) => $marginTop};
   padding: 0 50px;
   gap: 60px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export default MainContainer;

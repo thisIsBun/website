@@ -7,7 +7,6 @@ import Anchor from "../components/others/Anchor.style";
 import nav_open from "../assets/nav_open.svg";
 import nav_close from "../assets/nav_close.svg";
 import FlexRow from "../components/containers/FlexRow.style";
-import resume from "../assets/resume.pdf";
 
 const Header = styled.nav`
   position: fixed;
@@ -32,7 +31,7 @@ const Header = styled.nav`
       top: 0;
       right: -100%;
       width: 100%;
-      height: 100vh;
+      height: 110vh;
       background-color: var(--light-navy);
       transition: all 0.25s ease-in;
     }
@@ -91,7 +90,7 @@ const NavItem = ({ href, children, handleNavToggle }) => {
 };
 
 const handleOpenResume = () => {
-  window.open(resume, "_blank", "noopener noreferrer");
+  window.open("/website/resume.pdf", "_blank", "noopener noreferrer");
 };
 
 const Navbar = () => {

@@ -8,7 +8,6 @@ import TitleH2 from "../components/fonts/TitleH2.style";
 import BulletPoint from "../components/others/BulletPoint.style";
 import Anchor from "../components/others/Anchor.style";
 import styled from "styled-components";
-import headShot from "../assets/headShot.jpg";
 
 const ImgContainer = styled.div`
   width: 100%;
@@ -92,7 +91,7 @@ const About = () => {
           </GridColumn>
         </ColumnContainer>
         <ImgContainer>
-          <HeadShotImg src={headShot} alt="headShot" />
+          <HeadShotImg src="/website/headShot.jpg" alt="headShot" />
         </ImgContainer>
       </AboutWrapper>
     </SectionContainer>

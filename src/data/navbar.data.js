@@ -1,9 +1,9 @@
 const navbarData = [
-  { name: "About", path: "/#about" },
-  { name: "Experiences", path: "/#experiences" },
-  { name: "Blogs", path: "/#blogs" },
-  // { name: "Projects", path: "/#projects" },
-  { name: "Contact", path: "/#contact" },
+  { name: "About", path: "/website/#about" },
+  { name: "Experiences", path: "/website/#experiences" },
+  { name: "Blogs", path: "/website/#blogs" },
+  // { name: "Projects", path: "/website/#projects" },
+  { name: "Contact", path: "/website/#contact" },
 ];
 
 export default navbarData;

@@ -8,7 +8,7 @@ import ToastProvider from "./components/toast/Toast.context.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/website/",
+    path: `${import.meta.env.BASE_URL}`,
     element: <App />,
     errorElement: <ErrorPage />,
   },

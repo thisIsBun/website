@@ -13,8 +13,7 @@ const SectionContainer = styled.section`
 
   @media (max-width: 768px) {
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 4vw;
   }
 `;
 
