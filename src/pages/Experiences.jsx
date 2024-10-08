@@ -102,13 +102,14 @@ const CardWrapper = styled.div`
 
       &::before {
         font-size: var(--fz-xs);
-        line-height: 20px;
+        font-family: var(--font-mono);
+        line-height: 16px;
       }
     }
     .badgeWrapper {
       margin: 0;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
     }
   }
 `;
