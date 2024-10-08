@@ -36,6 +36,7 @@ const Header = styled.nav`
 
   @media (max-width: 768px) {
     padding: 0;
+    height: 50px;
     .navWrapper {
       position: fixed;
       flex-direction: column;
@@ -100,12 +101,12 @@ const NavList = styled.ol`
     gap: 60px;
     padding: 0;
 
-    li {
+    a {
       display: flex;
       flex-direction: column;
     }
 
-    li::before {
+    a::before {
       align-self: center;
     }
   }

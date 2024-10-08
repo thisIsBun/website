@@ -100,7 +100,9 @@ const CardWrapper = styled.div`
       margin-bottom: 0.5rem;
 
       &::before {
-        font-size: var(--fz-sm);
+        font-size: var(--fz-xs);
+        line-height: 18px;
+        left: 0px;
       }
     }
     .badgeWrapper {

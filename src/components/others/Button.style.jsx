@@ -59,8 +59,8 @@ const NavButton = styled(Button)`
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-md);
-    padding: 20px 48px;
+    font-size: var(--fz-lg);
+    padding: 18px 48px;
   }
 `;
 
