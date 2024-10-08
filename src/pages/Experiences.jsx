@@ -27,6 +27,7 @@ const CardPeriod = styled.div`
 
   @media (max-width: 576px) {
     font-size: var(--fz-sm);
+    padding-left: 1px;
   }
 `;
 
@@ -93,20 +94,21 @@ const CardWrapper = styled.div`
   }
 
   @media (max-width: 576px) {
-    gap: 10px;
+    gap: 4px;
     padding: 10px;
     .experienceItem {
       font-size: 16px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 6px;
 
       &::before {
         font-size: var(--fz-xs);
-        line-height: 18px;
-        left: 0px;
+        line-height: 20px;
       }
     }
     .badgeWrapper {
-      margin-left: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      gap: 6px;
     }
   }
 `;
