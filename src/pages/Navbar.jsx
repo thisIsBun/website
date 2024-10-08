@@ -49,6 +49,12 @@ const Header = styled.nav`
       gap: 40px;
     }
   }
+
+  @media (max-width: 576px) {
+    .navWrapper {
+      gap: 24px;
+    }
+  }
 `;
 
 const NavIcon = styled.img`
@@ -76,7 +82,7 @@ const NavList = styled.ol`
   font-size: var(--fz-xs);
   font-family: var(--font-mono);
 
-  li:before {
+  li a:before {
     counter-increment: li;
     content: counter(li, decimal-leading-zero) ". ";
     color: var(--green);
@@ -105,7 +111,8 @@ const NavList = styled.ol`
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-lg);
+    font-size: var(--fz-md);
+    gap: 28px;
   }
 `;
 

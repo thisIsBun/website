@@ -28,6 +28,9 @@ const CardWrapper = styled.div`
   @media (max-width: 576px) {
     padding: 10px;
     gap: 8px;
+    .arrowIcon {
+      display: none;
+    }
   }
 `;
 
@@ -40,7 +43,7 @@ const convertDate = (timestamp) => {
 const Blogs = () => {
   return (
     <SectionContainer id="blogs">
-      <TitleH2 $number="3">Things I’ve Written Recently</TitleH2>
+      <TitleH2 $number="3">Things I’ve Written</TitleH2>
       <FlexColumn $gap="20px">
         {blogsData.map(({ postId, post }) => {
           const {
@@ -55,7 +58,7 @@ const Blogs = () => {
               <Anchor to={mediumUrl} target>
                 <FlexRow>
                   <Heading4>{title}</Heading4>
-                  <ImArrowUpRight2 />
+                  <ImArrowUpRight2 className="arrowIcon" />
                 </FlexRow>
               </Anchor>
               <AboutP>{subtitle}</AboutP>

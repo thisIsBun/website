@@ -8,6 +8,7 @@ const Heading4 = styled.h4`
 
   @media (max-width: 576px) {
     font-size: var(--fz-lg);
+    line-height: 1.4;
   }
 `;
 

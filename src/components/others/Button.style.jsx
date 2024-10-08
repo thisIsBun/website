@@ -57,6 +57,11 @@ const NavButton = styled(Button)`
     font-size: var(--fz-xl);
     padding: 25px 60px;
   }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-md);
+    padding: 20px 48px;
+  }
 `;
 
 export { ContactButton, NavButton };

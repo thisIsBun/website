@@ -9,9 +9,10 @@ const HeroP = styled(P)`
   max-width: 50vw;
   color: var(--slate);
   font-size: var(--fz-lg);
+  margin: 0;
+  margin-bottom: 24px;
 
   @media (max-width: 1200px) {
-    margin-top: 12px;
     max-width: 65vw;
   }
 
@@ -40,6 +41,10 @@ const AboutP = styled(P)`
   @media (max-width: 992px) {
     font-size: 16px;
   }
+
+  @media (max-width: 576px) {
+    line-height: 1.4;
+  }
 `;
 
 const FooterP = styled(P)`
@@ -49,7 +54,7 @@ const FooterP = styled(P)`
   margin: 0;
 
   @media (max-width: 576px) {
-    font-size: 12px;
+    font-size: 11px;
   }
 `;
 

@@ -14,6 +14,10 @@ const BulletPoint = styled.span`
     font-size: ${({ $beforeFontSize }) => $beforeFontSize};
     line-height: ${({ $beforeLineHeight }) => $beforeLineHeight};
   }
+
+  @media (max-width: 576px) {
+    padding-left: 12px;
+  }
 `;
 
 export default BulletPoint;

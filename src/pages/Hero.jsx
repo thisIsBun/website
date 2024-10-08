@@ -19,7 +19,6 @@ const HeroH1 = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    margin-bottom: 16px;
   }
 `;
 
@@ -27,11 +26,9 @@ const HeroH2 = styled.h2`
   margin: 0;
   color: var(--lightest-slate);
   font-size: 80px;
-  line-height: 1.2;
 
   @media (max-width: 1200px) {
     font-size: 70px;
-    line-height: 1.1;
   }
 
   @media (max-width: 992px) {
@@ -40,24 +37,32 @@ const HeroH2 = styled.h2`
 
   @media (max-width: 768px) {
     font-size: 48px;
-    margin-bottom: 20px;
   }
 
   @media (max-width: 576px) {
     font-size: 32px;
-    margin-bottom: 16px;
   }
 `;
 
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+
+  @media (max-width: 992px) {
+    padding: 0 30px;
+  }
+
   @media (max-width: 768px) {
-    margin: 25vh 0;
+    padding: 0;
+    gap: 8px;
   }
 
   @media (max-width: 576px) {
-    margin: 18vh 0;
+    div a {
+      font-size: 32px;
+    }
   }
 `;
 

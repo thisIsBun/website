@@ -40,6 +40,12 @@ const ContactDetail = styled.div`
     padding-top: 0px;
     gap: 16px;
   }
+
+  @media (max-width: 576px) {
+    .iconContainer {
+      gap: 12px;
+    }
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -53,6 +59,11 @@ const Img = styled.img`
 
   @media (max-width: 992px) {
     margin-right: 16px;
+  }
+
+  @media (max-width: 576px) {
+    margin-right: 12px;
+    width: 20px;
   }
 `;
 
@@ -130,14 +141,14 @@ const Contact = () => {
 
     if (data.success) {
       event.target.reset();
-      toast.open("Your message was send to Bun");
+      toast.open("Message send to Bun 🤩");
       setFormDate({
         name: "",
         email: "",
         message: "",
       });
     } else {
-      toast.open("Something went wrong, try later");
+      toast.open("Try later 🥺");
     }
   };
 
@@ -150,7 +161,7 @@ const Contact = () => {
             It’s always nice to meet new friends 👋 <br />
             So feel free to send me a message anytime, I will get back to you.
           </AboutP>
-          <FlexColumn $gap="16px">
+          <FlexColumn $gap="16px" className="iconContainer">
             <IconWrapper>
               <Img src={emailIcon} alt="emailIcon" />
               <AboutP>{contactData.email}</AboutP>

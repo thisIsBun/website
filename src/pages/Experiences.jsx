@@ -98,6 +98,10 @@ const CardWrapper = styled.div`
     .experienceItem {
       font-size: 16px;
       margin-bottom: 0.5rem;
+
+      &::before {
+        font-size: var(--fz-sm);
+      }
     }
     .badgeWrapper {
       margin-left: 0;
