@@ -98,7 +98,7 @@ const CardWrapper = styled.div`
     padding: 10px;
     .experienceItem {
       font-size: 16px;
-      margin-bottom: 6px;
+      margin-bottom: 1px;
 
       &::before {
         font-size: var(--fz-xs);

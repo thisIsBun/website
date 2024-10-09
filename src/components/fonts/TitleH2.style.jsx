@@ -50,7 +50,7 @@ const TitleH2 = styled.h2`
 
   @media (max-width: 576px) {
     font-size: 26px;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 20px;
   }
 `;

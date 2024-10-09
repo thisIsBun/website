@@ -36,7 +36,6 @@ const Header = styled.nav`
 
   @media (max-width: 768px) {
     padding: 0;
-    height: 50px;
     .navWrapper {
       position: fixed;
       flex-direction: column;
@@ -50,8 +49,9 @@ const Header = styled.nav`
       gap: 40px;
     }
   }
-
+  
   @media (max-width: 576px) {
+    height: 50px;
     .navWrapper {
       gap: 24px;
     }
@@ -64,12 +64,12 @@ const NavIcon = styled.img`
   @media (max-width: 768px) {
     display: block;
     position: absolute;
-    top: 35px;
+    top: 25px;
     right: 30px;
   }
 
   @media (max-width: 576px) {
-    top: 15px;
+    top: 11px;
     right: 10px;
     width: 32px;
   }
