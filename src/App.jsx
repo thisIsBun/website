@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <MainContainer $marginTop={"var(--nav-height)"}>
+      <MainContainer>
         <Hero />
         <About />
         <Experiences />

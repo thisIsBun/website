@@ -8,7 +8,6 @@ const MainContainer = styled.main`
   height: ${({ height }) => height || "auto"};
   ${({ $justifyContentCenter }) =>
     $justifyContentCenter && `justify-content: center;`}
-  margin-top: ${({ $marginTop }) => $marginTop};
   padding: 0 50px;
   gap: ${({ gap }) => gap || "60px"};
 
@@ -24,6 +23,10 @@ const MainContainer = styled.main`
 
   @media (max-width: 768px) {
     padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 50px;
   }
 `;
 

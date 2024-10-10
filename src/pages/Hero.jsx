@@ -15,15 +15,15 @@ const HeroH1 = styled.h1`
   }
 
   @media (max-width: 992px) {
-    font-size: 56px;
+    font-size: 64px;
   }
 
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 56px;
   }
 
   @media (max-width: 576px) {
-    font-size: 36px;
+    font-size: 48px;
   }
 `;
 
@@ -32,7 +32,7 @@ const HeroWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 70vh;
-  gap: 3vh;
+  gap: 1rem;
 
   @media (max-width: 992px) {
     padding: 0 30px;
@@ -54,7 +54,7 @@ const Hero = () => {
     <SectionContainer>
       <HeroWrapper>
         <HeroH1>Bun Chen</HeroH1>
-        <Heading3>Self-taught Front-End Developer</Heading3>
+        <Heading3>Front-End Developer</Heading3>
         <HeroP>I enjoy crafting intuitive user interfaces on the web.</HeroP>
         <SocialMedia />
       </HeroWrapper>
