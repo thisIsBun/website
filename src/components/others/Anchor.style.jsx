@@ -7,6 +7,13 @@ const StyleLink = styled(Link)`
   color: var(--lightest-slate);
 
   ${({ $underline }) =>
+    !$underline &&
+    `
+      display: flex;
+      align-items: center;
+    `}
+
+  ${({ $underline }) =>
     $underline &&
     ` 
       &::after {

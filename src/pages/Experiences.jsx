@@ -108,6 +108,7 @@ const CardWrapper = styled.div`
     }
     .badgeWrapper {
       margin: 0;
+      margin-top: 6px;
       flex-wrap: wrap;
       gap: 8px;
     }

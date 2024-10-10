@@ -10,7 +10,7 @@ const HeroP = styled(P)`
   color: var(--slate);
   font-size: var(--fz-lg);
   margin: 0;
-  margin-bottom: 24px;
+  line-height: 1;
 
   @media (max-width: 1200px) {
     max-width: 65vw;
@@ -51,7 +51,6 @@ const FooterP = styled(P)`
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   color: var(--lightest-slate);
-  margin: 0;
 
   @media (max-width: 576px) {
     font-size: 11px;

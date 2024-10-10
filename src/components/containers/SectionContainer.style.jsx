@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 120px;
+  margin-top: 80px;
   margin-bottom: ${({ $marginBottom }) => $marginBottom || "80px"};
   width: 100%;
   max-width: 1000px;

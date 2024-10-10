@@ -43,6 +43,7 @@ const TitleH2 = styled.h2`
   }
 
   @media (max-width: 768px) {
+    margin-top: 60px;
     &::after {
       content: none;
     }

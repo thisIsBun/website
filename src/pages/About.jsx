@@ -52,27 +52,35 @@ const About = () => {
     <SectionContainer id="about">
       <TitleH2 $number="1">About Me</TitleH2>
       <AboutWrapper>
-        <ColumnContainer $gap="15px">
+        <ColumnContainer $gap="0.5em">
+          <AboutP>Hello, I’m Bun 🙂</AboutP>
           <AboutP>
-            Hello! My name is Bun and I enjoy building things on the web.
+            I’m a self-taught Front-End Developer with a passion for creating
+            intuitive and user-friendly web experiences.
           </AboutP>
           <AboutP>
-            I discovered my passion for coding while working as a software PM. I
-            joined Alpha Camp’s web development course, and I found coding is
-            like a detective who piecing clues together to solve puzzles. After
-            graduated from Alpha Camp, I successfully transitioned into a
-            front-end engineer role.
+            My coding journey began during my time as a software PM. I had a
+            passion for figuring out the logic behind apps and especially
+            interested in how apps interact with users. This led me to pursue a
+            career in front-end development.
           </AboutP>
           <AboutP>
-            Recently, I’ve been focused on delivering features that meet
-            customer needs while maintaining clean, readable code.
+            Currently, I’m focused on developing systems at{" "}
+            <Anchor
+              to="https://www.castlestech.com/payment-solutions/cashub/"
+              target
+              underline
+            >
+              Castles
+            </Anchor>
+            , ensuring user-friendly experiences with clean, maintainable code.
           </AboutP>
           <AboutP>
-            In my spare time, I love to write{" "}
+            In my spare time, I enjoy writing articles in{" "}
             <Anchor to="https://medium.com/@bun.coding" target underline>
-              blogs
+              Medium
             </Anchor>{" "}
-            to share and consolidate the skills I’ve picked up.
+            to refine and share the skills I’ve picked up.{" "}
           </AboutP>
           <AboutP>Here are a few tools I’ve been working with recently:</AboutP>
           <GridColumn $template="1fr 1fr" $gap="10px">
