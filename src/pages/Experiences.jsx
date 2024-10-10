@@ -43,7 +43,7 @@ const Badge = styled.span`
 
   @media (max-width: 576px) {
     font-size: var(--fz-xs);
-    padding: 6px 12px;
+    padding: 6px 10px;
   }
 `;
 

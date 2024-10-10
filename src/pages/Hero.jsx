@@ -32,17 +32,20 @@ const HeroWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 70vh;
-  gap: 1rem;
+  gap: 2rem;
 
   @media (max-width: 992px) {
+    gap: 1.8rem;
     padding: 0 30px;
   }
 
   @media (max-width: 768px) {
+    gap: 1.6rem;
     padding: 0;
   }
 
   @media (max-width: 576px) {
+    gap: 1.4rem;
     div a {
       font-size: 32px;
     }
@@ -51,7 +54,9 @@ const HeroWrapper = styled.div`
 
 const Hero = () => {
   return (
-    <SectionContainer>
+    <SectionContainer
+      style={{ height: "100vh", margin: "0", justifyContent: "center" }}
+    >
       <HeroWrapper>
         <HeroH1>Bun Chen</HeroH1>
         <Heading3>Front-End Developer</Heading3>
