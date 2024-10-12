@@ -49,7 +49,7 @@ const Header = styled.nav`
       gap: 40px;
     }
   }
-  
+
   @media (max-width: 576px) {
     height: 50px;
     .navWrapper {
@@ -82,6 +82,10 @@ const NavList = styled.ol`
   counter-reset: li;
   font-size: var(--fz-xs);
   font-family: var(--font-mono);
+
+  li.active a {
+    color: var(--green);
+  }
 
   li a:before {
     counter-increment: li;
@@ -117,9 +121,9 @@ const NavList = styled.ol`
   }
 `;
 
-const NavItem = ({ href, children, handleNavToggle }) => {
+const NavItem = ({ href, children, handleNavToggle, className }) => {
   return (
-    <li onClick={handleNavToggle}>
+    <li onClick={handleNavToggle} className={className}>
       <Anchor to={href}>{children}</Anchor>
     </li>
   );
@@ -176,7 +180,14 @@ const Navbar = () => {
         <NavList>
           {navbarData.map(({ name, path }) => {
             return (
-              <NavItem key={name} href={path} handleNavToggle={handleNavToggle}>
+              <NavItem
+                key={name}
+                href={path}
+                handleNavToggle={handleNavToggle}
+                className={
+                  hash.includes(name.toLowerCase()) ? "active" : undefined
+                }
+              >
                 {name}
               </NavItem>
             );
