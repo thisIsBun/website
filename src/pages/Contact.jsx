@@ -111,7 +111,27 @@ const TextArea = styled.textarea`
   }
 `;
 
+const Loader = styled.span`
+  display: block;
+  border: 2px solid var(--lightest-slate);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
   const [formDate, setFormDate] = useState({
     name: "",
@@ -128,27 +148,35 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    setIsLoading(true);
 
+    const formData = new FormData(event.target);
     formData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      event.target.reset();
-      toast.open("Message send to Bun 🤩");
-      setFormDate({
-        name: "",
-        email: "",
-        message: "",
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-    } else {
-      toast.open("Try later 🥺");
+
+      const data = await response.json();
+
+      if (data.success) {
+        event.target.reset();
+        toast.open("Message send to Bun 🤩");
+        setFormDate({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        toast.open("Oops..try later 🥺");
+      }
+    } catch (error) {
+      console.error("Error: ", error);
+      toast.open("Oops..try later 🥺");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -189,9 +217,14 @@ const Contact = () => {
             onChange={handleChange}
           ></TextArea>
           <ContactButton
-            disabled={!formDate.name || !formDate.email || !formDate.message}
+            disabled={
+              !formDate.name ||
+              !formDate.email ||
+              !formDate.message ||
+              isLoading
+            }
           >
-            Send out
+            {isLoading ? <Loader /> : "Send out"}
           </ContactButton>
         </ContactForm>
       </ContactWrapper>

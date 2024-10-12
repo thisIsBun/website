@@ -29,6 +29,8 @@ const ContactButton = styled(Button)`
   margin-bottom: 50px;
   width: 35%;
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 1200px) {
     width: 40%;
