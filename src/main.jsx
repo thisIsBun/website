@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import GlobalStyle from "./components/Global.style.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
-import ToastProvider from "./components/toast/Toast.context.jsx";
+import ToastProvider from "./utils/toast/Toast.context.jsx";
 
 const router = createBrowserRouter([
   {

@@ -1,7 +1,7 @@
 import SectionContainer from "../components/containers/SectionContainer.style";
 import Heading3 from "../components/fonts/Heading2.style";
 import { HeroP } from "../components/fonts/P.style";
-import SocialMedia from "../components/others/SocialMedia";
+import SocialMedia from "../components/others/SocialMedia.style";
 import styled from "styled-components";
 
 const HeroH1 = styled.h1`

@@ -9,7 +9,7 @@ import locationIcon from "../assets/location_icon.svg";
 import contactData from "../data/contact.data";
 import { ContactButton } from "../components/others/Button.style";
 import styled from "styled-components";
-import useToast from "../components/toast/useToast";
+import useToast from "../utils/toast/useToast";
 
 const ContactWrapper = styled.div`
   display: flex;

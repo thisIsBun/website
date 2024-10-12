@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { ToastContainer, ToastItem } from "./Toast.style";
+import { ToastContainer, ToastItem } from "../../components/others/Toast.style";
 import useTimeout from "./useTimeout";
 
 const Toast = ({ message, close }) => {
