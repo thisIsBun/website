@@ -7,8 +7,8 @@ import { AboutP } from "../components/fonts/P.style";
 import { ImArrowUpRight2 } from "react-icons/im";
 import Anchor from "../components/others/Anchor.style";
 import FlexRow from "../components/containers/FlexRow.style";
-
 import styled from "styled-components";
+import useIntersectionObserver from "../utils/useIntersectionObserver";
 
 const CardWrapper = styled.div`
   display: flex;
@@ -41,8 +41,14 @@ const convertDate = (timestamp) => {
 };
 
 const Blogs = () => {
+  const [isIntersecting, elementRef] = useIntersectionObserver();
+
   return (
-    <SectionContainer id="blogs">
+    <SectionContainer
+      id="blogs"
+      ref={elementRef}
+      className={isIntersecting ? "loaded" : undefined}
+    >
       <TitleH2 $number="3">Things I’ve Written</TitleH2>
       <FlexColumn $gap="20px">
         {blogsData.map(({ postId, post }) => {

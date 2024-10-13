@@ -10,6 +10,7 @@ import contactData from "../data/contact.data";
 import { ContactButton } from "../components/others/Button.style";
 import styled from "styled-components";
 import useToast from "../utils/toast/useToast";
+import useIntersectionObserver from "../utils/useIntersectionObserver";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -131,6 +132,7 @@ const Loader = styled.span`
 `;
 
 const Contact = () => {
+  const [isIntersecting, elementRef] = useIntersectionObserver();
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
   const [formDate, setFormDate] = useState({
@@ -181,7 +183,11 @@ const Contact = () => {
   };
 
   return (
-    <SectionContainer id="contact">
+    <SectionContainer
+      id="contact"
+      ref={elementRef}
+      className={isIntersecting ? "loaded" : undefined}
+    >
       <TitleH2 $number="4">Get In Touch</TitleH2>
       <ContactWrapper>
         <ContactDetail>

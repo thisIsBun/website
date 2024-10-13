@@ -5,6 +5,7 @@ import FlexColumn from "../components/containers/FlexColumn.style";
 import FlexRow from "../components/containers/FlexRow.style";
 import BulletPoint from "../components/others/BulletPoint.style";
 import styled from "styled-components";
+import useIntersectionObserver from "../utils/useIntersectionObserver";
 
 const CardPeriod = styled.div`
   font-size: var(--fz-sm);
@@ -116,8 +117,13 @@ const CardWrapper = styled.div`
 `;
 
 const Experiences = () => {
+  const [isIntersecting, elementRef] = useIntersectionObserver();
   return (
-    <SectionContainer id="experiences">
+    <SectionContainer
+      id="experiences"
+      ref={elementRef}
+      className={isIntersecting ? "loaded" : undefined}
+    >
       <TitleH2 $number="2">Where I’ve Worked</TitleH2>
       <FlexColumn $gap="20px" className="cardContainer">
         {experienceData.map(

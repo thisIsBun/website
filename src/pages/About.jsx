@@ -8,6 +8,7 @@ import TitleH2 from "../components/fonts/TitleH2.style";
 import BulletPoint from "../components/others/BulletPoint.style";
 import Anchor from "../components/others/Anchor.style";
 import styled from "styled-components";
+import useIntersectionObserver from "../utils/useIntersectionObserver";
 
 const ImgContainer = styled.div`
   width: 100%;
@@ -44,12 +45,18 @@ const AboutWrapper = styled.div`
 `;
 
 const About = () => {
+  const [isIntersecting, elementRef] = useIntersectionObserver();
+
   const tools = useMemo(() => {
     return aboutData.tools;
   }, []);
 
   return (
-    <SectionContainer id="about">
+    <SectionContainer
+      id="about"
+      ref={elementRef}
+      className={isIntersecting ? "loaded" : undefined}
+    >
       <TitleH2 $number="1">About Me</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap="0.5em">

@@ -3,6 +3,7 @@ import Heading3 from "../components/fonts/Heading2.style";
 import { HeroP } from "../components/fonts/P.style";
 import SocialMedia from "../components/others/SocialMedia.style";
 import styled from "styled-components";
+import useIntersectionObserver from "../utils/useIntersectionObserver";
 
 const HeroH1 = styled.h1`
   margin: 0;
@@ -53,9 +54,13 @@ const HeroWrapper = styled.div`
 `;
 
 const Hero = () => {
+  const [isIntersecting, elementRef] = useIntersectionObserver();
+
   return (
     <SectionContainer
       style={{ height: "100vh", margin: "0", justifyContent: "center" }}
+      ref={elementRef}
+      className={isIntersecting ? "loaded" : undefined}
     >
       <HeroWrapper>
         <HeroH1>Bun Chen</HeroH1>
