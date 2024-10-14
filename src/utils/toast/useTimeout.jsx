@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
 
-const useTimeout = (cb, delay = 3000) => {
-  const savedCallback = useRef(cb);
+const useTimeout = (callback, delay = 3000) => {
+  const savedCallback = useRef(callback);
 
   useEffect(() => {
-    savedCallback.current = cb;
-  }, [cb]);
+    savedCallback.current = callback;
+  }, [callback]);
 
   useEffect(() => {
     const timeId = setTimeout(() => {

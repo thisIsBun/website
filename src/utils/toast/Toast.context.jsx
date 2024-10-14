@@ -3,10 +3,7 @@ import { ToastContainer, ToastItem } from "../../components/others/Toast.style";
 import useTimeout from "./useTimeout";
 
 const Toast = ({ message, close }) => {
-  useTimeout(() => {
-    close();
-  });
-
+  useTimeout(close);
   return (
     <ToastItem>
       <p>{message}</p>
@@ -14,14 +11,14 @@ const Toast = ({ message, close }) => {
   );
 };
 
-export const ToastContext = createContext();
+const ToastContext = createContext();
 
 const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
   const openToast = (message) => {
     const newToast = {
-      id: new Date(),
+      id: new Date().getTime(),
       message,
     };
     setToasts((prev) => {
@@ -42,9 +39,9 @@ const ToastProvider = ({ children }) => {
   return (
     <ToastContext.Provider value={contextValue}>
       {children}
-      <ToastContainer>
-        {toasts &&
-          toasts.map((toast) => {
+      {toasts.length > 0 && (
+        <ToastContainer>
+          {toasts.map((toast) => {
             return (
               <Toast
                 key={toast.id}
@@ -53,9 +50,11 @@ const ToastProvider = ({ children }) => {
               />
             );
           })}
-      </ToastContainer>
+        </ToastContainer>
+      )}
     </ToastContext.Provider>
   );
 };
 
+export { ToastContext };
 export default ToastProvider;
