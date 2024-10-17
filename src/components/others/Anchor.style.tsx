@@ -1,7 +1,12 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const StyleLink = styled(Link)`
+type StyleLinkType = {
+  $underline?: boolean;
+};
+
+const StyleLink = styled(Link)<StyleLinkType>`
   position: relative;
   text-decoration: none;
   color: var(--lightest-slate);
@@ -39,12 +44,19 @@ const StyleLink = styled(Link)`
   }
 `;
 
-const Anchor = ({ to, underline, target, children }) => {
+type AnchorProps = {
+  to: string;
+  underline?: boolean;
+  target?: boolean;
+  children: React.ReactNode;
+};
+
+const Anchor = ({ to, underline, target, children }: AnchorProps): React.ReactNode => {
   return (
     <StyleLink
       to={to}
       $underline={underline}
-      target={target ? "_blank" : "_self"}
+      target={target ? '_blank' : '_self'}
     >
       {children}
     </StyleLink>
