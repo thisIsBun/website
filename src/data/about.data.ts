@@ -1,4 +1,6 @@
-const aboutData = {
+type ToolNames = string[];
+
+const aboutData: { tools: ToolNames } = {
   tools: [
     "JavaScript (ES6+)",
     "React",
