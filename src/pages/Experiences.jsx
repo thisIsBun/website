@@ -124,7 +124,7 @@ const Experiences = () => {
       ref={elementRef}
       className={isIntersecting ? "loaded" : undefined}
     >
-      <TitleH2 $number="2">Where I’ve Worked</TitleH2>
+      <TitleH2 $number={2}>Where I’ve Worked</TitleH2>
       <FlexColumn $gap="20px" className="cardContainer">
         {experienceData.map(
           ({ period, title, company, description, tools }, index) => {

@@ -188,7 +188,7 @@ const Contact = () => {
       ref={elementRef}
       className={isIntersecting ? "loaded" : undefined}
     >
-      <TitleH2 $number="4">Get In Touch</TitleH2>
+      <TitleH2 $number={4}>Get In Touch</TitleH2>
       <ContactWrapper>
         <ContactDetail>
           <AboutP>

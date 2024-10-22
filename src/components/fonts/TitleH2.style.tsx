@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const TitleH2 = styled.h2`
+type TitleH2Props = {
+  $number?: number;
+};
+
+const TitleH2 = styled.h2<TitleH2Props>`
   display: flex;
   align-items: flex-end;
   font-size: 32px;
@@ -14,7 +18,7 @@ const TitleH2 = styled.h2`
     position: relative;
     bottom: 4px;
     counter-increment: title ${({ $number }) => $number};
-    content: "0" counter(title) ".";
+    content: '0' counter(title) '.';
     margin-right: 10px;
     color: var(--green);
     font-family: var(--font-mono);
@@ -23,7 +27,7 @@ const TitleH2 = styled.h2`
   }
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: relative;
     width: 300px;

@@ -57,7 +57,7 @@ const About = () => {
       ref={elementRef}
       className={isIntersecting ? "loaded" : undefined}
     >
-      <TitleH2 $number="1">About Me</TitleH2>
+      <TitleH2 $number={1}>About Me</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap="0.5em">
           <AboutP>Hello, I’m Bun 🙂</AboutP>
