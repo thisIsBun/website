@@ -1,14 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { CSSProperties } from 'react';
 
-const SectionContainer = styled.section`
+type SectionContainerProps = {
+  $marginBottom?: CSSProperties['marginBottom'];
+  $alignItemsCenter?: CSSProperties['alignItems'];
+  $paddingBottom?: CSSProperties['paddingBottom'];
+};
+
+const SectionContainer = styled.section<SectionContainerProps>`
   display: flex;
   flex-direction: column;
   margin-top: 80px;
-  margin-bottom: ${({ $marginBottom }) => $marginBottom || "80px"};
+  margin-bottom: ${({ $marginBottom }) => $marginBottom || '80px'};
   width: 100%;
   max-width: 1000px;
-  align-items: ${({ $alignItemsCenter }) =>
-    $alignItemsCenter ? "center" : "stretch"};
+  align-items: ${({ $alignItemsCenter }) => ($alignItemsCenter ? 'center' : 'stretch')};
   padding-bottom: ${({ $paddingBottom }) => $paddingBottom};
   visibility: hidden;
   opacity: 0;
