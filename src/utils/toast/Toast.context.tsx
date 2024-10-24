@@ -1,8 +1,13 @@
-import { createContext, useState } from "react";
-import { ToastContainer, ToastItem } from "../../components/others/Toast.style";
-import useTimeout from "./useTimeout";
+import React, { createContext, useState } from 'react';
+import { ToastContainer, ToastItem } from '../../components/others/Toast.style';
+import useTimeout from './useTimeout';
 
-const Toast = ({ message, close }) => {
+type ToastType = {
+  message: string;
+  close: () => void;
+};
+
+const Toast = ({ message, close }: ToastType) => {
   useTimeout(close);
   return (
     <ToastItem>
@@ -11,12 +16,26 @@ const Toast = ({ message, close }) => {
   );
 };
 
-const ToastContext = createContext();
+type ToastContextType = {
+  open: (message: string) => void;
+  close: (id: number) => void;
+};
 
-const ToastProvider = ({ children }) => {
-  const [toasts, setToasts] = useState([]);
+const ToastContext = createContext<ToastContextType | null>(null);
 
-  const openToast = (message) => {
+type ToastProviderProps = {
+  children: React.ReactNode;
+};
+
+type ToastsType = {
+  id: number;
+  message: string;
+};
+
+const ToastProvider = ({ children }: ToastProviderProps) => {
+  const [toasts, setToasts] = useState<ToastsType[]>([]);
+
+  const openToast = (message: string) => {
     const newToast = {
       id: new Date().getTime(),
       message,
@@ -26,7 +45,7 @@ const ToastProvider = ({ children }) => {
     });
   };
 
-  const closeToast = (id) => {
+  const closeToast = (id: number) => {
     setToasts((prev) => {
       return prev.filter((toast) => {
         return toast.id !== id;
