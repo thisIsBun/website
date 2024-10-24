@@ -1,3 +1,4 @@
+import React from "react";
 import SectionContainer from "../components/containers/SectionContainer.style";
 import Heading3 from "../components/fonts/Heading2.style";
 import { HeroP } from "../components/fonts/P.style";

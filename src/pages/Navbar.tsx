@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { NavButton } from "../components/others/Button.style";
-import navbarData from "../data/navbar.data";
-import styled from "styled-components";
-import Anchor from "../components/others/Anchor.style";
-import nav_open from "../assets/nav_open.svg";
-import nav_close from "../assets/nav_close.svg";
-import FlexRow from "../components/containers/FlexRow.style";
+import React, { MouseEventHandler, useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { NavButton } from '../components/others/Button.style';
+import navbarData from '../data/navbar.data';
+import styled from 'styled-components';
+import Anchor from '../components/others/Anchor.style';
+import nav_open from '../assets/nav_open.svg';
+import nav_close from '../assets/nav_close.svg';
+import FlexRow from '../components/containers/FlexRow.style';
 
 const Header = styled.nav`
   position: fixed;
@@ -89,7 +89,7 @@ const NavList = styled.ol`
 
   li a:before {
     counter-increment: li;
-    content: counter(li, decimal-leading-zero) ". ";
+    content: counter(li, decimal-leading-zero) '. ';
     color: var(--green);
   }
 
@@ -121,40 +121,51 @@ const NavList = styled.ol`
   }
 `;
 
-const NavItem = ({ href, children, handleNavToggle, className }) => {
+type NavItemProps = {
+  href: string;
+  children: React.ReactNode;
+  handleNavToggle: MouseEventHandler;
+  className: string | undefined;
+};
+
+const NavItem = ({ href, children, handleNavToggle, className }: NavItemProps) => {
   return (
-    <li onClick={handleNavToggle} className={className}>
+    <li
+      onClick={handleNavToggle}
+      className={className}
+    >
       <Anchor to={href}>{children}</Anchor>
     </li>
   );
 };
 
 const handleOpenResume = () => {
-  window.open("/website/resume.pdf", "_blank", "noopener noreferrer");
+  window.open('/website/resume.pdf', '_blank', 'noopener noreferrer');
 };
 
 const Navbar = () => {
-  const [prevScrollY, setPrevScrollY] = useState(window.scrollY);
-  const [navOpen, setNavOpen] = useState(false);
-  const headerRef = useRef();
-  const navWrapper = useRef();
+  const [prevScrollY, setPrevScrollY] = useState<number>(window.scrollY);
+  const [navOpen, setNavOpen] = useState<boolean>(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const navWrapper = useRef<HTMLDivElement>(null);
   const { hash } = useLocation();
 
   useEffect(() => {
     const handleWindowScroll = () => {
       const currentScrollY = window.scrollY;
+      if (!headerRef.current) return;
       if (currentScrollY > prevScrollY) {
-        headerRef.current.style.top = "-100px";
+        headerRef.current.style.top = '-100px';
       } else {
-        headerRef.current.style.top = "0px";
+        headerRef.current.style.top = '0px';
       }
       setPrevScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleWindowScroll);
+    window.addEventListener('scroll', handleWindowScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleWindowScroll);
+      window.removeEventListener('scroll', handleWindowScroll);
     };
   }, [prevScrollY]);
 
@@ -162,21 +173,35 @@ const Navbar = () => {
     if (hash) {
       const section = document.querySelector(hash);
       if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     }
   }, [hash]);
 
   const handleNavToggle = () => {
-    navWrapper.current.style.right = navOpen ? "-100%" : "0";
+    if (navWrapper.current) {
+      navWrapper.current.style.right = navOpen ? '-100%' : '0';
+    }
     setNavOpen(!navOpen);
   };
 
   return (
     <Header ref={headerRef}>
-      <NavIcon src={nav_open} alt="open nav" onClick={handleNavToggle} />
-      <FlexRow $gap="40px" className="navWrapper" ref={navWrapper}>
-        <NavIcon src={nav_close} alt="close nav" onClick={handleNavToggle} />
+      <NavIcon
+        src={nav_open}
+        alt='open nav'
+        onClick={handleNavToggle}
+      />
+      <FlexRow
+        $gap='40px'
+        className='navWrapper'
+        ref={navWrapper}
+      >
+        <NavIcon
+          src={nav_close}
+          alt='close nav'
+          onClick={handleNavToggle}
+        />
         <NavList>
           {navbarData.map(({ name, path }) => {
             return (
@@ -184,9 +209,7 @@ const Navbar = () => {
                 key={name}
                 href={path}
                 handleNavToggle={handleNavToggle}
-                className={
-                  hash.includes(name.toLowerCase()) ? "active" : undefined
-                }
+                className={hash.includes(name.toLowerCase()) ? 'active' : undefined}
               >
                 {name}
               </NavItem>

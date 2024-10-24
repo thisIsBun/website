@@ -1,11 +1,12 @@
-import SectionContainer from "../components/containers/SectionContainer.style";
-import TitleH2 from "../components/fonts/TitleH2.style";
-import experienceData from "../data/experiences.data";
-import FlexColumn from "../components/containers/FlexColumn.style";
-import FlexRow from "../components/containers/FlexRow.style";
-import BulletPoint from "../components/others/BulletPoint.style";
-import styled from "styled-components";
-import useIntersectionObserver from "../utils/useIntersectionObserver";
+import React from 'react';
+import SectionContainer from '../components/containers/SectionContainer.style';
+import TitleH2 from '../components/fonts/TitleH2.style';
+import experienceData from '../data/experiences.data';
+import FlexColumn from '../components/containers/FlexColumn.style';
+import FlexRow from '../components/containers/FlexRow.style';
+import BulletPoint from '../components/others/BulletPoint.style';
+import styled from 'styled-components';
+import useIntersectionObserver from '../utils/useIntersectionObserver';
 
 const CardPeriod = styled.div`
   font-size: var(--fz-sm);
@@ -120,48 +121,52 @@ const Experiences = () => {
   const [isIntersecting, elementRef] = useIntersectionObserver();
   return (
     <SectionContainer
-      id="experiences"
+      id='experiences'
       ref={elementRef}
-      className={isIntersecting ? "loaded" : undefined}
+      className={isIntersecting ? 'loaded' : undefined}
     >
       <TitleH2 $number={2}>Where I’ve Worked</TitleH2>
-      <FlexColumn $gap="20px" className="cardContainer">
-        {experienceData.map(
-          ({ period, title, company, description, tools }, index) => {
-            return (
-              <CardWrapper key={index}>
-                <CardPeriod>{period}</CardPeriod>
-                <CardContent>
-                  <Heading3>
-                    {title} · {company}
-                  </Heading3>
-                  <FlexColumn $gap="5px">
-                    {description.map((item, index) => {
-                      return (
-                        <BulletPoint
-                          key={index}
-                          $fontSize="var(--fz-lg)"
-                          $beforeFontSize="var(--fz-lg)"
-                          $beforeLineHeight="var(--fz-xl)"
-                          className="experienceItem"
-                        >
-                          {item}
-                        </BulletPoint>
-                      );
+      <FlexColumn
+        $gap='20px'
+        className='cardContainer'
+      >
+        {experienceData.map(({ period, title, company, description, tools }, index) => {
+          return (
+            <CardWrapper key={index}>
+              <CardPeriod>{period}</CardPeriod>
+              <CardContent>
+                <Heading3>
+                  {title} · {company}
+                </Heading3>
+                <FlexColumn $gap='5px'>
+                  {description.map((item, index) => {
+                    return (
+                      <BulletPoint
+                        key={index}
+                        $fontSize='var(--fz-lg)'
+                        $beforeFontSize='var(--fz-lg)'
+                        $beforeLineHeight='var(--fz-xl)'
+                        className='experienceItem'
+                      >
+                        {item}
+                      </BulletPoint>
+                    );
+                  })}
+                </FlexColumn>
+                {tools && tools.length > 0 && (
+                  <FlexRow
+                    $margin='10px 0 0 20px'
+                    className='badgeWrapper'
+                  >
+                    {tools.map((tool, index) => {
+                      return <Badge key={index}>{tool}</Badge>;
                     })}
-                  </FlexColumn>
-                  {tools?.length > 0 && (
-                    <FlexRow $margin="10px 0 0 20px" className="badgeWrapper">
-                      {tools.map((tool, index) => {
-                        return <Badge key={index}>{tool}</Badge>;
-                      })}
-                    </FlexRow>
-                  )}
-                </CardContent>
-              </CardWrapper>
-            );
-          }
-        )}
+                  </FlexRow>
+                )}
+              </CardContent>
+            </CardWrapper>
+          );
+        })}
       </FlexColumn>
     </SectionContainer>
   );
