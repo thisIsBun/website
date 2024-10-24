@@ -3,7 +3,7 @@ import { CSSProperties } from 'react';
 
 type MainContainerProps = {
   height?: CSSProperties['height'];
-  $justifyContentCenter?: string;
+  $justifyContentCenter?: boolean;
   gap?: CSSProperties['gap'];
 };
 

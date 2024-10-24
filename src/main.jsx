@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import GlobalStyle from "./components/Global.style.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage.jsx";
+import ErrorPage from "./pages/ErrorPage";
 import ToastProvider from "./utils/toast/Toast.context.jsx";
 
 const router = createBrowserRouter([

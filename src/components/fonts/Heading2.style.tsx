@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { CSSProperties } from 'react';
+type Heading2Props = {
+  $marginBottom?: CSSProperties['marginBottom'];
+};
 
-const Heading2 = styled.h2`
+const Heading2 = styled.h2<Heading2Props>`
   margin: 0;
   margin-bottom: ${({ $marginBottom }) => $marginBottom};
   color: var(--slate);
