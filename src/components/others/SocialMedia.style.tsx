@@ -1,3 +1,4 @@
+import React from "react";
 import socialMediaData from "../../data/socialMedia.data";
 import Anchor from "./Anchor.style";
 import styled from "styled-components";
