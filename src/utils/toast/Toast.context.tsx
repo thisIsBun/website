@@ -21,7 +21,10 @@ type ToastContextType = {
   close: (id: number) => void;
 };
 
-const ToastContext = createContext<ToastContextType | null>(null);
+const ToastContext = createContext<ToastContextType>({
+  open: () => {},
+  close: () => {},
+});
 
 type ToastProviderProps = {
   children: React.ReactNode;
