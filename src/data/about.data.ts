@@ -3,12 +3,13 @@ type ToolNames = string[];
 const aboutData: { tools: ToolNames } = {
   tools: [
     "JavaScript (ES6+)",
-    "React",
     "HTML & CSS",
+    "React",
     "Styled-Components",
+    "TypeScript",
     "Storybook",
-    "i18next",
     "Vite",
+    "i18next",
   ],
 };
 
