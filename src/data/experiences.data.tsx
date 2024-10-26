@@ -71,6 +71,7 @@ const experienceData: experienceDataType[] = [
           to='https://ifdesign.com/en/winner-ranking/project/cerberus-fortus/234226'
           target
           underline
+          ariaLabel='if Design award website'
         >
           iF Design Award
         </Anchor>{' '}

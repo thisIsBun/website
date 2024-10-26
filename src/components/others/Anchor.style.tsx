@@ -49,14 +49,22 @@ type AnchorProps = {
   underline?: boolean;
   target?: boolean;
   children: React.ReactNode;
+  ariaLabel: string;
 };
 
-const Anchor = ({ to, underline, target, children }: AnchorProps): React.ReactNode => {
+const Anchor = ({
+  to,
+  underline,
+  target,
+  children,
+  ariaLabel,
+}: AnchorProps): React.ReactNode => {
   return (
     <StyleLink
       to={to}
       $underline={underline}
       target={target ? '_blank' : '_self'}
+      aria-label={ariaLabel}
     >
       {children}
     </StyleLink>

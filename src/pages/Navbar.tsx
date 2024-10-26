@@ -126,15 +126,21 @@ type NavItemProps = {
   children: React.ReactNode;
   handleNavToggle: MouseEventHandler;
   className: string | undefined;
+  ariaLabel: string;
 };
 
-const NavItem = ({ href, children, handleNavToggle, className }: NavItemProps) => {
+const NavItem = ({
+  href,
+  children,
+  handleNavToggle,
+  className,
+  ariaLabel,
+}: NavItemProps) => {
   return (
-    <li
-      onClick={handleNavToggle}
-      className={className}
-    >
-      <Anchor to={href}>{children}</Anchor>
+    <li onClick={handleNavToggle} className={className}>
+      <Anchor to={href} ariaLabel={`${ariaLabel} section`}>
+        {children}
+      </Anchor>
     </li>
   );
 };
@@ -209,7 +215,10 @@ const Navbar = () => {
                 key={name}
                 href={path}
                 handleNavToggle={handleNavToggle}
-                className={hash.includes(name.toLowerCase()) ? 'active' : undefined}
+                className={
+                  hash.includes(name.toLowerCase()) ? 'active' : undefined
+                }
+                ariaLabel={name}
               >
                 {name}
               </NavItem>

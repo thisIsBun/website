@@ -17,9 +17,9 @@ const IconWrapper = styled.div`
 const SocialMedia = () => {
   return (
     <IconWrapper>
-      {socialMediaData.map(({ path, element }, index) => {
+      {socialMediaData.map(({ path, element, ariaLabel }, index) => {
         return (
-          <Anchor to={path} key={index} target>
+          <Anchor to={path} key={index} target ariaLabel={ariaLabel}>
             {element}
           </Anchor>
         );

@@ -76,6 +76,7 @@ const About = () => {
               to='https://www.castlestech.com/payment-solutions/cashub/'
               target
               underline
+              ariaLabel="CasHUB website"
             >
               Castles
             </Anchor>
@@ -87,6 +88,7 @@ const About = () => {
               to='https://medium.com/@bun.coding'
               target
               underline
+              ariaLabel="Bun's Medium link"
             >
               Medium
             </Anchor>{' '}

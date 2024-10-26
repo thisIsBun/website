@@ -62,10 +62,7 @@ const Blogs = () => {
           } = post;
           return (
             <CardWrapper key={postId}>
-              <Anchor
-                to={mediumUrl}
-                target
-              >
+              <Anchor to={mediumUrl} target ariaLabel={title}>
                 <FlexRow>
                   <Heading4>{title}</Heading4>
                   <ImArrowUpRight2 className='arrowIcon' />
