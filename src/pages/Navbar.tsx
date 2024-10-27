@@ -4,8 +4,6 @@ import { NavButton } from '../components/others/Button.style';
 import navbarData from '../data/navbar.data';
 import styled from 'styled-components';
 import Anchor from '../components/others/Anchor.style';
-import nav_open from '../assets/nav_open.svg';
-import nav_close from '../assets/nav_close.svg';
 import FlexRow from '../components/containers/FlexRow.style';
 
 const Header = styled.nav`
@@ -20,7 +18,7 @@ const Header = styled.nav`
   gap: 40px;
   background-color: rgba(10, 25, 47, 0.85);
   z-index: 28;
-  transition: top 0.3s;
+  transition: top var(--animation-timing);
 
   @media (max-width: 1200px) {
     padding: 30px 40px;
@@ -43,9 +41,9 @@ const Header = styled.nav`
       top: 0;
       right: -100%;
       width: 100%;
-      height: 110vh;
+      height: 100vh;
       background-color: var(--light-navy);
-      transition: all 0.25s ease-in;
+      transition: all var(--animation-timing);
       gap: 40px;
     }
   }
@@ -55,23 +53,6 @@ const Header = styled.nav`
     .navWrapper {
       gap: 24px;
     }
-  }
-`;
-
-const NavIcon = styled.img`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 25px;
-    right: 30px;
-  }
-
-  @media (max-width: 576px) {
-    top: 11px;
-    right: 10px;
-    width: 32px;
   }
 `;
 
@@ -121,6 +102,60 @@ const NavList = styled.ol`
   }
 `;
 
+const Hamburger = styled.label`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    position: absolute;
+    right: var(--hamburger-margin);
+    z-index: 2;
+    cursor: pointer;
+
+    &::before,
+    &::after,
+    & input {
+      content: '';
+      width: var(--bar-width);
+      height: var(--bar-height);
+      background-color: var(--green);
+      border-radius: 9999px;
+      transform-origin: right center;
+      transition: all var(--animation-timing);
+    }
+
+    &:has(input:checked)::before {
+      rotate: -45deg;
+      width: calc(var(--hamburger-height) * 1.414213562);
+      translate: 0 calc(var(--bar-height) / -2);
+    }
+
+    &:has(input:checked)::after {
+      rotate: 45deg;
+      width: calc(var(--hamburger-height) * 1.414213562);
+      translate: 0 calc(var(--bar-height) / 2);
+    }
+
+    &:has(input:checked) + .navWrapper {
+      right: 0%;
+    }
+  }
+`;
+
+const HamburgerCheckbox = styled.input`
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+
+  &:checked {
+    opacity: 0;
+    width: 0;
+  }
+`;
+
 type NavItemProps = {
   href: string;
   children: React.ReactNode;
@@ -151,9 +186,8 @@ const handleOpenResume = () => {
 
 const Navbar = () => {
   const [prevScrollY, setPrevScrollY] = useState<number>(window.scrollY);
-  const [navOpen, setNavOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
-  const navWrapper = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -185,29 +219,18 @@ const Navbar = () => {
   }, [hash]);
 
   const handleNavToggle = () => {
-    if (navWrapper.current) {
-      navWrapper.current.style.right = navOpen ? '-100%' : '0';
+    if (inputRef.current) {
+      inputRef.current.checked = false;
     }
-    setNavOpen(!navOpen);
   };
 
   return (
     <Header ref={headerRef}>
-      <NavIcon
-        src={nav_open}
-        alt='open nav'
-        onClick={handleNavToggle}
-      />
-      <FlexRow
-        $gap='40px'
-        className='navWrapper'
-        ref={navWrapper}
-      >
-        <NavIcon
-          src={nav_close}
-          alt='close nav'
-          onClick={handleNavToggle}
-        />
+      <h1 style={{ color: 'transparent' }}>Bun</h1>
+      <Hamburger aria-label="Toggle navigation menu">
+        <HamburgerCheckbox type="checkbox" ref={inputRef}></HamburgerCheckbox>
+      </Hamburger>
+      <FlexRow $gap="40px" className="navWrapper">
         <NavList>
           {navbarData.map(({ name, path }) => {
             return (

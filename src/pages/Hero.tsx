@@ -66,7 +66,7 @@ const Hero = () => {
       <HeroWrapper>
         <HeroH1>Bun Chen</HeroH1>
         <Heading3>Front-End Developer</Heading3>
-        <HeroP>I enjoy crafting intuitive user interfaces on the web.</HeroP>
+        <HeroP>I enjoy crafting things on the web.</HeroP>
         <SocialMedia />
       </HeroWrapper>
     </SectionContainer>

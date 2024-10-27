@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   *, ::before, ::after {
@@ -27,6 +27,18 @@ const GlobalStyle = createGlobalStyle`
     --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     --tab-height: 42px;
     --nav-height: 100px;
+    --bar-width: 60px;
+    --bar-height: 5px;
+    --hamburger-gap: 10px;
+    --hamburger-margin: 4vw;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(3*var(--bar-height) + 2*var(--hamburger-gap));
+
+      @media (max-width: 576px) {
+        --bar-width: 36px;
+        --bar-height: 3px;
+        --hamburger-gap: 6px;
+      }
   }
 
   body {
