@@ -194,10 +194,10 @@ const Navbar = () => {
     const handleWindowScroll = () => {
       const currentScrollY = window.scrollY;
       if (!headerRef.current) return;
-      if (currentScrollY > prevScrollY) {
-        headerRef.current.style.top = '-100px';
-      } else {
+      if (currentScrollY < prevScrollY || prevScrollY < 800) {
         headerRef.current.style.top = '0px';
+      } else {
+        headerRef.current.style.top = '-100px';
       }
       setPrevScrollY(currentScrollY);
     };
