@@ -1,6 +1,35 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      src: url('/website/fonts/inter-v18-latin-300.woff2') format('woff2');
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/website/fonts/inter-v18-latin-regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      src: url('/website/fonts/inter-v18-latin-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-display: swap;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      src: url('/website/fonts/inter-v18-latin-600.woff2') format('woff2');
+    }
+
   *, ::before, ::after {
     box-sizing: border-box;
   }
