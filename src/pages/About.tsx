@@ -116,7 +116,7 @@ const About = () => {
         </ColumnContainer>
         <ImgContainer>
           <HeadShotImg
-            src='/website/headShot.jpg'
+            src='/website/headShot.webp'
             alt='headShot'
           />
         </ImgContainer>
