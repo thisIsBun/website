@@ -8,6 +8,15 @@ This website is designed to showcase my personal brand, including my skills, por
 
 ## Features
 - Responsive design optimized for various devices
+  <div style="display: flex;">
+     <img src="https://github.com/user-attachments/assets/4dc5e682-0b19-4b5c-b5aa-60cabcad2058" alt="hero section desktop view" style="height: 300px; margin-right: 8px;" />
+     <img src="https://github.com/user-attachments/assets/b9d64d26-35a1-4b7e-b6c5-f30ee80a3b72" alt="hero section mobile view" style="height: 300px;" />
+  </div>
+  <div style="display: flex;">
+     <img src="https://github.com/user-attachments/assets/75430791-aa87-4756-a8b6-12c066558c4a" alt="about section desktop view" style="height: 300px; margin-right: 8px;" />
+     <img src="https://github.com/user-attachments/assets/ee1b0eb2-e290-48d2-9674-0cc3883ba840" alt="about section mobile view" style="height: 300px;" />
+  </div>
+
 - Enhanced website preferences
 
 ## Tech Stack
@@ -25,7 +34,7 @@ This website is designed to showcase my personal brand, including my skills, por
    ```bash
    npm install
    ```
-3. Start the development server, will auto navigate to http://localhost:3000/
+3. Start the development server, once server start browser will auto navigate to http://localhost:3000/
    ```bash
    npm run dev
    ```
@@ -33,10 +42,8 @@ This website is designed to showcase my personal brand, including my skills, por
 This website is automatically deployed to GitHub Pages using GitHub Actions.
 
 ## Future Improvements
-- Add Testing: Implement comprehensive tests to ensure reliability and performance across different use cases and devices.
-- Add Traditional Chinese Translation: Enable a Traditional Chinese version to support a broader audience and enhance accessibility.
+- Add Testing
+- Add Traditional Chinese Translation
 
 ## Contact
 - Email: shuyin.chen28@gmail.com
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/bun-chen-2a4411138/)
-
