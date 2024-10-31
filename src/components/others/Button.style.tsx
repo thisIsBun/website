@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Button = styled.button`
   border: none;
@@ -47,22 +47,23 @@ const ContactButton = styled(Button)`
 `;
 
 const NavButton = styled(Button)`
-  font-size: var(--fz-md);
-  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 14px 24px;
+  font-size: inherit;
+  font-family: inherit;
 
   @media (max-width: 992px) {
-    font-size: var(--fz-sm);
-    padding: 13px 25px;
+    padding: 13px 22px;
   }
 
   @media (max-width: 768px) {
-    font-size: var(--fz-xl);
-    padding: 25px 60px;
+    padding: 22px 45px;
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-lg);
-    padding: 18px 48px;
+    padding: 16px 36px;
   }
 `;
 

@@ -5,6 +5,7 @@ import navbarData from '../data/navbar.data';
 import styled from 'styled-components';
 import Anchor from '../components/others/Anchor.style';
 import FlexRow from '../components/containers/FlexRow.style';
+import { ImArrowUpRight2 } from 'react-icons/im';
 
 const Header = styled.nav`
   position: fixed;
@@ -27,32 +28,14 @@ const Header = styled.nav`
   @media (max-width: 992px) {
     height: 80px;
     padding: 10px 25px;
-    .navWrapper {
-      gap: 20px;
-    }
   }
 
   @media (max-width: 768px) {
     padding: 0;
-    .navWrapper {
-      position: fixed;
-      flex-direction: column;
-      justify-content: center;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--light-navy);
-      transition: all var(--animation-timing);
-      gap: 40px;
-    }
   }
 
   @media (max-width: 576px) {
     height: 50px;
-    .navWrapper {
-      gap: 24px;
-    }
   }
 `;
 
@@ -61,11 +44,10 @@ const NavList = styled.ol`
   gap: 40px;
   list-style-type: none;
   counter-reset: li;
-  font-size: var(--fz-xs);
-  font-family: var(--font-mono);
 
   li.active a {
     color: var(--green);
+    border-bottom: 1px solid var(--green);
   }
 
   li a:before {
@@ -75,14 +57,12 @@ const NavList = styled.ol`
   }
 
   @media (max-width: 992px) {
-    font-size: 12px;
     gap: 20px;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    font-size: var(--fz-xl);
     gap: 60px;
     padding: 0;
 
@@ -97,7 +77,6 @@ const NavList = styled.ol`
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-md);
     gap: 28px;
   }
 `;
@@ -137,7 +116,7 @@ const Hamburger = styled.label`
       translate: 0 calc(var(--bar-height) / 2);
     }
 
-    &:has(input:checked) + .navWrapper {
+    &:has(input:checked) + div {
       right: 0%;
     }
   }
@@ -153,6 +132,34 @@ const HamburgerCheckbox = styled.input`
   &:checked {
     opacity: 0;
     width: 0;
+  }
+`;
+
+const NavWrapper = styled(FlexRow)`
+  font-size: var(--fz-xs);
+  font-family: var(--font-mono);
+  @media (max-width: 992px) {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--fz-xl);
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-navy);
+    transition: all var(--animation-timing);
+    gap: 40px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: var(--fz-md);
+    gap: 24px;
   }
 `;
 
@@ -230,7 +237,7 @@ const Navbar = () => {
       <Hamburger aria-label="Toggle navigation menu">
         <HamburgerCheckbox type="checkbox" ref={inputRef}></HamburgerCheckbox>
       </Hamburger>
-      <FlexRow $gap="40px" className="navWrapper">
+      <NavWrapper $gap="40px">
         <NavList>
           {navbarData.map(({ name, path }) => {
             return (
@@ -248,8 +255,11 @@ const Navbar = () => {
             );
           })}
         </NavList>
-        <NavButton onClick={handleOpenResume}>Resume</NavButton>
-      </FlexRow>
+        <NavButton onClick={handleOpenResume}>
+          resume
+          <ImArrowUpRight2 />
+        </NavButton>
+      </NavWrapper>
     </Header>
   );
 };
