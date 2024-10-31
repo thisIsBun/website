@@ -1,10 +1,10 @@
 # thisIsBun personal website
 
 ## Overview
-This website is designed to showcase my personal brand, including my skills, portfolio, and contact information. By visiting this site, users can get a comprehensive view of my expertise and experience as a frontend developer, presented through a clean and user-friendly interface.
+This website is designed for a comprehensive view of my expertise and experience as a developer, presented through a clean and user-friendly interface.
 
-## Preview
-[Website Link](https://thisisbun.github.io/website/)
+## Link
+https://thisisbun.github.io/website/
 
 ## Features
 - Responsive design optimized for various devices
