@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import TitleH2 from '../components/fonts/TitleH2.style';
 import experienceData from '../data/experiences.data';

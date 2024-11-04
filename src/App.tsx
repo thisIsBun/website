@@ -1,4 +1,3 @@
-import React from "react";
 import MainContainer from "./components/containers/MainContainer.style";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";

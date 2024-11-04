@@ -1,4 +1,3 @@
-import React from 'react';
 import { FooterP } from '../components/fonts/P.style';
 import SocialMedia from '../components/others/SocialMedia.style';
 import styled from 'styled-components';

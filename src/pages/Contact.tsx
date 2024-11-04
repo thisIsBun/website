@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FormEventHandler, useState } from 'react';
+import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import FlexColumn from '../components/containers/FlexColumn.style';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import TitleH2 from '../components/fonts/TitleH2.style';

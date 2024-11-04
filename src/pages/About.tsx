@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import ColumnContainer from '../components/containers/FlexColumn.style';
 import { AboutP } from '../components/fonts/P.style';

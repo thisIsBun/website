@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useRouteError } from 'react-router-dom';
 import MainContainer from '../components/containers/MainContainer.style';
 import { AboutP } from '../components/fonts/P.style';
