@@ -11,7 +11,7 @@ const TitleH2 = styled.h2<TitleH2Props>`
   font-weight: 600;
   color: var(--lightest-slate);
   width: 100%;
-  margin-top: var(--nav-height);
+  margin-top: var(--nav-height-desktop);
   margin-bottom: 40px;
 
   &::before {

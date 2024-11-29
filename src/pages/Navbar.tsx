@@ -11,7 +11,7 @@ const Header = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  height: var(--nav-height);
+  height: var(--nav-height-desktop);
   display: flex;
   justify-content: end;
   align-items: center;
@@ -26,7 +26,7 @@ const Header = styled.nav`
   }
 
   @media (max-width: 992px) {
-    height: 80px;
+    height: var(--nav-height-992px);
     padding: 10px 25px;
   }
 
@@ -35,7 +35,7 @@ const Header = styled.nav`
   }
 
   @media (max-width: 576px) {
-    height: 50px;
+    height: var(--nav-height-576px);
   }
 `;
 
@@ -171,16 +171,16 @@ type NavItemProps = {
   ariaLabel: string;
 };
 
-const NavItem = ({
-  href,
-  children,
-  handleNavToggle,
-  className,
-  ariaLabel,
-}: NavItemProps) => {
+const NavItem = ({ href, children, handleNavToggle, className, ariaLabel }: NavItemProps) => {
   return (
-    <li onClick={handleNavToggle} className={className}>
-      <Anchor to={href} ariaLabel={`${ariaLabel} section`}>
+    <li
+      onClick={handleNavToggle}
+      className={className}
+    >
+      <Anchor
+        to={href}
+        ariaLabel={`${ariaLabel} section`}
+      >
         {children}
       </Anchor>
     </li>
@@ -234,10 +234,13 @@ const Navbar = () => {
   return (
     <Header ref={headerRef}>
       <h1 style={{ color: 'transparent' }}>Bun</h1>
-      <Hamburger aria-label="Toggle navigation menu">
-        <HamburgerCheckbox type="checkbox" ref={inputRef}></HamburgerCheckbox>
+      <Hamburger aria-label='Toggle navigation menu'>
+        <HamburgerCheckbox
+          type='checkbox'
+          ref={inputRef}
+        ></HamburgerCheckbox>
       </Hamburger>
-      <NavWrapper $gap="40px">
+      <NavWrapper $gap='40px'>
         <NavList>
           {navbarData.map(({ name, path }) => {
             return (
@@ -245,9 +248,7 @@ const Navbar = () => {
                 key={name}
                 href={path}
                 handleNavToggle={handleNavToggle}
-                className={
-                  hash.includes(name.toLowerCase()) ? 'active' : undefined
-                }
+                className={hash.includes(name.toLowerCase()) ? 'active' : undefined}
                 ariaLabel={name}
               >
                 {name}

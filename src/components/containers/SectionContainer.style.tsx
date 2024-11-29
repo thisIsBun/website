@@ -10,7 +10,7 @@ type SectionContainerProps = {
 const SectionContainer = styled.section<SectionContainerProps>`
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
+  scroll-margin-top: var(--nav-height-desktop);
   margin-bottom: ${({ $marginBottom }) => $marginBottom || '80px'};
   width: 100%;
   max-width: 1000px;
@@ -27,17 +27,17 @@ const SectionContainer = styled.section<SectionContainerProps>`
     opacity: 1;
   }
 
-  @media (max-width: 1200px) {
-    margin-top: 100px;
-  }
-
   @media (max-width: 992px) {
-    margin-top: 80px;
+    scroll-margin-top: var(--nav-height-992px);
   }
 
   @media (max-width: 768px) {
     margin: 0;
     padding: 20px 4vw;
+  }
+
+  @media (max-width: 576px) {
+    scroll-margin-top: var(--nav-height-576px);
   }
 `;
 

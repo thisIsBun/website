@@ -55,7 +55,9 @@ const GlobalStyle = createGlobalStyle`
     --font-sans: 'Inter', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     --tab-height: 42px;
-    --nav-height: 100px;
+    --nav-height-desktop: 100px;
+    --nav-height-992px: 80px;
+    --nav-height-576px: 50px;
     --bar-width: 60px;
     --bar-height: 5px;
     --hamburger-gap: 10px;
