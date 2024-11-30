@@ -17,28 +17,26 @@ const experienceData: experienceDataType[] = [
     period: 'May 2023 — Present',
     description: [
       <>
-        Work alongside with product manager, backend engineers, and QA teams to transform concepts
-        into <Strong>functional digital interfaces</Strong>, following a one-month agile cycle.
+        <Strong>Collaborate</Strong> with PMs, backend engineers, and QA teams
+        to deliver functional, user-friendly digital interfaces within a
+        one-month agile cycle.
       </>,
       <>
-        Actively discuss requirements with the team, analyze user operate logic, and{' '}
-        <Strong>resolve potential issues</Strong>, thereby improving development efficiency and
-        product quality.
+        <Strong>Engage</Strong> in requirement discussions, analyze user
+        workflows, and proactively address potential challenges to boost
+        development efficiency and product quality.
       </>,
       <>
-        Write system design documents, recording requirement background, scope of changes, to ensure{' '}
-        <Strong>clear design thinking</Strong> and facilitate future reference.
+        <Strong>Document</Strong> system designs with detailed requirement
+        backgrounds and change scopes, ensuring clarity and providing reliable
+        references for future development.
       </>,
       <>
-        Follow team-defined development rules, utilize code review mechanisms, discuss code
-        architecture with the team, and produce <Strong>optimized and maintainable code</Strong>.
-      </>,
-      <>
-        Regularly check where the codebase can be improved, perform optimization and refactoring
-        after development to enhance <Strong>product’s quality and stability</Strong>.
+        <Strong>Refactor</Strong> and optimize key areas of the codebase to
+        enhance product quality, maintainability, and stability.
       </>,
     ],
-    tools: ['JavaScript', 'React', 'Storybook', 'Vite'],
+    tools: ['JavaScript', 'React', 'Storybook', 'Vite', 'Docker'],
   },
   {
     company: 'QNAP',
@@ -46,9 +44,10 @@ const experienceData: experienceDataType[] = [
     period: 'Jun 2021 — May 2023',
     description: [
       'Responsible for QVR-Human(crowd flow analysis), and QVR-Face(face recognition) software development.',
-      'Collaborate with UI/UX, discussing feasibility with frontend and backend engineers, assisting QA in defining tests.',
-      'Defining MVP, writing PRD, and providing marketing materials.',
+      'Collaborated with UI/UX designers to evaluate feasibility with frontend and backend engineers, assisting QA in defining tests.',
+      'Defined MVP, wrote PRD, and provided marketing materials.',
     ],
+    tools: ['Product Design', 'Cross-functional Collaborations'],
   },
   {
     company: 'Asus',
@@ -56,15 +55,16 @@ const experienceData: experienceDataType[] = [
     period: 'Apr 2020 — Jun 2021',
     description: [
       'Lead the task force team to improve software stability.',
-      'Collect issues with users from different countries, assist QA in duplicating issues, and assist engineers pinpoint bug.',
+      'Gathered user issues from various countries, supported QA in reproducing issues.',
     ],
+    tools: ['Software Troubleshooting', 'Cross-functional Collaborations'],
   },
   {
     company: 'Asus',
     title: 'Hardware Product Manager',
     period: 'May 2015 — Apr 2020',
     description: [
-      'Responsible for the ROG gaming keyboard and mouse develop.',
+      'Responsible for the ROG gaming keyboard and mouse development.',
       <>
         Won the German{' '}
         <Anchor
@@ -78,6 +78,7 @@ const experienceData: experienceDataType[] = [
         in 2018.
       </>,
     ],
+    tools: ['Product Development', 'Cross-functional Collaborations'],
   },
 ];
 
