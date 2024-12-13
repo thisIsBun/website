@@ -19,7 +19,7 @@ const socialMediaData: socialMediaDataType[] = [
     ariaLabel: "Bun's GitHub link",
   },
   {
-    path: 'https://www.linkedin.com/in/bun-chen-2a4411138/',
+    path: 'https://www.linkedin.com/in/thisisbun/',
     element: <FaLinkedin />,
     ariaLabel: "Bun's Linkedin link",
   },
