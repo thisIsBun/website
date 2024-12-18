@@ -1,11 +1,9 @@
 import React, { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { NavButton } from '../components/others/Button.style';
 import navbarData from '../data/navbar.data';
 import styled from 'styled-components';
 import Anchor from '../components/others/Anchor.style';
 import FlexRow from '../components/containers/FlexRow.style';
-import { ImArrowUpRight2 } from 'react-icons/im';
 
 const Header = styled.nav`
   position: fixed;
@@ -187,10 +185,6 @@ const NavItem = ({ href, children, handleNavToggle, className, ariaLabel }: NavI
   );
 };
 
-const handleOpenResume = () => {
-  window.open('/website/resume.pdf', '_blank', 'noopener noreferrer');
-};
-
 const Navbar = () => {
   const [prevScrollY, setPrevScrollY] = useState<number>(window.scrollY);
   const headerRef = useRef<HTMLElement>(null);
@@ -256,10 +250,6 @@ const Navbar = () => {
             );
           })}
         </NavList>
-        <NavButton onClick={handleOpenResume}>
-          resume
-          <ImArrowUpRight2 />
-        </NavButton>
       </NavWrapper>
     </Header>
   );

@@ -6,6 +6,9 @@ import FlexRow from '../components/containers/FlexRow.style';
 import BulletPoint from '../components/others/BulletPoint.style';
 import styled from 'styled-components';
 import useIntersectionObserver from '../utils/useIntersectionObserver';
+import Anchor from '../components/others/Anchor.style';
+import Heading4 from '../components/fonts/Heading4.style';
+import { ImArrowUpRight2 } from 'react-icons/im';
 
 const CardPeriod = styled.div`
   font-size: var(--fz-sm);
@@ -167,6 +170,18 @@ const Experiences = () => {
           );
         })}
       </FlexColumn>
+      <FlexRow $margin='1rem 0 0 30px'>
+        <Anchor
+          to='/website/resume.pdf'
+          target
+          ariaLabel='open Resume page'
+        >
+          <FlexRow>
+            <Heading4>View English Resume</Heading4>
+            <ImArrowUpRight2 className='arrowIcon' />
+          </FlexRow>
+        </Anchor>
+      </FlexRow>
     </SectionContainer>
   );
 };
