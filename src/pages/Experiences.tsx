@@ -10,6 +10,16 @@ import Anchor from '../components/others/Anchor.style';
 import Heading4 from '../components/fonts/Heading4.style';
 import { ImArrowUpRight2 } from 'react-icons/im';
 
+const ExperienceSection = styled(SectionContainer)`
+  --card-padding: 30px;
+  @media (max-width: 768px) {
+    --card-padding: 20px;
+  }
+  @media (max-width: 576px) {
+    --card-padding: 10px;
+  }
+`;
+
 const CardPeriod = styled.div`
   font-size: var(--fz-sm);
   font-family: var(--font-mono);
@@ -71,7 +81,7 @@ const Heading3 = styled.h3`
 const CardWrapper = styled.div`
   display: flex;
   gap: 20px;
-  padding: 30px;
+  padding: var(--card-padding);
   border-radius: 8px;
 
   &:hover {
@@ -93,13 +103,8 @@ const CardWrapper = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
-
   @media (max-width: 576px) {
     gap: 4px;
-    padding: 10px;
     .experienceItem {
       font-size: 16px;
       margin-bottom: 1px;
@@ -122,7 +127,7 @@ const CardWrapper = styled.div`
 const Experiences = () => {
   const [isIntersecting, elementRef] = useIntersectionObserver();
   return (
-    <SectionContainer
+    <ExperienceSection
       id='experiences'
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
@@ -170,7 +175,7 @@ const Experiences = () => {
           );
         })}
       </FlexColumn>
-      <FlexRow $margin='1rem 0 0 30px'>
+      <FlexRow $margin='1rem 0 0 var(--card-padding)'>
         <Anchor
           to='/website/resume.pdf'
           target
@@ -182,7 +187,7 @@ const Experiences = () => {
           </FlexRow>
         </Anchor>
       </FlexRow>
-    </SectionContainer>
+    </ExperienceSection>
   );
 };
 
