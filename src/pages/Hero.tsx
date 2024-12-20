@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SectionContainer from '../components/containers/SectionContainer.style';
-import Heading3 from '../components/fonts/Heading2.style';
+import Heading2 from '../components/fonts/Heading2.style';
 import { HeroP } from '../components/fonts/P.style';
 import SocialMedia from '../components/others/SocialMedia.style';
 import styled from 'styled-components';
@@ -11,24 +11,24 @@ import FlexRow from '../components/containers/FlexRow.style';
 
 const HeroH1 = styled.h1`
   margin: 0;
-  color: var(--lightest-slate);
-  font-size: 80px;
+  color: var(--primary-font);
+  font-size: 78px;
   line-height: 0.8;
 
   @media (max-width: 1200px) {
-    font-size: 74px;
+    font-size: 72px;
   }
 
   @media (max-width: 992px) {
-    font-size: 64px;
+    font-size: 62px;
   }
 
   @media (max-width: 768px) {
-    font-size: 56px;
+    font-size: 54px;
   }
 
   @media (max-width: 576px) {
-    font-size: 48px;
+    font-size: 46px;
   }
 `;
 
@@ -63,13 +63,13 @@ const IconButton = styled.button`
   align-items: center;
   width: 48px;
   height: 48px;
-  background-color: transparent;
+  background-color: var(--header-background);
   cursor: pointer;
   border: none;
   border-radius: 50%;
 
   svg {
-    color: var(--lightest-slate);
+    color: var(--accent-color);
     font-size: 24px;
     transition: transform 0.2s ease-in-out;
   }
@@ -79,11 +79,11 @@ const IconButton = styled.button`
   }
 
   &:hover {
-    background-color: var(--slate);
+    border: 1px solid var(--accent-color);
   }
 
   &:hover svg {
-    color: var(--green);
+    color: var(--accent-color);
     transform: scale(1.05);
   }
 `;
@@ -151,7 +151,7 @@ const Hero = () => {
             {isUttering ? <GoSquareFill className='uttering' /> : <HiOutlineSpeakerWave />}
           </IconButton>
         </FlexRow>
-        <Heading3>Front-End Developer</Heading3>
+        <Heading2>Front-End Developer</Heading2>
         <HeroP>I enjoy crafting things on the web.</HeroP>
         <SocialMedia />
       </HeroWrapper>

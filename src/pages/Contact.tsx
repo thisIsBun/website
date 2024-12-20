@@ -2,7 +2,7 @@ import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import FlexColumn from '../components/containers/FlexColumn.style';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import TitleH2 from '../components/fonts/TitleH2.style';
-import { AboutP } from '../components/fonts/P.style';
+import { Paragraph } from '../components/fonts/P.style';
 import emailIcon from '../assets/email_icon.svg';
 import phoneIcon from '../assets/phone_icon.svg';
 import locationIcon from '../assets/location_icon.svg';
@@ -56,7 +56,7 @@ const IconWrapper = styled.div`
 `;
 
 const Img = styled.img`
-  width: 24px;
+  width: var(--fz-md);
   margin-right: 8px;
 
   @media (max-width: 992px) {
@@ -70,6 +70,7 @@ const Img = styled.img`
 `;
 
 const ContactForm = styled.form`
+  background-color: var(--primary-background);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -77,23 +78,29 @@ const ContactForm = styled.form`
 `;
 
 const Label = styled.label`
-  font-size: var(--fz-xl);
-
-  @media (max-width: 576px) {
-    font-size: var(--fz-lg);
-  }
+  font-size: var(--fz-lg);
 `;
 
 const Input = styled.input`
-  background-color: var(--lightest-navy);
-  font-size: var(--fz-lg);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  height: 54px;
-  color: var(--lightest-slate);
+  background-color: transparent;
+  font-size: var(--fz-sm);
+  padding: 12px 15px;
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  line-height: 1.6;
+  color: var(--primary-font);
   font-family: var(--font-mono);
   margin-bottom: 10px;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:active,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 1000px var(--primary-background) inset;
+    box-shadow: inset 0 0 0 1000px var(--primary-background);
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--primary-font);
+  }
 
   &:focus {
     outline: none;
@@ -101,12 +108,11 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  background-color: var(--lightest-navy);
-  font-size: var(--fz-lg);
-  padding: 15px 20px;
-  border: none;
-  border-radius: 6px;
-  color: var(--lightest-slate);
+  background-color: transparent;
+  font-size: var(--fz-sm);
+  padding: 12px 15px;
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  color: var(--primary-font);
 
   &:focus {
     outline: none;
@@ -181,13 +187,13 @@ const Contact = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2 $number={4}>Get In Touch</TitleH2>
+      <TitleH2>Get In Touch</TitleH2>
       <ContactWrapper>
         <ContactDetail>
-          <AboutP>
+          <Paragraph>
             It’s always nice to meet new friends 👋 <br />
             So feel free to send me a message anytime, I will get back to you.
-          </AboutP>
+          </Paragraph>
           <FlexColumn
             $gap='16px'
             className='iconContainer'
@@ -197,21 +203,21 @@ const Contact = () => {
                 src={emailIcon}
                 alt='emailIcon'
               />
-              <AboutP>{contactData.email}</AboutP>
+              <Paragraph>{contactData.email}</Paragraph>
             </IconWrapper>
             <IconWrapper>
               <Img
                 src={phoneIcon}
                 alt='phoneIcon'
               />
-              <AboutP>{contactData.phone}</AboutP>
+              <Paragraph>{contactData.phone}</Paragraph>
             </IconWrapper>
             <IconWrapper>
               <Img
                 src={locationIcon}
                 alt='locationIcon'
               />
-              <AboutP>{contactData.location}</AboutP>
+              <Paragraph>{contactData.location}</Paragraph>
             </IconWrapper>
           </FlexColumn>
         </ContactDetail>

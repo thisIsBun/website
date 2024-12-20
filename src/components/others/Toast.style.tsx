@@ -10,8 +10,8 @@ const ToastContainer = styled.div`
 `;
 
 const ToastItem = styled.div`
-  background-color: var(--lightest-navy);
-  color: var(--lightest-slate);
+  background-color: var(--accent-color);
+  color: var(--primary-font);
   border-radius: 5px;
   padding: 5px 20px;
   position: relative;

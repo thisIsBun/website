@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { CSSProperties } from 'react';
 
 const P = styled.p`
   font-weight: 300;
@@ -7,7 +8,7 @@ const P = styled.p`
 
 const HeroP = styled(P)`
   max-width: 50vw;
-  color: var(--slate);
+  color: var(--secondary-font);
   font-size: var(--fz-lg);
   margin: 0;
   line-height: 1;
@@ -31,8 +32,13 @@ const HeroP = styled(P)`
   }
 `;
 
-const AboutP = styled(P)`
+type ParagraphType = {
+  $color?: CSSProperties['color'];
+};
+
+const Paragraph = styled(P)<ParagraphType>`
   margin: 0;
+  color: ${({ $color }) => $color};
 
   @media (max-width: 1200px) {
     font-size: var(--fz-lg);
@@ -50,11 +56,11 @@ const AboutP = styled(P)`
 const FooterP = styled(P)`
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
-  color: var(--lightest-slate);
+  color: var(--info-font);
 
   @media (max-width: 576px) {
     font-size: 11px;
   }
 `;
 
-export { HeroP, AboutP, FooterP };
+export { HeroP, Paragraph, FooterP };

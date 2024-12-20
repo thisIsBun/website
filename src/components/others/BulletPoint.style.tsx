@@ -6,6 +6,7 @@ type BulletPointProps = {
   $fontSize?: CSSProperties['fontSize'];
   $beforeFontSize?: CSSProperties['fontSize'];
   $beforeLineHeight?: CSSProperties['lineHeight'];
+  $color?: CSSProperties['color'];
 };
 
 const BulletPoint = styled.span<BulletPointProps>`
@@ -13,12 +14,13 @@ const BulletPoint = styled.span<BulletPointProps>`
   padding-left: 20px;
   font-family: ${({ $fontFamily }) => $fontFamily || 'inherit'};
   font-size: ${({ $fontSize }) => $fontSize};
+  color: ${({ $color }) => $color || 'var(--secondary-font)'};
 
   &::before {
     content: '▹';
     position: absolute;
     left: 0px;
-    color: var(--green);
+    color: var(--accent-color);
     font-size: ${({ $beforeFontSize }) => $beforeFontSize};
     line-height: ${({ $beforeLineHeight }) => $beforeLineHeight};
   }

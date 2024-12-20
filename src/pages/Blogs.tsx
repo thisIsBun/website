@@ -3,7 +3,7 @@ import TitleH2 from '../components/fonts/TitleH2.style';
 import blogsData from '../data/blogs.data';
 import FlexColumn from '../components/containers/FlexColumn.style';
 import Heading4 from '../components/fonts/Heading4.style';
-import { AboutP } from '../components/fonts/P.style';
+import { Paragraph } from '../components/fonts/P.style';
 import { ImArrowUpRight2 } from 'react-icons/im';
 import Anchor from '../components/others/Anchor.style';
 import FlexRow from '../components/containers/FlexRow.style';
@@ -16,10 +16,6 @@ const CardWrapper = styled.div`
   padding: 30px;
   border-radius: 8px;
   flex-direction: column;
-
-  &:hover {
-    background-color: var(--light-navy);
-  }
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -49,7 +45,7 @@ const Blogs = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2 $number={3}>Things I’ve Written</TitleH2>
+      <TitleH2>Things I’ve Written</TitleH2>
       <FlexColumn $gap='20px'>
         {blogsData.map(({ postId, post }) => {
           const {
@@ -61,16 +57,20 @@ const Blogs = () => {
           } = post;
           return (
             <CardWrapper key={postId}>
-              <Anchor to={mediumUrl} target ariaLabel={title}>
+              <Anchor
+                to={mediumUrl}
+                target
+                ariaLabel={title}
+              >
                 <FlexRow>
                   <Heading4>{title}</Heading4>
                   <ImArrowUpRight2 className='arrowIcon' />
                 </FlexRow>
               </Anchor>
-              <AboutP>{subtitle}</AboutP>
-              <AboutP>
+              <Paragraph $color='var(--secondary-font)'>{subtitle}</Paragraph>
+              <Paragraph $color='var(--secondary-font)'>
                 Published on {convertDate(firstPublishedAt)} · {Math.round(readingTime)} min read
-              </AboutP>
+              </Paragraph>
             </CardWrapper>
           );
         })}

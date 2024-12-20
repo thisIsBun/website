@@ -35,17 +35,13 @@ const GlobalStyle = createGlobalStyle`
   }
   
   :root {
-    --lightest-navy: #233554;
-    --light-navy: #112240;
-    --navy: #0a192f;
-    --light-teal: #64d3ff;
-    --green: #64ffda;
-    --white: #ffffff;
-    --lightest-slate: #ccd6f6;
-    --slate: #8892b0;
-    --badge-color: #50c0cc;
-    --badge-bg: #152d47;
-    --fz-heading: 32px;
+    --primary-background: #003e52;
+    --secondary-background: #152d47;
+    --header-background: #002f3f;
+    --primary-font: #fff;
+    --secondary-font: #a7a8a9;
+    --info-font: #809ea8;
+    --accent-color: #bc955c;
     --fz-xxl: 28px;
     --fz-xl: 20px;
     --fz-lg: 18px;
@@ -74,10 +70,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: var(--navy);
-    color: var(--slate);
+    background-color: var(--primary-background);
+    color: var(--primary-font);
     font-family: var(--font-sans);
-    font-size: var(--fz-xl);
+    font-size: var(--fz-md);
     line-height: 1.3;
   }
 `;

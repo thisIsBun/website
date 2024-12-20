@@ -1,39 +1,23 @@
 import styled from 'styled-components';
 
-type TitleH2Props = {
-  $number?: number;
-};
-
-const TitleH2 = styled.h2<TitleH2Props>`
+const TitleH2 = styled.h2`
   display: flex;
   align-items: flex-end;
   font-size: 32px;
   font-weight: 600;
-  color: var(--lightest-slate);
+  color: var(--accent-color);
   width: 100%;
   margin-top: var(--nav-height-desktop);
   margin-bottom: 40px;
-
-  &::before {
-    position: relative;
-    bottom: 4px;
-    counter-increment: title ${({ $number }) => $number};
-    content: '0' counter(title) '.';
-    margin-right: 10px;
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-    font-weight: 400;
-  }
 
   &::after {
     content: '';
     display: block;
     position: relative;
     width: 300px;
-    height: 1px;
+    height: .8px;
     margin: 20px;
-    background-color: var(--lightest-navy);
+    background-color: var(--accent-color);
   }
 
   @media (max-width: 1200px) {

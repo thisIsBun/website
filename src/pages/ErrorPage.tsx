@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useRouteError } from 'react-router-dom';
 import MainContainer from '../components/containers/MainContainer.style';
-import { AboutP } from '../components/fonts/P.style';
+import { Paragraph } from '../components/fonts/P.style';
 import Heading2 from '../components/fonts/Heading2.style';
 
 const ErrorPage = () => {
@@ -25,8 +25,8 @@ const ErrorPage = () => {
       gap='0'
     >
       <Heading2 $marginBottom='20px'>Oops..</Heading2>
-      <AboutP>Sorry, an unexpected error has occurred.</AboutP>
-      <AboutP>{errorMessage}</AboutP>
+      <Paragraph>Sorry, an unexpected error has occurred.</Paragraph>
+      <Paragraph>{errorMessage}</Paragraph>
     </MainContainer>
   );
 };

@@ -1,31 +1,27 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  border: none;
-  border-radius: 50px;
-  color: var(--white);
-  background: linear-gradient(
-    120deg,
-    var(--light-teal) -37.17%,
-    var(--lightest-navy) 128.21%
-  );
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
+    color: var(--primary-font);
+    background-color: var(--accent-color);
   }
 
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 `;
 
 const ContactButton = styled(Button)`
-  font-size: var(--fz-xl);
-  padding: 18px 0;
+  font-size: var(--fz-md);
+  height: 1.5;
+  padding: 7px 25px;
   margin-bottom: 50px;
   width: 35%;
   align-self: flex-end;
