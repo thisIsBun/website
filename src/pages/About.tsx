@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import ColumnContainer from '../components/containers/FlexColumn.style';
-import { AboutP } from '../components/fonts/P.style';
+import { Paragraph } from '../components/fonts/P.style';
 import GridColumn from '../components/containers/GridColumn.style';
 import aboutData from '../data/about.data';
 import TitleH2 from '../components/fonts/TitleH2.style';
@@ -57,32 +57,32 @@ const About = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2 $number={1}>About Me</TitleH2>
+      <TitleH2>About Me</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap='0.5em'>
-          <AboutP>Hello, I’m Bun 🙂</AboutP>
-          <AboutP>
+          <Paragraph>Hello, I’m Bun 🙂</Paragraph>
+          <Paragraph>
             I’m a self-taught Front-End Developer with a passion for creating intuitive and
             user-friendly web experiences.
-          </AboutP>
-          <AboutP>
+          </Paragraph>
+          <Paragraph>
             My coding journey began during my time as a software PM. I had a passion for figuring
             out the logic behind apps and especially interested in how apps interact with users.
             This led me to pursue a career in front-end development.
-          </AboutP>
-          <AboutP>
+          </Paragraph>
+          <Paragraph>
             Currently, I’m focused on developing systems at{' '}
             <Anchor
               to='https://www.castlestech.com/payment-solutions/cashub/'
               target
               underline
-              ariaLabel="CasHUB website"
+              ariaLabel='CasHUB website'
             >
               Castles
             </Anchor>
             , ensuring user-friendly experiences with clean, maintainable code.
-          </AboutP>
-          <AboutP>
+          </Paragraph>
+          <Paragraph>
             In my spare time, I enjoy writing articles in{' '}
             <Anchor
               to='https://medium.com/@bun.coding'
@@ -93,8 +93,8 @@ const About = () => {
               Medium
             </Anchor>{' '}
             to refine and share the skills I’ve picked up.{' '}
-          </AboutP>
-          <AboutP>Here are a few tools I’ve been working with recently:</AboutP>
+          </Paragraph>
+          <Paragraph>Here are a few tools I’ve been working with recently:</Paragraph>
           <GridColumn
             $template='1fr 1fr'
             $gap='10px'
@@ -106,7 +106,8 @@ const About = () => {
                   $fontFamily='var(--font-mono)'
                   $fontSize='var(--fz-sm)'
                   $beforeFontSize='var(--fz-xs)'
-                  $beforeLineHeight='13px'
+                  $beforeLineHeight='1.2'
+                  $color='var(--primary-font)'
                 >
                   {tool}
                 </BulletPoint>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Loader = styled.span`
   display: block;
-  border: 2px solid var(--lightest-slate);
+  border: 2px solid var(--accent-color);
   border-top: 2px solid transparent;
   border-radius: 50%;
   width: 16px;

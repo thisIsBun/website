@@ -9,7 +9,7 @@ type StyleLinkType = {
 const StyleLink = styled(Link)<StyleLinkType>`
   position: relative;
   text-decoration: none;
-  color: var(--lightest-slate);
+  color: var(--primary-font);
 
   ${({ $underline }) =>
     !$underline &&
@@ -29,7 +29,7 @@ const StyleLink = styled(Link)<StyleLinkType>`
         position: absolute;
         left: 0;
         bottom: 0;
-        background-color: var(--green);
+        background-color: var(--accent-color);
         opacity: 0.5;
         transition: all 0.16s ease-in;
       }
@@ -40,7 +40,7 @@ const StyleLink = styled(Link)<StyleLinkType>`
     `}
 
   &:hover {
-    color: var(--green);
+    color: var(--accent-color);
   }
 `;
 
@@ -52,13 +52,7 @@ type AnchorProps = {
   ariaLabel: string;
 };
 
-const Anchor = ({
-  to,
-  underline,
-  target,
-  children,
-  ariaLabel,
-}: AnchorProps): React.ReactNode => {
+const Anchor = ({ to, underline, target, children, ariaLabel }: AnchorProps): React.ReactNode => {
   return (
     <StyleLink
       to={to}

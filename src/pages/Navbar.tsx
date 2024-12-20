@@ -15,7 +15,7 @@ const Header = styled.nav`
   align-items: center;
   padding: 35px 50px;
   gap: 40px;
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--header-background);
   z-index: 28;
   transition: top var(--animation-timing);
 
@@ -41,17 +41,15 @@ const NavList = styled.ol`
   display: flex;
   gap: 40px;
   list-style-type: none;
-  counter-reset: li;
 
-  li.active a {
-    color: var(--green);
-    border-bottom: 1px solid var(--green);
+  li a {
+    padding: 10px 23px;
+    border: 1px solid transparent;
   }
 
-  li a:before {
-    counter-increment: li;
-    content: counter(li, decimal-leading-zero) '. ';
-    color: var(--green);
+  li.active a {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
   }
 
   @media (max-width: 992px) {
@@ -96,7 +94,7 @@ const Hamburger = styled.label`
       content: '';
       width: var(--bar-width);
       height: var(--bar-height);
-      background-color: var(--green);
+      background-color: var(--accent-color);
       border-radius: 9999px;
       transform-origin: right center;
       transition: all var(--animation-timing);
@@ -134,7 +132,7 @@ const HamburgerCheckbox = styled.input`
 `;
 
 const NavWrapper = styled(FlexRow)`
-  font-size: var(--fz-xs);
+  font-size: var(--fz-md);
   font-family: var(--font-mono);
   @media (max-width: 992px) {
     font-size: 12px;
@@ -150,7 +148,7 @@ const NavWrapper = styled(FlexRow)`
     right: -100%;
     width: 100%;
     height: 100vh;
-    background-color: var(--light-navy);
+    background-color: var(--header-background);
     transition: all var(--animation-timing);
     gap: 40px;
   }

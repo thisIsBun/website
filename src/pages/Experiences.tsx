@@ -25,7 +25,8 @@ const CardPeriod = styled.div`
   font-family: var(--font-mono);
   flex-basis: 18%;
   flex-shrink: 0;
-  padding-top: 9px;
+  padding-top: 4px;
+  color: var(--accent-color);
 
   @media (max-width: 1200px) {
     padding-top: 8px;
@@ -52,8 +53,8 @@ const Badge = styled.span`
   font-family: var(--font-mono);
   padding: 8px 16px;
   border-radius: 50px;
-  background-color: var(--badge-bg);
-  color: var(--badge-color);
+  background-color: var(--header-background);
+  color: var(--accent-color);
 
   @media (max-width: 576px) {
     font-size: var(--fz-xs);
@@ -63,10 +64,10 @@ const Badge = styled.span`
 
 const Heading3 = styled.h3`
   margin: 0 0 10px 0;
-  font-size: var(--fz-xxl);
+  font-size: var(--fz-xl);
   font-weight: 500;
   line-height: 1.3;
-  color: var(--lightest-slate);
+  color: var(--primary-font);
 
   @media (max-width: 1200px) {
     font-size: 26px;
@@ -83,10 +84,6 @@ const CardWrapper = styled.div`
   gap: 20px;
   padding: var(--card-padding);
   border-radius: 8px;
-
-  &:hover {
-    background-color: var(--light-navy);
-  }
 
   @media (max-width: 1200px) {
     .experienceItem {
@@ -132,7 +129,7 @@ const Experiences = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2 $number={2}>Where I’ve Worked</TitleH2>
+      <TitleH2>Where I’ve Worked</TitleH2>
       <FlexColumn
         $gap='20px'
         className='cardContainer'
@@ -150,9 +147,8 @@ const Experiences = () => {
                     return (
                       <BulletPoint
                         key={index}
-                        $fontSize='var(--fz-lg)'
                         $beforeFontSize='var(--fz-lg)'
-                        $beforeLineHeight='var(--fz-xl)'
+                        $beforeLineHeight='var(--fz-lg)'
                         className='experienceItem'
                       >
                         {item}
