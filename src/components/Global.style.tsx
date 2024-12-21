@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
   
   :root {
     --primary-background: #003e52;
-    --secondary-background: #152d47;
     --header-background: #002f3f;
     --primary-font: #fff;
     --secondary-font: #a7a8a9;

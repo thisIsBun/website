@@ -9,6 +9,7 @@ import useIntersectionObserver from '../utils/useIntersectionObserver';
 import Anchor from '../components/others/Anchor.style';
 import Heading4 from '../components/fonts/Heading4.style';
 import { ImArrowUpRight2 } from 'react-icons/im';
+import { useState } from 'react';
 
 const ExperienceSection = styled(SectionContainer)`
   --card-padding: 30px;
@@ -20,45 +21,85 @@ const ExperienceSection = styled(SectionContainer)`
   }
 `;
 
-const CardPeriod = styled.div`
-  font-size: var(--fz-sm);
-  font-family: var(--font-mono);
-  flex-basis: 18%;
-  flex-shrink: 0;
-  padding-top: 4px;
-  color: var(--accent-color);
-
-  @media (max-width: 1200px) {
-    padding-top: 8px;
-  }
-
-  @media (max-width: 992px) {
-    padding: 0;
-  }
+const CardContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  padding: var(--card-padding);
+  border-radius: 8px;
 
   @media (max-width: 768px) {
-    font-size: var(--fz-md);
+    flex-direction: column;
+    gap: 10px;
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-sm);
-    padding-left: 1px;
+    gap: 20px;
+    .experienceItem {
+      &::before {
+        font-size: var(--fz-xs);
+        font-family: var(--font-mono);
+        line-height: 16px;
+      }
+    }
+    .badgeWrapper {
+      margin: 0;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
   }
 `;
 
-const CardContent = styled.div``;
-
-const Badge = styled.span`
+const PeriodWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   font-size: var(--fz-sm);
   font-family: var(--font-mono);
-  padding: 8px 16px;
-  border-radius: 50px;
-  background-color: var(--header-background);
+  flex-basis: 20%;
+  flex-shrink: 0;
   color: var(--accent-color);
+  height: 200px;
 
-  @media (max-width: 576px) {
+  @media (max-width: 992px) {
+    flex-basis: 18%;
     font-size: var(--fz-xs);
-    padding: 6px 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% + 100px);
+    flex-direction: row;
+    overflow-x: auto;
+  }
+`;
+
+const Period = styled.div`
+  padding-left: 1rem;
+  width: 100%;
+  height: 100%;
+  border-left: 3px solid var(--header-background);
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    border-left: none;
+    height: 48px;
+    min-width: 140px;
+    border-bottom: 3px solid var(--header-background);
+    justify-content: center;
+  }
+
+  &.active {
+    background-color: var(--header-background);
+    border-color: var(--accent-color);
+  }
+`;
+
+const CardContent = styled.div`
+  min-height: 320px;
+  @media (max-width: 768px) {
+    height: auto;
   }
 `;
 
@@ -79,37 +120,27 @@ const Heading3 = styled.h3`
   }
 `;
 
-const CardWrapper = styled.div`
-  display: flex;
-  gap: 20px;
-  padding: var(--card-padding);
-  border-radius: 8px;
-
-  @media (max-width: 992px) {
-    flex-direction: column;
-    gap: 10px;
-  }
+const Badge = styled.span`
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: var(--header-background);
+  color: var(--accent-color);
 
   @media (max-width: 576px) {
-    gap: 4px;
-    .experienceItem {
-      &::before {
-        font-size: var(--fz-xs);
-        font-family: var(--font-mono);
-        line-height: 16px;
-      }
-    }
-    .badgeWrapper {
-      margin: 0;
-      margin-top: 6px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    font-size: var(--fz-xs);
+    padding: 6px 10px;
   }
 `;
 
 const Experiences = () => {
+  const [selectIndex, setSelectIndex] = useState(0);
   const [isIntersecting, elementRef] = useIntersectionObserver();
+
+  const periods = experienceData.map((data) => data.period);
+  const displayItem = experienceData[selectIndex];
+
   return (
     <ExperienceSection
       id='experiences'
@@ -118,40 +149,44 @@ const Experiences = () => {
     >
       <TitleH2>Where I’ve Worked</TitleH2>
       <FlexColumn $gap='20px' className='cardContainer'>
-        {experienceData.map(
-          ({ period, title, company, description, tools }, index) => {
-            return (
-              <CardWrapper key={index}>
-                <CardPeriod>{period}</CardPeriod>
-                <CardContent>
-                  <Heading3>
-                    {title} · {company}
-                  </Heading3>
-                  <FlexColumn $gap='5px'>
-                    {description.map((item, index) => {
-                      return (
-                        <BulletPoint
-                          key={index}
-                          $fontSize='var(--fz-md)'
-                          className='experienceItem'
-                        >
-                          {item}
-                        </BulletPoint>
-                      );
-                    })}
-                  </FlexColumn>
-                  {tools && tools.length > 0 && (
-                    <FlexRow $margin='10px 0 0 20px' className='badgeWrapper'>
-                      {tools.map((tool, index) => {
-                        return <Badge key={index}>{tool}</Badge>;
-                      })}
-                    </FlexRow>
-                  )}
-                </CardContent>
-              </CardWrapper>
-            );
-          }
-        )}
+        <CardContainer>
+          <PeriodWrapper>
+            {periods.map((period, index) => (
+              <Period
+                key={index}
+                onClick={() => setSelectIndex(index)}
+                className={index === selectIndex ? 'active' : undefined}
+              >
+                {period}
+              </Period>
+            ))}
+          </PeriodWrapper>
+          <CardContent>
+            <Heading3>
+              {displayItem.title} · {displayItem.company}
+            </Heading3>
+            <FlexColumn $gap='5px'>
+              {displayItem.description.map((item, index) => {
+                return (
+                  <BulletPoint
+                    key={index}
+                    $fontSize='var(--fz-md)'
+                    className='experienceItem'
+                  >
+                    {item}
+                  </BulletPoint>
+                );
+              })}
+            </FlexColumn>
+            {displayItem.tools && displayItem.tools.length > 0 && (
+              <FlexRow $margin='10px 0 0 20px' className='badgeWrapper'>
+                {displayItem.tools.map((tool, index) => {
+                  return <Badge key={index}>{tool}</Badge>;
+                })}
+              </FlexRow>
+            )}
+          </CardContent>
+        </CardContainer>
       </FlexColumn>
       <FlexRow $margin='1rem 0 0 var(--card-padding)'>
         <Anchor to='/website/resume.pdf' target ariaLabel='open Resume page'>
