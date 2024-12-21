@@ -62,13 +62,14 @@ const About = () => {
         <ColumnContainer $gap='0.5em'>
           <Paragraph>Hello, I’m Bun 🙂</Paragraph>
           <Paragraph>
-            I’m a self-taught Front-End Developer with a passion for creating intuitive and
-            user-friendly web experiences.
+            I’m a self-taught Front-End Developer with a passion for creating
+            intuitive and user-friendly web experiences.
           </Paragraph>
           <Paragraph>
-            My coding journey began during my time as a software PM. I had a passion for figuring
-            out the logic behind apps and especially interested in how apps interact with users.
-            This led me to pursue a career in front-end development.
+            My coding journey began during my time as a software PM. I had a
+            passion for figuring out the logic behind apps and especially
+            interested in how apps interact with users. This led me to pursue a
+            career in front-end development.
           </Paragraph>
           <Paragraph>
             Currently, I’m focused on developing systems at{' '}
@@ -105,8 +106,6 @@ const About = () => {
                   key={index}
                   $fontFamily='var(--font-mono)'
                   $fontSize='var(--fz-sm)'
-                  $beforeFontSize='var(--fz-xs)'
-                  $beforeLineHeight='1.2'
                   $color='var(--primary-font)'
                 >
                   {tool}

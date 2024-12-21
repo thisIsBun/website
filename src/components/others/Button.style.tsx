@@ -20,8 +20,8 @@ const Button = styled.button`
 
 const ContactButton = styled(Button)`
   font-size: var(--fz-md);
-  height: 1.5;
-  padding: 7px 25px;
+  line-height: 1.4;
+  padding: 12px 15px;
   margin-bottom: 50px;
   width: 35%;
   align-self: flex-end;
@@ -36,9 +36,14 @@ const ContactButton = styled(Button)`
     width: 60%;
   }
 
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+
   @media (max-width: 576px) {
     font-size: var(--fz-lg);
     padding: 14px 0;
+    width: 100%;
   }
 `;
 

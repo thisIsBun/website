@@ -20,7 +20,7 @@ const experienceData: experienceDataType[] = [
       'Documented development process with detailed requirements and change scopes to ensure alignment with project needs, enhancing development quality.',
       'Proactively discussed requirements with teams, ensured alignment with customer needs, and resolved issues early to streamline development.',
     ],
-    tools: ['JavaScript', 'React', 'Storybook', 'Vite', 'Docker'],
+    tools: ['React', 'Styled Components', 'Storybook', 'Vite', 'WCAG'],
   },
   {
     company: 'QNAP',

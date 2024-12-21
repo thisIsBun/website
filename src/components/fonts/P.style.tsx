@@ -9,26 +9,21 @@ const P = styled.p`
 const HeroP = styled(P)`
   max-width: 50vw;
   color: var(--secondary-font);
-  font-size: var(--fz-lg);
+  font-size: var(--fz-md);
   margin: 0;
-  line-height: 1;
+  line-height: 1.5;
 
   @media (max-width: 1200px) {
     max-width: 65vw;
   }
 
-  @media (max-width: 992px) {
-    font-size: var(--fz-md);
-  }
-
   @media (max-width: 768px) {
-    font-size: var(--fz-lg);
     max-width: 80vw;
   }
 
   @media (max-width: 576px) {
-    font-size: var(--fz-md);
     max-width: 100vw;
+    font-size: var(--fz-sm);
   }
 `;
 
@@ -45,11 +40,12 @@ const Paragraph = styled(P)<ParagraphType>`
   }
 
   @media (max-width: 992px) {
-    font-size: 16px;
+    font-size: var(--fz-md);
   }
 
   @media (max-width: 576px) {
     line-height: 1.4;
+    font-size: var(--fz-sm);
   }
 `;
 

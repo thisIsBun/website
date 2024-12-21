@@ -70,11 +70,10 @@ const Img = styled.img`
 `;
 
 const ContactForm = styled.form`
-  background-color: var(--primary-background);
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 `;
 
 const Label = styled.label`
@@ -113,6 +112,7 @@ const TextArea = styled.textarea`
   padding: 12px 15px;
   border: 1px solid hsla(0, 0%, 100%, 0.5);
   color: var(--primary-font);
+  margin-bottom: 10px;
 
   &:focus {
     outline: none;

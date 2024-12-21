@@ -85,27 +85,14 @@ const CardWrapper = styled.div`
   padding: var(--card-padding);
   border-radius: 8px;
 
-  @media (max-width: 1200px) {
-    .experienceItem {
-      font-size: 17px;
-    }
-  }
-
   @media (max-width: 992px) {
     flex-direction: column;
     gap: 10px;
-
-    .experienceItem {
-      margin-bottom: 0.8rem;
-    }
   }
 
   @media (max-width: 576px) {
     gap: 4px;
     .experienceItem {
-      font-size: 16px;
-      margin-bottom: 1px;
-
       &::before {
         font-size: var(--fz-xs);
         font-family: var(--font-mono);
@@ -130,53 +117,44 @@ const Experiences = () => {
       className={isIntersecting ? 'loaded' : undefined}
     >
       <TitleH2>Where I’ve Worked</TitleH2>
-      <FlexColumn
-        $gap='20px'
-        className='cardContainer'
-      >
-        {experienceData.map(({ period, title, company, description, tools }, index) => {
-          return (
-            <CardWrapper key={index}>
-              <CardPeriod>{period}</CardPeriod>
-              <CardContent>
-                <Heading3>
-                  {title} · {company}
-                </Heading3>
-                <FlexColumn $gap='5px'>
-                  {description.map((item, index) => {
-                    return (
-                      <BulletPoint
-                        key={index}
-                        $beforeFontSize='var(--fz-lg)'
-                        $beforeLineHeight='var(--fz-lg)'
-                        className='experienceItem'
-                      >
-                        {item}
-                      </BulletPoint>
-                    );
-                  })}
-                </FlexColumn>
-                {tools && tools.length > 0 && (
-                  <FlexRow
-                    $margin='10px 0 0 20px'
-                    className='badgeWrapper'
-                  >
-                    {tools.map((tool, index) => {
-                      return <Badge key={index}>{tool}</Badge>;
+      <FlexColumn $gap='20px' className='cardContainer'>
+        {experienceData.map(
+          ({ period, title, company, description, tools }, index) => {
+            return (
+              <CardWrapper key={index}>
+                <CardPeriod>{period}</CardPeriod>
+                <CardContent>
+                  <Heading3>
+                    {title} · {company}
+                  </Heading3>
+                  <FlexColumn $gap='5px'>
+                    {description.map((item, index) => {
+                      return (
+                        <BulletPoint
+                          key={index}
+                          $fontSize='var(--fz-md)'
+                          className='experienceItem'
+                        >
+                          {item}
+                        </BulletPoint>
+                      );
                     })}
-                  </FlexRow>
-                )}
-              </CardContent>
-            </CardWrapper>
-          );
-        })}
+                  </FlexColumn>
+                  {tools && tools.length > 0 && (
+                    <FlexRow $margin='10px 0 0 20px' className='badgeWrapper'>
+                      {tools.map((tool, index) => {
+                        return <Badge key={index}>{tool}</Badge>;
+                      })}
+                    </FlexRow>
+                  )}
+                </CardContent>
+              </CardWrapper>
+            );
+          }
+        )}
       </FlexColumn>
       <FlexRow $margin='1rem 0 0 var(--card-padding)'>
-        <Anchor
-          to='/website/resume.pdf'
-          target
-          ariaLabel='open Resume page'
-        >
+        <Anchor to='/website/resume.pdf' target ariaLabel='open Resume page'>
           <FlexRow>
             <Heading4>View English Resume</Heading4>
             <ImArrowUpRight2 className='arrowIcon' />

@@ -24,11 +24,11 @@ const HeroH1 = styled.h1`
   }
 
   @media (max-width: 768px) {
-    font-size: 54px;
+    font-size: 50px;
   }
 
   @media (max-width: 576px) {
-    font-size: 46px;
+    font-size: 42px;
   }
 `;
 
@@ -151,8 +151,12 @@ const Hero = () => {
             {isUttering ? <GoSquareFill className='uttering' /> : <HiOutlineSpeakerWave />}
           </IconButton>
         </FlexRow>
-        <Heading2>Front-End Developer</Heading2>
-        <HeroP>I enjoy crafting things on the web.</HeroP>
+        <Heading2>I build things on the web.</Heading2>
+        <HeroP>
+          I’m working at Castles in Taiwan, developing terminal management
+          systems for B2B clients. Binding creativity with functionality is what
+          I genuinely enjoy.
+        </HeroP>
         <SocialMedia />
       </HeroWrapper>
     </SectionContainer>

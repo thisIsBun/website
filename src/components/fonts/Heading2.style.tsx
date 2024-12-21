@@ -7,9 +7,9 @@ type Heading2Props = {
 const Heading2 = styled.h2<Heading2Props>`
   margin: 0;
   margin-bottom: ${({ $marginBottom }) => $marginBottom};
-  color: var(--primary-font);
+  color: var(--secondary-font);
   font-size: 68px;
-  line-height: 0.8;
+  line-height: 1;
 
   @media (max-width: 1200px) {
     font-size: 62px;
@@ -20,11 +20,11 @@ const Heading2 = styled.h2<Heading2Props>`
   }
 
   @media (max-width: 768px) {
-    font-size: 46px;
+    font-size: 42px;
   }
 
   @media (max-width: 576px) {
-    font-size: 32px;
+    font-size: 30px;
   }
 `;
 
