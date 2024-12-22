@@ -67,7 +67,6 @@ const PeriodWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: calc(100% + 100px);
     flex-direction: row;
     overflow-x: auto;
   }
@@ -80,12 +79,13 @@ const Period = styled.div`
   border-left: 3px solid var(--header-background);
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     padding: 0 10px;
     border-left: none;
     height: 48px;
-    min-width: 140px;
+    min-width: max-content;
     border-bottom: 3px solid var(--header-background);
     justify-content: center;
   }
