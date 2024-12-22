@@ -12,7 +12,7 @@ const experienceData: experienceDataType[] = [
   {
     company: 'Castles',
     title: 'Engineer',
-    period: '2023 — Present',
+    period: 'Present - 2023',
     description: [
       'Developed React.js platforms for B2B clients, and built reusable UI components using Styled Components and Storybook.',
       'Migrated the build tool from Webpack to Vite by referencing official documentation, reducing server startup time and improving development efficiency.',
@@ -25,7 +25,7 @@ const experienceData: experienceDataType[] = [
   {
     company: 'QNAP',
     title: 'Software Product Manager',
-    period: '2021 — 2023',
+    period: '2023 - 2021',
     description: [
       'Led development of crowd flow analysis and facial recognition software.',
       'Partnered with UI/UX designers and engineers to evaluate feasibility and optimize user experience.',
@@ -36,7 +36,7 @@ const experienceData: experienceDataType[] = [
   {
     company: 'ASUS',
     title: 'Software Project Manager',
-    period: '2020 — 2021',
+    period: '2021 - 2020',
     description: [
       'Led a task force to enhance software stability by collaborating with global key users to clarify and reproduce issues based on their usage scenarios.',
       'Presented at the annual global sales meeting, earning recognition from the sales team for significant improvements in software stability.',
@@ -46,7 +46,7 @@ const experienceData: experienceDataType[] = [
   {
     company: 'ASUS',
     title: 'Hardware Product Manager',
-    period: '2015 — 2020',
+    period: '2020 - 2015',
     description: [
       'Led development of ROG gaming keyboards and mice, earning the 2018 German iF Design Award.',
     ],
