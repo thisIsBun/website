@@ -68,6 +68,7 @@ const PeriodWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: row;
+    justify-content: flex-start;
     overflow-x: scroll;
     scrollbar-width: none;
   }
