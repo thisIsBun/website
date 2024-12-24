@@ -70,7 +70,6 @@ const PeriodWrapper = styled.div`
     flex-direction: row;
     overflow-x: scroll;
     scrollbar-width: none;
-    scroll-snap-align: center;
   }
 `;
 
@@ -88,7 +87,6 @@ const Period = styled.div`
     height: 48px;
     min-width: max-content;
     border-bottom: 3px solid var(--header-background);
-    justify-content: center;
   }
 
   &.active {
