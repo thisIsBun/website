@@ -4,6 +4,9 @@ import navbarData from '../data/navbar.data';
 import styled from 'styled-components';
 import Anchor from '../components/others/Anchor.style';
 import FlexRow from '../components/containers/FlexRow.style';
+import { AiOutlineGlobal } from 'react-icons/ai';
+import { LANGUAGES } from '../utils/constant';
+import { useTranslation } from 'react-i18next';
 
 const Header = styled.nav`
   position: fixed;
@@ -163,7 +166,7 @@ type NavItemProps = {
   href: string;
   children: React.ReactNode;
   handleNavToggle: MouseEventHandler;
-  className: string | undefined;
+  className: 'active' | undefined;
   ariaLabel: string;
 };
 
@@ -183,7 +186,24 @@ const NavItem = ({ href, children, handleNavToggle, className, ariaLabel }: NavI
   );
 };
 
+const LangButton = styled.button`
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 23px;
+  font-size: inherit;
+  font-family: inherit;
+
+  &:hover {
+    border-color: var(--accent-color);
+  }
+`;
+
 const Navbar = () => {
+  const { t, i18n } = useTranslation('navbar');
   const [prevScrollY, setPrevScrollY] = useState<number>(window.scrollY);
   const headerRef = useRef<HTMLElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -223,10 +243,13 @@ const Navbar = () => {
     }
   };
 
+  const handleChangeLang = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'zh-TW' : 'en');
+  };
+
   return (
     <Header ref={headerRef}>
-      <h1 style={{ color: 'transparent' }}>Bun</h1>
-      <Hamburger aria-label='Toggle navigation menu'>
+      <Hamburger aria-label={t('ToggleNavigationMenu')}>
         <HamburgerCheckbox
           type='checkbox'
           ref={inputRef}
@@ -241,13 +264,17 @@ const Navbar = () => {
                 href={path}
                 handleNavToggle={handleNavToggle}
                 className={hash.includes(name.toLowerCase()) ? 'active' : undefined}
-                ariaLabel={name}
+                ariaLabel={t(name)}
               >
-                {name}
+                {t(name)}
               </NavItem>
             );
           })}
         </NavList>
+        <LangButton onClick={handleChangeLang}>
+          <AiOutlineGlobal />
+          {i18n.language === 'en' ? LANGUAGES[1].text : LANGUAGES[0].text}
+        </LangButton>
       </NavWrapper>
     </Header>
   );

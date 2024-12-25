@@ -47,25 +47,4 @@ const ContactButton = styled(Button)`
   }
 `;
 
-const NavButton = styled(Button)`
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  padding: 14px 24px;
-  font-size: inherit;
-  font-family: inherit;
-
-  @media (max-width: 992px) {
-    padding: 13px 22px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 22px 45px;
-  }
-
-  @media (max-width: 576px) {
-    padding: 16px 36px;
-  }
-`;
-
-export { ContactButton, NavButton };
+export { ContactButton };
