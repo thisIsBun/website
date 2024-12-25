@@ -8,6 +8,7 @@ import useIntersectionObserver from '../utils/useIntersectionObserver';
 import { HiOutlineSpeakerWave } from 'react-icons/hi2';
 import { GoSquareFill } from 'react-icons/go';
 import FlexRow from '../components/containers/FlexRow.style';
+import { useTranslation } from 'react-i18next';
 
 const HeroH1 = styled.h1`
   margin: 0;
@@ -89,6 +90,7 @@ const IconButton = styled.button`
 `;
 
 const Hero = () => {
+  const { t } = useTranslation('hero');
   const [utterVoice, setUtterVoice] = useState<SpeechSynthesisVoice | null>(null);
   const [isUttering, setIsUttering] = useState<boolean>(false);
   const [isIntersecting, elementRef] = useIntersectionObserver();
@@ -151,12 +153,8 @@ const Hero = () => {
             {isUttering ? <GoSquareFill className='uttering' /> : <HiOutlineSpeakerWave />}
           </IconButton>
         </FlexRow>
-        <Heading2>I build things on the web.</Heading2>
-        <HeroP>
-          I’m working at Castles in Taiwan, developing terminal management
-          systems for B2B clients. Binding creativity with functionality is what
-          I genuinely enjoy.
-        </HeroP>
+        <Heading2>{t('HeroSubject')}</Heading2>
+        <HeroP>{t('HeroBrief')}</HeroP>
         <SocialMedia />
       </HeroWrapper>
     </SectionContainer>

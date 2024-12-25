@@ -1,0 +1,11 @@
+{
+  "Title": "About Me",
+  "Content": {
+    "partI": "Hello, I'm Bun",
+    "partII": "I'm a self-taught Front-End Developer with a passion for creating intuitive and user-friendly web experiences.",
+    "partIII": "My coding journey began during my time as a software PM. I had a passion for figuring out the logic behind apps and especially interested in how apps interact with users. This led me to pursue a career in front-end development.",
+    "partIV": "Currently, I'm focused on developing systems at <anchor>Castles</anchor> , ensuring user-friendly experiences with clean, maintainable code.",
+    "partV": "I also love sharing, I enjoy writing articles in <anchor>Medium</anchor> to refine and share the skills I've picked up.",
+    "partVI": "Here are a few tools I've been working with recently:"
+  }
+}
