@@ -5,6 +5,7 @@ import GlobalStyle from './components/Global.style.js';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage.js';
 import ToastProvider from './utils/toast/Toast.context.js';
+import './i18n.ts';
 
 const router = createBrowserRouter([
   {
