@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     lng: 'en',
-    fallbackLng: 'en',
+    fallbackLng: ['en', 'zh-TW'],
     backend: {
       loadPath: '/website/locales/{{lng}}/{{ns}}.json',
     },

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import ColumnContainer from '../components/containers/FlexColumn.style';
 import { Paragraph } from '../components/fonts/P.style';
@@ -45,11 +45,9 @@ const AboutWrapper = styled.div`
 `;
 
 const About = () => {
+  const { t } = useTranslation('about');
   const [isIntersecting, elementRef] = useIntersectionObserver();
-
-  const tools = useMemo(() => {
-    return aboutData.tools;
-  }, []);
+  const tools = aboutData.tools;
 
   return (
     <SectionContainer
@@ -57,45 +55,43 @@ const About = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2>About Me</TitleH2>
+      <TitleH2>{t('Title')}</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap='0.5em'>
-          <Paragraph>Hello, I’m Bun 🙂</Paragraph>
+          <Paragraph>{t('Content.partI')} 🙂</Paragraph>
+          <Paragraph>{t('Content.partII')}</Paragraph>
+          <Paragraph>{t('Content.partIII')}</Paragraph>
           <Paragraph>
-            I’m a self-taught Front-End Developer with a passion for creating
-            intuitive and user-friendly web experiences.
+            <Trans
+              i18nKey={t('Content.partIV')}
+              components={{
+                anchor: (
+                  <Anchor
+                    to='https://www.castlestech.com/payment-solutions/cashub/'
+                    target
+                    underline
+                    ariaLabel='CasHUB website'
+                  />
+                ),
+              }}
+            />
           </Paragraph>
           <Paragraph>
-            My coding journey began during my time as a software PM. I had a
-            passion for figuring out the logic behind apps and especially
-            interested in how apps interact with users. This led me to pursue a
-            career in front-end development.
+            <Trans
+              i18nKey={t('Content.partV')}
+              components={{
+                anchor: (
+                  <Anchor
+                    to='https://medium.com/@bun.coding'
+                    target
+                    underline
+                    ariaLabel="Bun's Medium link"
+                  />
+                ),
+              }}
+            />
           </Paragraph>
-          <Paragraph>
-            Currently, I’m focused on developing systems at{' '}
-            <Anchor
-              to='https://www.castlestech.com/payment-solutions/cashub/'
-              target
-              underline
-              ariaLabel='CasHUB website'
-            >
-              Castles
-            </Anchor>
-            , ensuring user-friendly experiences with clean, maintainable code.
-          </Paragraph>
-          <Paragraph>
-            In my spare time, I enjoy writing articles in{' '}
-            <Anchor
-              to='https://medium.com/@bun.coding'
-              target
-              underline
-              ariaLabel="Bun's Medium link"
-            >
-              Medium
-            </Anchor>{' '}
-            to refine and share the skills I’ve picked up.{' '}
-          </Paragraph>
-          <Paragraph>Here are a few tools I’ve been working with recently:</Paragraph>
+          <Paragraph>{t('Content.partVI')}</Paragraph>
           <GridColumn
             $template='1fr 1fr'
             $gap='10px'

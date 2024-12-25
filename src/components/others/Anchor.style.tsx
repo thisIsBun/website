@@ -48,7 +48,7 @@ type AnchorProps = {
   to: string;
   underline?: boolean;
   target?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   ariaLabel: string;
 };
 
