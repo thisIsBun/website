@@ -55,15 +55,15 @@ const About = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2>{t('Title')}</TitleH2>
+      <TitleH2>{t('title')}</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap='0.5em'>
-          <Paragraph>{t('Content.partI')} 🙂</Paragraph>
-          <Paragraph>{t('Content.partII')}</Paragraph>
-          <Paragraph>{t('Content.partIII')}</Paragraph>
+          <Paragraph>{t('content.partI')} 🙂</Paragraph>
+          <Paragraph>{t('content.partII')}</Paragraph>
+          <Paragraph>{t('content.partIII')}</Paragraph>
           <Paragraph>
             <Trans
-              i18nKey={t('Content.partIV')}
+              i18nKey={t('content.partIV')}
               components={{
                 anchor: (
                   <Anchor
@@ -78,7 +78,7 @@ const About = () => {
           </Paragraph>
           <Paragraph>
             <Trans
-              i18nKey={t('Content.partV')}
+              i18nKey={t('content.partV')}
               components={{
                 anchor: (
                   <Anchor
@@ -91,7 +91,7 @@ const About = () => {
               }}
             />
           </Paragraph>
-          <Paragraph>{t('Content.partVI')}</Paragraph>
+          <Paragraph>{t('content.partVI')}</Paragraph>
           <GridColumn
             $template='1fr 1fr'
             $gap='10px'

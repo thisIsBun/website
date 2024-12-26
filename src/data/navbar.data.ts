@@ -4,11 +4,11 @@ type NavType = {
 };
 
 enum NavNameType {
-  ABOUT = 'About',
-  EXPERIENCES = 'Experiences',
-  BLOGS = 'Blogs',
-  PROJECTS = 'Projects',
-  CONTACT = 'Contact',
+  ABOUT = 'about',
+  EXPERIENCES = 'experiences',
+  BLOGS = 'blogs',
+  PROJECTS = 'projects',
+  CONTACT = 'contact',
 }
 
 const navbarData: NavType[] = [
