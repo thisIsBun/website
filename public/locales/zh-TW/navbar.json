@@ -1,8 +1,8 @@
 {
-  "About": "關於",
-  "Blogs": "部落格",
-  "Contact": "聯絡",
-  "Experiences": "經歷",
-  "Projects": "專案",
-  "ToggleNavigationMenu": "切換導航選單"
+  "about": "關於我",
+  "experiences": "經歷",
+  "blogs": "部落格",
+  "projects": "專案",
+  "contact": "與我聯繫",
+  "toggleNavigationMenu": "切換導航選單"
 }

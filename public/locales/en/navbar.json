@@ -1,8 +1,8 @@
 {
-  "About": "About",
-  "Blogs": "Blogs",
-  "Contact": "Contact",
-  "Experiences": "Experiences",
-  "Projects": "Projects",
-  "ToggleNavigationMenu": "Toggle navigation menu"
+  "about": "About",
+  "experiences": "Experiences",
+  "blogs": "Blogs",
+  "projects": "Projects",
+  "contact": "Contact",
+  "toggleNavigationMenu": "Toggle navigation menu"
 }

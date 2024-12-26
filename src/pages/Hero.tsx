@@ -148,13 +148,13 @@ const Hero = () => {
           <HeroH1>Bun</HeroH1>
           <IconButton
             onClick={handleUtterance}
-            aria-label='listen pronunciation for bun '
+            aria-label={t('pronounce')}
           >
             {isUttering ? <GoSquareFill className='uttering' /> : <HiOutlineSpeakerWave />}
           </IconButton>
         </FlexRow>
-        <Heading2>{t('HeroSubject')}</Heading2>
-        <HeroP>{t('HeroBrief')}</HeroP>
+        <Heading2>{t('subject')}</Heading2>
+        <HeroP>{t('brief')}</HeroP>
         <SocialMedia />
       </HeroWrapper>
     </SectionContainer>
