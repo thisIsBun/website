@@ -40,5 +40,10 @@
     "description1": "Led development of ROG gaming keyboards and mice, won German iF Design in 2018.",
     "tool1": "Product Development",
     "tool2": "Cross-functional Collaborations"
+  },
+  "resume": {
+    "link": "/website/resume_en.pdf",
+    "ariaLabel": "open Resume page",
+    "title": "View English Resume"
   }
 }
