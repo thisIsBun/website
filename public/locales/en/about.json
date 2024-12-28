@@ -3,9 +3,9 @@
   "content": {
     "partI": "Hello, I'm Bun",
     "partII": "I'm a web developer from Taiwan with a passion for creating user-friendly web experiences. I enjoy exploring the structure and context of code to better understand how everything works together.",
-    "partIII": "My coding journey began during my time as a software PM. I had a passion for figuring out the logic behind web and especially interested in how web interact with users. This led me to pursue a career in front-end development.",
+    "partIII": "My coding journey began when I was a software PM. I had a passion for figuring out the logic behind web and especially interested in how web interact with users. This led me to pursue a career in front-end development.",
     "partIV": "Currently, I'm focused on developing products at <anchor>Castles</anchor> , ensuring user-friendly experiences with clean, maintainable code.",
-    "partV": "I also love sharing, I enjoy writing articles in <anchor>Medium</anchor> to share the skills I've picked up.",
-    "partVI": "Here are a few tools I've been working with recently:"
+    "partV": "I also write articles on <anchor>Medium</anchor> to share my interesting development experiences.",
+    "partVI": "These are the tools I've been using recently:"
   }
 }

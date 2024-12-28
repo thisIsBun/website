@@ -10,6 +10,7 @@ import Anchor from '../components/others/Anchor.style';
 import Heading4 from '../components/fonts/Heading4.style';
 import { ImArrowUpRight2 } from 'react-icons/im';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ExperienceSection = styled(SectionContainer)`
   --card-padding: 30px;
@@ -135,6 +136,7 @@ const Badge = styled.span`
 `;
 
 const Experiences = () => {
+  const { t } = useTranslation('experiences');
   const [selectIndex, setSelectIndex] = useState(0);
   const [isIntersecting, elementRef] = useIntersectionObserver();
 
@@ -147,7 +149,7 @@ const Experiences = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2>Where I’ve Worked</TitleH2>
+      <TitleH2>{t('title')}</TitleH2>
       <FlexColumn $gap='20px' className='cardContainer'>
         <CardContainer>
           <PeriodWrapper>
@@ -163,7 +165,7 @@ const Experiences = () => {
           </PeriodWrapper>
           <CardContent>
             <Heading3>
-              {displayItem.title} · {displayItem.company}
+              {displayItem.title} @ {displayItem.company} · {displayItem.service}
             </Heading3>
             <FlexColumn $gap='5px'>
               {displayItem.description.map((item, index) => {

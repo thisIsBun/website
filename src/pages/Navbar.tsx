@@ -170,16 +170,16 @@ type NavItemProps = {
   ariaLabel: string;
 };
 
-const NavItem = ({ href, children, handleNavToggle, className, ariaLabel }: NavItemProps) => {
+const NavItem = ({
+  href,
+  children,
+  handleNavToggle,
+  className,
+  ariaLabel,
+}: NavItemProps) => {
   return (
-    <li
-      onClick={handleNavToggle}
-      className={className}
-    >
-      <Anchor
-        to={href}
-        ariaLabel={`${ariaLabel} section`}
-      >
+    <li onClick={handleNavToggle} className={className}>
+      <Anchor to={href} ariaLabel={`${ariaLabel} section`}>
         {children}
       </Anchor>
     </li>
@@ -245,15 +245,13 @@ const Navbar = () => {
 
   const handleChangeLang = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'zh-TW' : 'en');
+    handleNavToggle();
   };
 
   return (
     <Header ref={headerRef}>
       <Hamburger aria-label={t('ToggleNavigationMenu')}>
-        <HamburgerCheckbox
-          type='checkbox'
-          ref={inputRef}
-        ></HamburgerCheckbox>
+        <HamburgerCheckbox type='checkbox' ref={inputRef}></HamburgerCheckbox>
       </Hamburger>
       <NavWrapper $gap='40px'>
         <NavList>
@@ -263,7 +261,9 @@ const Navbar = () => {
                 key={name}
                 href={path}
                 handleNavToggle={handleNavToggle}
-                className={hash.includes(name.toLowerCase()) ? 'active' : undefined}
+                className={
+                  hash.includes(name.toLowerCase()) ? 'active' : undefined
+                }
                 ariaLabel={t(name)}
               >
                 {t(name)}
