@@ -2,6 +2,7 @@ import React from 'react';
 
 type experienceDataType = {
   company: string;
+  service: string;
   title: string;
   period: string;
   description: (string | React.ReactNode)[];
@@ -11,6 +12,7 @@ type experienceDataType = {
 const experienceData: experienceDataType[] = [
   {
     company: 'Castles',
+    service: 'Payment device',
     title: 'Engineer',
     period: 'Present - 2023',
     description: [
@@ -24,6 +26,7 @@ const experienceData: experienceDataType[] = [
   },
   {
     company: 'QNAP',
+    service: 'Surveillance device',
     title: 'Software Product Manager',
     period: '2023 - 2021',
     description: [
@@ -35,6 +38,7 @@ const experienceData: experienceDataType[] = [
   },
   {
     company: 'ASUS',
+    service: 'Gaming device app',
     title: 'Software Project Manager',
     period: '2021 - 2020',
     description: [
@@ -45,6 +49,7 @@ const experienceData: experienceDataType[] = [
   },
   {
     company: 'ASUS',
+    service: 'Gaming peripheral',
     title: 'Hardware Product Manager',
     period: '2020 - 2015',
     description: [

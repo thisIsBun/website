@@ -91,7 +91,9 @@ const IconButton = styled.button`
 
 const Hero = () => {
   const { t } = useTranslation('hero');
-  const [utterVoice, setUtterVoice] = useState<SpeechSynthesisVoice | null>(null);
+  const [utterVoice, setUtterVoice] = useState<SpeechSynthesisVoice | null>(
+    null
+  );
   const [isUttering, setIsUttering] = useState<boolean>(false);
   const [isIntersecting, elementRef] = useIntersectionObserver();
 
@@ -123,7 +125,9 @@ const Hero = () => {
     const loadVoice = () => {
       const voices = speechSynthesis.getVoices();
       if (voices.length) {
-        const maleVoice = voices.find((voice) => voice.name.includes('Google UK English Male'));
+        const maleVoice = voices.find((voice) =>
+          voice.name.includes('Google UK English Male')
+        );
         setUtterVoice(maleVoice || null);
       } else {
         setTimeout(loadVoice, 100);
@@ -146,15 +150,16 @@ const Hero = () => {
       <HeroWrapper>
         <FlexRow $gap='1rem'>
           <HeroH1>Bun</HeroH1>
-          <IconButton
-            onClick={handleUtterance}
-            aria-label={t('pronounce')}
-          >
-            {isUttering ? <GoSquareFill className='uttering' /> : <HiOutlineSpeakerWave />}
+          <IconButton onClick={handleUtterance} aria-label={t('pronounce')}>
+            {isUttering ? (
+              <GoSquareFill className='uttering' />
+            ) : (
+              <HiOutlineSpeakerWave />
+            )}
           </IconButton>
         </FlexRow>
         <Heading2>{t('subject')}</Heading2>
-        <HeroP>{t('brief')}</HeroP>
+        <HeroP>{t('content')}</HeroP>
         <SocialMedia />
       </HeroWrapper>
     </SectionContainer>

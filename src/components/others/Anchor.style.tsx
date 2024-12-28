@@ -9,11 +9,11 @@ type StyleLinkType = {
 const StyleLink = styled(Link)<StyleLinkType>`
   position: relative;
   text-decoration: none;
-  color: var(--primary-font);
 
   ${({ $underline }) =>
     !$underline &&
     `
+      color: var(--primary-font);
       display: flex;
       align-items: center;
     `}
@@ -21,6 +21,7 @@ const StyleLink = styled(Link)<StyleLinkType>`
   ${({ $underline }) =>
     $underline &&
     ` 
+      color: var(--accent-color);
       &::after {
         content: "";
         display: block;
@@ -52,7 +53,13 @@ type AnchorProps = {
   ariaLabel: string;
 };
 
-const Anchor = ({ to, underline, target, children, ariaLabel }: AnchorProps): React.ReactNode => {
+const Anchor = ({
+  to,
+  underline,
+  target,
+  children,
+  ariaLabel,
+}: AnchorProps): React.ReactNode => {
   return (
     <StyleLink
       to={to}
