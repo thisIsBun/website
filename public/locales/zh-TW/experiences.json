@@ -40,5 +40,10 @@
     "description1": "負責 ROG電競鍵盤及滑鼠的開發，負責產品在 2018年得過德國 iF設計獎。",
     "tool1": "產品開發",
     "tool2": "跨團隊合作"
+  },
+  "resume": {
+    "link": "/website/resume_zhTW.pdf",
+    "ariaLabel": "另外開啟履歷分頁",
+    "title": "檢視中文履歷"
   }
 }

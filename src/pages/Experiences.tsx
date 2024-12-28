@@ -195,9 +195,9 @@ const Experiences = () => {
         </CardContainer>
       </FlexColumn>
       <FlexRow $margin='1rem 0 0 var(--card-padding)'>
-        <Anchor to='/website/resume.pdf' target ariaLabel='open Resume page'>
+        <Anchor to={t('resume.link')} target ariaLabel={t('resume.ariaLabel')}>
           <FlexRow>
-            <Heading4>View English Resume</Heading4>
+            <Heading4>{t('resume.title')}</Heading4>
             <ImArrowUpRight2 className='arrowIcon' />
           </FlexRow>
         </Anchor>
