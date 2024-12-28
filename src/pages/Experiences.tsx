@@ -11,6 +11,7 @@ import Heading4 from '../components/fonts/Heading4.style';
 import { ImArrowUpRight2 } from 'react-icons/im';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Paragraph } from '../components/fonts/P.style';
 
 const ExperienceSection = styled(SectionContainer)`
   --card-padding: 30px;
@@ -159,13 +160,16 @@ const Experiences = () => {
                 onClick={() => setSelectIndex(index)}
                 className={index === selectIndex ? 'active' : undefined}
               >
-                {period}
+                {t(period)}
               </Period>
             ))}
           </PeriodWrapper>
           <CardContent>
             <Heading3>
-              {displayItem.title} @ {displayItem.company} · {displayItem.service}
+              {t(displayItem.title)}
+              <Paragraph>
+                {t(displayItem.company)} · {t(displayItem.service)}
+              </Paragraph>
             </Heading3>
             <FlexColumn $gap='5px'>
               {displayItem.description.map((item, index) => {
@@ -175,7 +179,7 @@ const Experiences = () => {
                     $fontSize='var(--fz-md)'
                     className='experienceItem'
                   >
-                    {item}
+                    {t(item)}
                   </BulletPoint>
                 );
               })}
@@ -183,7 +187,7 @@ const Experiences = () => {
             {displayItem.tools && displayItem.tools.length > 0 && (
               <FlexRow $margin='10px 0 0 20px' className='badgeWrapper'>
                 {displayItem.tools.map((tool, index) => {
-                  return <Badge key={index}>{tool}</Badge>;
+                  return <Badge key={index}>{t(tool)}</Badge>;
                 })}
               </FlexRow>
             )}

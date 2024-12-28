@@ -1,3 +1,44 @@
 {
-  "title": "Where I've Worked"
+  "title": "Where I've Worked",
+  "job4": {
+    "company": "Castles",
+    "service": "Payment device app",
+    "title": "Engineer",
+    "period": "Present - 2023",
+    "description1": "Developed company own platforms by React.js, and built reusable UI components using Styled Components and Storybook.",
+    "description2": "Migrated the build tool from Webpack to Vite by referencing official documentation, reducing server startup time and improving development efficiency.",
+    "description3": "Studied the implement guidelines of WCAG 2.1 and analyzed the project codebase to evaluate the adjustments needed for compliance with accessibility standards.",
+    "description4": "Documented development process with detailed requirements and change scopes to ensure alignment with project needs, enhancing development quality.",
+    "description5": "Proactively discussed requirements with teams, ensured alignment with customer needs, and resolved issues early to streamline development."
+  },
+  "job3": {
+    "company": "QNAP",
+    "service": "Surveillance device app",
+    "title": "Software Product Manager",
+    "period": "2023 - 2021",
+    "description1": "Led development of QVR products' crowd flow analysis and facial recognition software.",
+    "description2": "Partnered with UI/UX designers and software engineers to evaluate feasibility and optimize user experience.",
+    "description3": "Plan MVPs, authored PRDs, and marketing content to support software launches",
+    "tool1": "Product Design",
+    "tool2": "Cross-functional Collaborations"
+  },
+  "job2": {
+    "company": "ASUS",
+    "service": "Gaming device app",
+    "title": "Software Project Manager",
+    "period": "2021 - 2020",
+    "description1": "Led a task force to enhance software stability by collaborating with global key users to clarify and reproduce issues based on their usage scenarios.",
+    "description2": "Presented at the annual global sales meeting, earning recognition from the sales team for significant improvements in software stability.",
+    "tool1": "Software Troubleshooting",
+    "tool2": "Cross-functional Collaborations"
+  },
+  "job1": {
+    "company": "ASUS",
+    "service": "Gaming device",
+    "title": "Hardware Product Manager",
+    "period": "2020 - 2015",
+    "description1": "Led development of ROG gaming keyboards and mice, won German iF Design in 2018.",
+    "tool1": "Product Development",
+    "tool2": "Cross-functional Collaborations"
+  }
 }
