@@ -1,61 +1,54 @@
-import React from 'react';
-
 type experienceDataType = {
   company: string;
   service: string;
   title: string;
   period: string;
-  description: (string | React.ReactNode)[];
+  description: string[];
   tools?: string[];
 };
 
 const experienceData: experienceDataType[] = [
   {
-    company: 'Castles',
-    service: 'Payment device',
-    title: 'Engineer',
-    period: 'Present - 2023',
+    company: 'job4.company',
+    service: 'job4.service',
+    title: 'job4.title',
+    period: 'job4.period',
     description: [
-      'Developed React.js platforms for B2B clients, and built reusable UI components using Styled Components and Storybook.',
-      'Migrated the build tool from Webpack to Vite by referencing official documentation, reducing server startup time and improving development efficiency.',
-      'Studied the details of WCAG 2.1 guidelines and analyzed the project codebase to evaluate the adjustments needed for compliance with accessibility standards.',
-      'Documented development process with detailed requirements and change scopes to ensure alignment with project needs, enhancing development quality.',
-      'Proactively discussed requirements with teams, ensured alignment with customer needs, and resolved issues early to streamline development.',
+      'job4.description1',
+      'job4.description2',
+      'job4.description3',
+      'job4.description4',
+      'job4.description5',
     ],
     tools: ['React', 'Styled Components', 'Storybook', 'Vite', 'WCAG'],
   },
   {
-    company: 'QNAP',
-    service: 'Surveillance device',
-    title: 'Software Product Manager',
-    period: '2023 - 2021',
+    company: 'job3.company',
+    service: 'job3.service',
+    title: 'job3.title',
+    period: 'job3.period',
     description: [
-      'Led development of crowd flow analysis and facial recognition software.',
-      'Partnered with UI/UX designers and engineers to evaluate feasibility and optimize user experience.',
-      'Authored detailed MVPs, PRDs, and marketing content to support software launches',
+      'job3.description1',
+      'job3.description2',
+      'job3.description3',
     ],
-    tools: ['Product Design', 'Cross-functional Collaborations'],
+    tools: ['job3.tool1', 'job3.tool2'],
   },
   {
-    company: 'ASUS',
-    service: 'Gaming device app',
-    title: 'Software Project Manager',
-    period: '2021 - 2020',
-    description: [
-      'Led a task force to enhance software stability by collaborating with global key users to clarify and reproduce issues based on their usage scenarios.',
-      'Presented at the annual global sales meeting, earning recognition from the sales team for significant improvements in software stability.',
-    ],
-    tools: ['Software Troubleshooting', 'Cross-functional Collaborations'],
+    company: 'job2.company',
+    service: 'job2.service',
+    title: 'job2.title',
+    period: 'job2.period',
+    description: ['job2.description1', 'job2.description2'],
+    tools: ['job2.tool1', 'job2.tool2'],
   },
   {
-    company: 'ASUS',
-    service: 'Gaming peripheral',
-    title: 'Hardware Product Manager',
-    period: '2020 - 2015',
-    description: [
-      'Led development of ROG gaming keyboards and mice, earning the 2018 German iF Design Award.',
-    ],
-    tools: ['Product Development', 'Cross-functional Collaborations'],
+    company: 'job1.company',
+    service: 'job1.service',
+    title: 'job1.title',
+    period: 'job1.period',
+    description: ['job1.description1'],
+    tools: ['job1.tool1', 'job1.tool2'],
   },
 ];
 
