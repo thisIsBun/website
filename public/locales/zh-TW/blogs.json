@@ -1,0 +1,25 @@
+{
+  "title": "部落格",
+  "publishedOn": "發表於",
+  "minRead": "分鐘閱讀",
+  "post1": {
+    "title": "WCAG 2.1 網頁內容無障礙指南",
+    "subtitle": "最近在評估公司產品導入無障礙網頁設計的可能性，覺得有顛覆我對無障礙的想像，所以寫成部落格分享。"
+  },
+  "post2": {
+    "title": "開發常見的深拷貝方法",
+    "subtitle": "當要複製很多層的巢狀結構時，就需要使用深拷貝。例如，React state是物件或陣列，要先複製原本的 state值。"
+  },
+  "post3": {
+    "title": "探索 Debounce在 JavaScript的應用",
+    "subtitle": "利用 Debounce解決頻繁請求的效能問題，探索 debounce在 JavaScript的運作邏輯。"
+  },
+  "post4": {
+    "title": "Build your own React - 8個步驟了解 React邏輯脈絡",
+    "subtitle": "Rodrigo Pombo在 2019年，用 JavaScript寫出 React的運作邏輯，一共分 8個步驟寫出 React的核心功能，像是 concurrent、fiber、reconciliation等。"
+  },
+  "post5": {
+    "title": "筆記 - JavaScript constructor function / prototype / this",
+    "subtitle": "當要建立很多筆很相似的物件時，一個一個的建立物件，程式碼的重複性是很高的。可以用建構式函式，就可以快速建立多筆相似的物件。"
+  }
+}

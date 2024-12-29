@@ -1,0 +1,25 @@
+{
+  "title": "Things I've Written",
+  "publishedOn": "Published on",
+  "minRead": "min read",
+  "post1": {
+    "title": "WCAG 2.1 (Web Content Accessibility Guidelines)",
+    "subtitle": "I've been evaluating the possibility of implementing accessible web design for the company's products recently. It has completely changed my perception of accessibility, so I decided to write a blog post to share my thoughts."
+  },
+  "post2": {
+    "title": "Deep Copy methods commonly used",
+    "subtitle": "When copying deeply nested structures, deep copy is required. For example, if a React state is an object or an array, you need to copy the original state value first."
+  },
+  "post3": {
+    "title": "Exploring Debounce in JavaScript",
+    "subtitle": "Use Debounce to solve performance problems with frequent requests and explore the operating logic of debounce in JavaScript."
+  },
+  "post4": {
+    "title": "Build your own React - 8 steps to understand the operation logic of React",
+    "subtitle": "Rodrigo Pombo used JavaScript to write the operating logic of React in 2019. He wrote the core functions of React in 8 steps, such as concurrent, fiber, reconciliation, etc."
+  },
+  "post5": {
+    "title": "Notes for JavaScript constructor function / prototype / this",
+    "subtitle": "When create many very similar objects, creating the objects one by one will cause the code to be very repetitive. Use the constructor function to quickly create multiple similar objects."
+  }
+}
