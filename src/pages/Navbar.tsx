@@ -244,7 +244,9 @@ const Navbar = () => {
   };
 
   const handleChangeLang = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'zh-TW' : 'en');
+    const newLang = i18n.language === 'en' ? 'zh-TW' : 'en';
+    i18n.changeLanguage(newLang);
+    document.documentElement.setAttribute('data-lang', newLang);
     handleNavToggle();
   };
 
