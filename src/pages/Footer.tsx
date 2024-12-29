@@ -1,6 +1,7 @@
 import { FooterP } from '../components/fonts/P.style';
 import SocialMedia from '../components/others/SocialMedia.style';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const FooterContainer = styled.footer`
   width: 100%;
@@ -23,10 +24,11 @@ const FooterContainer = styled.footer`
 `;
 
 const Footer = () => {
+  const { t } = useTranslation('footer');
   return (
     <FooterContainer>
       <SocialMedia />
-      <FooterP>Crafted with care by Bun Chen © 2024</FooterP>
+      <FooterP>{t('title')}</FooterP>
     </FooterContainer>
   );
 };

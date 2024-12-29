@@ -58,7 +58,7 @@ const About = () => {
       <TitleH2>{t('title')}</TitleH2>
       <AboutWrapper>
         <ColumnContainer $gap='0.5em'>
-          <Paragraph>{t('content.partI')} 🙂</Paragraph>
+          <Paragraph>{t('content.partI')} 👋</Paragraph>
           <Paragraph>{t('content.partII')}</Paragraph>
           <Paragraph>{t('content.partIII')}</Paragraph>
           <Paragraph>
@@ -92,10 +92,7 @@ const About = () => {
             />
           </Paragraph>
           <Paragraph>{t('content.partVI')}</Paragraph>
-          <GridColumn
-            $template='1fr 1fr'
-            $gap='10px'
-          >
+          <GridColumn $template='1fr 1fr' $gap='10px'>
             {tools.map((tool, index) => {
               return (
                 <BulletPoint
@@ -111,10 +108,7 @@ const About = () => {
           </GridColumn>
         </ColumnContainer>
         <ImgContainer>
-          <HeadShotImg
-            src='/website/headShot.webp'
-            alt='headShot'
-          />
+          <HeadShotImg src='/website/headShot.webp' alt='headShot' />
         </ImgContainer>
       </AboutWrapper>
     </SectionContainer>

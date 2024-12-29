@@ -1,0 +1,17 @@
+{
+  "title": "聯絡資訊",
+  "description": "轉工程師工作後，我發現我越來越 I 人，但也希望能多認識新朋友。如果你發訊息給我，我一定會回你的喔。",
+  "contact": { "name": "名字", "email": "信箱", "message": "你想說的話" },
+  "ariaLabel": {
+    "name": "輸入你的名字",
+    "email": "輸入你的信箱",
+    "message": "輸入你想說的話"
+  },
+  "alt": {
+    "email": "信箱圖示",
+    "phone": "電話圖示",
+    "location": "地點圖示"
+  },
+  "location": "台灣",
+  "sendOut": "送出"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Get In Touch",
+  "description": "It's always nice to meet new friends, feel free to send me a message anytime, I will get back to you.",
+  "contact": {
+    "name": "enter your name",
+    "email": "enter your email",
+    "message": "enter your message"
+  },
+  "ariaLabel": {
+    "name": "enter your name",
+    "email": "enter your email",
+    "message": "enter your message"
+  },
+  "alt": {
+    "email": "email icon",
+    "phone": "phone icon",
+    "location": "location icon"
+  },
+  "location": "Taiwan",
+  "sendOut": "Send out"
+}
