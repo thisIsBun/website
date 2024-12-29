@@ -9,6 +9,7 @@ import Anchor from '../components/others/Anchor.style';
 import FlexRow from '../components/containers/FlexRow.style';
 import styled from 'styled-components';
 import useIntersectionObserver from '../utils/useIntersectionObserver';
+import { useTranslation } from 'react-i18next';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -30,14 +31,21 @@ const CardWrapper = styled.div`
   }
 `;
 
-const convertDate = (timestamp: number) => {
-  const date = new Date(timestamp);
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
-};
-
 const Blogs = () => {
+  const { t, i18n } = useTranslation('blogs');
   const [isIntersecting, elementRef] = useIntersectionObserver();
+
+  const convertDate = (timestamp: number) => {
+    const date = new Date(timestamp);
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    };
+
+    const lang = i18n.language === 'en' ? 'en-US' : 'zh-TW';
+    return date.toLocaleDateString(lang, options);
+  };
 
   return (
     <SectionContainer
@@ -45,7 +53,7 @@ const Blogs = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2>Things I’ve Written</TitleH2>
+      <TitleH2>{t('title')}</TitleH2>
       <FlexColumn $gap='20px'>
         {blogsData.map(({ postId, post }) => {
           const {
@@ -57,19 +65,18 @@ const Blogs = () => {
           } = post;
           return (
             <CardWrapper key={postId}>
-              <Anchor
-                to={mediumUrl}
-                target
-                ariaLabel={title}
-              >
+              <Anchor to={mediumUrl} target ariaLabel={t(title)}>
                 <FlexRow>
-                  <Heading4>{title}</Heading4>
+                  <Heading4>{t(title)}</Heading4>
                   <ImArrowUpRight2 className='arrowIcon' />
                 </FlexRow>
               </Anchor>
-              <Paragraph $color='var(--secondary-font)'>{subtitle}</Paragraph>
               <Paragraph $color='var(--secondary-font)'>
-                Published on {convertDate(firstPublishedAt)} · {Math.round(readingTime)} min read
+                {t(subtitle)}
+              </Paragraph>
+              <Paragraph $color='var(--secondary-font)'>
+                {t('publishedOn')} {convertDate(firstPublishedAt)} ·{' '}
+                {Math.round(readingTime)} {t('minRead')}
               </Paragraph>
             </CardWrapper>
           );
