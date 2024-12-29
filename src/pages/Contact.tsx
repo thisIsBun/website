@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import useToast from '../utils/toast/useToast';
 import useIntersectionObserver from '../utils/useIntersectionObserver';
 import Loader from '../components/others/Loader.style';
+import { useTranslation } from 'react-i18next';
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -36,17 +37,9 @@ const ContactDetail = styled.div`
   display: flex;
   flex-direction: column;
   gap: 36px;
-  padding-top: 48px;
 
   @media (max-width: 768px) {
-    padding-top: 0px;
     gap: 16px;
-  }
-
-  @media (max-width: 576px) {
-    .iconContainer {
-      gap: 12px;
-    }
   }
 `;
 
@@ -76,10 +69,6 @@ const ContactForm = styled.form`
   gap: 5px;
 `;
 
-const Label = styled.label`
-  font-size: var(--fz-lg);
-`;
-
 const Input = styled.input`
   background-color: transparent;
   font-size: var(--fz-sm);
@@ -89,6 +78,7 @@ const Input = styled.input`
   color: var(--primary-font);
   font-family: var(--font-mono);
   margin-bottom: 10px;
+  border-radius: 0;
 
   &:-webkit-autofill,
   &:-webkit-autofill:active,
@@ -113,6 +103,7 @@ const TextArea = styled.textarea`
   border: 1px solid hsla(0, 0%, 100%, 0.5);
   color: var(--primary-font);
   margin-bottom: 10px;
+  border-radius: 0;
 
   &:focus {
     outline: none;
@@ -126,6 +117,7 @@ type ContactFormData = {
 };
 
 const Contact = () => {
+  const { t } = useTranslation('contact');
   const [isIntersecting, elementRef] = useIntersectionObserver();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const toast = useToast();
@@ -135,7 +127,9 @@ const Contact = () => {
     message: '',
   });
 
-  const handleChange: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (event) => {
+  const handleChange: ChangeEventHandler<
+    HTMLTextAreaElement | HTMLInputElement
+  > = (event) => {
     const { value, name } = event.target;
     setFormData((prev) => {
       return { ...prev, [name]: value };
@@ -187,69 +181,59 @@ const Contact = () => {
       ref={elementRef}
       className={isIntersecting ? 'loaded' : undefined}
     >
-      <TitleH2>Get In Touch</TitleH2>
+      <TitleH2>{t('title')}</TitleH2>
       <ContactWrapper>
         <ContactDetail>
-          <Paragraph>
-            It’s always nice to meet new friends 👋 <br />
-            So feel free to send me a message anytime, I will get back to you.
-          </Paragraph>
-          <FlexColumn
-            $gap='16px'
-            className='iconContainer'
-          >
+          <Paragraph>{t('description')}</Paragraph>
+          <FlexColumn $gap='8px'>
             <IconWrapper>
-              <Img
-                src={emailIcon}
-                alt='emailIcon'
-              />
+              <Img src={emailIcon} alt={t('alt.email')} />
               <Paragraph>{contactData.email}</Paragraph>
             </IconWrapper>
             <IconWrapper>
-              <Img
-                src={phoneIcon}
-                alt='phoneIcon'
-              />
+              <Img src={phoneIcon} alt={t('alt.phone')} />
               <Paragraph>{contactData.phone}</Paragraph>
             </IconWrapper>
             <IconWrapper>
-              <Img
-                src={locationIcon}
-                alt='locationIcon'
-              />
-              <Paragraph>{contactData.location}</Paragraph>
+              <Img src={locationIcon} alt={t('alt.location')} />
+              <Paragraph>{t(contactData.location)}</Paragraph>
             </IconWrapper>
           </FlexColumn>
         </ContactDetail>
         <ContactForm onSubmit={onSubmit}>
-          <Label htmlFor='name'>Your name</Label>
           <Input
             name='name'
             type='text'
             id='name'
             onChange={handleChange}
-            aria-label='Enter your name'
+            aria-label={t('ariaLabel.name')}
+            placeholder={t('contact.name')}
           />
-          <Label htmlFor='email'>Your email</Label>
           <Input
             name='email'
             type='email'
             id='email'
             onChange={handleChange}
-            aria-label='Enter your email'
+            aria-label={t('ariaLabel.email')}
+            placeholder={t('contact.email')}
           />
-          <Label htmlFor='message'>Write your message here</Label>
           <TextArea
             name='message'
             id='message'
             rows={8}
             onChange={handleChange}
-            aria-label='Enter your message'
+            aria-label={t('ariaLabel.message')}
+            placeholder={t('contact.message')}
           ></TextArea>
           <ContactButton
-            disabled={!formData.name || !formData.email || !formData.message || isLoading}
+            disabled={
+              !formData.name ||
+              !formData.email ||
+              !formData.message ||
+              isLoading
+            }
           >
-            {isLoading ? <Loader /> : 'Send out'}
+            {isLoading ? <Loader /> : t('sendOut')}
           </ContactButton>
         </ContactForm>
       </ContactWrapper>
