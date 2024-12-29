@@ -67,6 +67,10 @@ const GlobalStyle = createGlobalStyle`
       }
   }
 
+  html[data-lang='zh-TW'] body {
+    letter-spacing: 0.075em;
+  }
+
   body {
     margin: 0;
     background-color: var(--primary-background);
