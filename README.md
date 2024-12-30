@@ -40,7 +40,7 @@ Responsive design optimized for various devices
 This website is automatically deployed to GitHub Pages using GitHub Actions.
 
 ## Future Improvements
-- Add Testing
+- ~~Add Testing~~ --> 2024/12/29 done
 - Add Traditional Chinese Translation
 
 ## Contact
