@@ -3,7 +3,7 @@
   "job4": {
     "company": "Castles",
     "service": "Payment device app",
-    "title": "Engineer",
+    "title": "Frontend Engineer",
     "period": "Present - 2023",
     "description1": "Developed company own platforms by React.js, and built reusable UI components using Styled Components and Storybook.",
     "description2": "Migrated the build tool from Webpack to Vite by referencing official documentation, reducing server startup time and improving development efficiency.",
@@ -37,12 +37,13 @@
     "service": "Gaming device",
     "title": "Hardware Product Manager",
     "period": "2020 - 2015",
-    "description1": "Led development of ROG gaming keyboards and mice, won German iF Design in 2018.",
+    "description1": "Led the development of ROG gaming keyboards and mice, analyzing market needs and collaborating with internal engineers, designers, and external ODM partners to bring concepts to market.",
+    "description2": "One of the products earned the 2018 German iF Design Award.",
     "tool1": "Product Development",
     "tool2": "Cross-functional Collaborations"
   },
   "resume": {
-    "link": "/website/resume_en.pdf",
+    "link": "/website/bun_resume_en.pdf",
     "ariaLabel": "open Resume page",
     "title": "View English Resume"
   }
