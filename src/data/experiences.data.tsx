@@ -47,7 +47,7 @@ const experienceData: experienceDataType[] = [
     service: 'job1.service',
     title: 'job1.title',
     period: 'job1.period',
-    description: ['job1.description1'],
+    description: ['job1.description1', 'job1.description2'],
     tools: ['job1.tool1', 'job1.tool2'],
   },
 ];

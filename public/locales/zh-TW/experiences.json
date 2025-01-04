@@ -3,7 +3,7 @@
   "job4": {
     "company": "虹堡科技",
     "service": "支付裝置軟體",
-    "title": "工程師",
+    "title": "前端工程師",
     "period": "目前 - 2023",
     "description1": "使用 React.js開發公司自有平台，並用 Styled Components及 Storybook建構可重複使用的元件。",
     "description2": "透過研究官方文件，將打包工具從 Webpack 遷移至 Vite，提升開發效率並縮短伺服器啟動時間。",
@@ -37,12 +37,13 @@
     "service": "電競裝置",
     "title": "硬體產品經理",
     "period": "2020 - 2015",
-    "description1": "負責 ROG電競鍵盤及滑鼠的開發，負責產品在 2018年得過德國 iF設計獎。",
+    "description1": "負責 ROG 電競鍵盤與滑鼠的開發，分析市場需求，並與內部工程師、設計師及外部 ODM 廠商協作，將概念轉化為產品。",
+    "description2": "其中一款產品榮獲 2018 年德國 iF 設計獎。",
     "tool1": "產品開發",
     "tool2": "跨團隊合作"
   },
   "resume": {
-    "link": "/website/resume_zhTW.pdf",
+    "link": "/website/bun_resume_zhTW.pdf",
     "ariaLabel": "另外開啟履歷分頁",
     "title": "檢視中文履歷"
   }
