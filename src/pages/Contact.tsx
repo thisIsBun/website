@@ -208,6 +208,7 @@ const Contact = () => {
             onChange={handleChange}
             aria-label={t('ariaLabel.name')}
             placeholder={t('contact.name')}
+            inputMode='text'
           />
           <Input
             name='email'
@@ -216,6 +217,7 @@ const Contact = () => {
             onChange={handleChange}
             aria-label={t('ariaLabel.email')}
             placeholder={t('contact.email')}
+            inputMode='email'
           />
           <TextArea
             name='message'
@@ -224,6 +226,7 @@ const Contact = () => {
             onChange={handleChange}
             aria-label={t('ariaLabel.message')}
             placeholder={t('contact.message')}
+            inputMode='text'
           ></TextArea>
           <ContactButton
             disabled={
