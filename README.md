@@ -40,8 +40,7 @@ Responsive design optimized for various devices
 This website is automatically deployed to GitHub Pages using GitHub Actions.
 
 ## Future Improvements
-- ~~Add Testing~~ --> 2024/12/29 done
-- Add Traditional Chinese Translation
+- ~~Add Traditional Chinese Translation~~ --> 2024/12/29 done
 
 ## Contact
 - Email: shuyin.chen28@gmail.com
