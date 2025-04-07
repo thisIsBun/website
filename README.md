@@ -9,12 +9,12 @@ https://thisisbun.github.io/website/
 ## Features
 Responsive design optimized for various devices
 <div style="display: flex;">
-   <img src="https://github.com/user-attachments/assets/4dc5e682-0b19-4b5c-b5aa-60cabcad2058" alt="hero section desktop view" style="height: 300px; margin-right: 8px;" />
-   <img src="https://github.com/user-attachments/assets/b9d64d26-35a1-4b7e-b6c5-f30ee80a3b72" alt="hero section mobile view" style="height: 300px;" />
+   <img src="https://github.com/user-attachments/assets/c925a8fb-7e3c-4b9c-87ec-552af170cf87" alt="hero section desktop view" style="height: 300px; margin-right: 8px;" />
+   <img src="https://github.com/user-attachments/assets/8e71f680-e9e1-4435-b8b5-904a8cdc3d84" alt="hero section mobile view" style="height: 300px;" />
 </div>
 <div style="display: flex;">
-   <img src="https://github.com/user-attachments/assets/75430791-aa87-4756-a8b6-12c066558c4a" alt="about section desktop view" style="height: 300px; margin-right: 8px;" />
-   <img src="https://github.com/user-attachments/assets/ee1b0eb2-e290-48d2-9674-0cc3883ba840" alt="about section mobile view" style="height: 300px;" />
+   <img src="https://github.com/user-attachments/assets/2d792495-75a0-4296-b1c9-76dd370b9dc5" alt="about section desktop view" style="height: 300px; margin-right: 8px;" />
+   <img src="https://github.com/user-attachments/assets/f0b80b99-f0d8-4613-b264-6687af7f8ca1" alt="about section mobile view" style="height: 300px;" />
 </div>
 
 ## Tech Stack
