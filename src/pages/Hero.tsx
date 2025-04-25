@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SectionContainer from '../components/containers/SectionContainer.style';
 import Heading2 from '../components/fonts/Heading2.style';
 import { HeroP } from '../components/fonts/P.style';
@@ -89,6 +89,7 @@ const IconButton = styled.button`
   }
 `;
 
+const walk = 25;
 const Hero = () => {
   const { t } = useTranslation('hero');
   const [utterVoice, setUtterVoice] = useState<SpeechSynthesisVoice | null>(
@@ -96,6 +97,7 @@ const Hero = () => {
   );
   const [isUttering, setIsUttering] = useState<boolean>(false);
   const [isIntersecting, elementRef] = useIntersectionObserver();
+  const h1Ref = useRef<HTMLHeadingElement>(null);
 
   const handleUtterance = () => {
     if (speechSynthesis.speaking) return;
@@ -121,6 +123,25 @@ const Hero = () => {
     speechSynthesis.speak(utterance);
   };
 
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!elementRef.current) return;
+    let { offsetX: x, offsetY: y } = e;
+
+    if (e.target !== elementRef.current) {
+      const { offsetTop: top, offsetLeft: left } = e.target as HTMLElement;
+      x = x + left;
+      y = y + top;
+    }
+
+    const { offsetWidth: width, offsetHeight: height } = elementRef.current;
+    const xWalk = Math.round((x * walk) / width - walk / 2);
+    const yWalk = Math.round((y * walk) / height - walk / 2);
+
+    if (h1Ref.current) {
+      h1Ref.current.style.textShadow = `${xWalk}px ${yWalk}px 0 var(--accent-color)`;
+    }
+  };
+
   useEffect(() => {
     const loadVoice = () => {
       const voices = speechSynthesis.getVoices();
@@ -141,6 +162,17 @@ const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const div = elementRef.current;
+    if (div) {
+      div.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      div?.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <SectionContainer
       style={{ height: '100vh', margin: '0', justifyContent: 'center' }}
@@ -149,7 +181,7 @@ const Hero = () => {
     >
       <HeroWrapper>
         <FlexRow $gap='1rem'>
-          <HeroH1>Bun</HeroH1>
+          <HeroH1 ref={h1Ref}>Bun</HeroH1>
           <IconButton onClick={handleUtterance} aria-label={t('pronounce')}>
             {isUttering ? (
               <GoSquareFill className='uttering' />
